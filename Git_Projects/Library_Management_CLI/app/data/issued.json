@@ -1,0 +1,44 @@
+[
+    {
+        "student_id": "S005",
+        "book_id": "B005",
+        "issue_date": "2025:06:10",
+        "return_date": null
+    },
+    {
+        "student_id": "S006",
+        "book_id": "B006",
+        "issue_date": "2025:06:10",
+        "return_date": null
+    },
+    {
+        "student_id": "S007",
+        "book_id": "B007",
+        "issue_date": "2025:06:10",
+        "return_date": null
+    },
+    {
+        "student_id": "S008",
+        "book_id": "B008",
+        "issue_date": "2025:06:12",
+        "return_date": null
+    },
+    {
+        "student_id": "S015",
+        "book_id": "B015",
+        "issue_date": "2025-06-12",
+        "return_date": null
+    },
+    {
+        "student_id": "S009",
+        "book_id": "B009",
+        "issue_date": "2025-06-12",
+        "return_date": null
+    },
+    {
+        "student_id": "S017",
+        "book_id": "B017",
+        "issue_date": "2025-06-12",
+        "return_date": null
+    }
+]

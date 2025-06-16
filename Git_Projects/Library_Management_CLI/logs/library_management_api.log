@@ -1,0 +1,848 @@
+2025-06-07 17:44:20,444 - app.utils.decorators - INFO - MainThread - Executing: add_student
+2025-06-07 17:44:20,446 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 17:44:20,474 - app.utils.decorators - INFO - MainThread - Executing: save_students
+2025-06-07 17:44:20,476 - app.service.student_service - INFO - MainThread - Students data saved
+2025-06-07 17:44:23,911 - app.utils.decorators - INFO - MainThread - Executing: list_students
+2025-06-07 17:44:23,918 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 17:46:10,439 - app.utils.decorators - INFO - MainThread - Executing: list_students
+2025-06-07 17:46:10,439 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 17:47:51,159 - app.utils.decorators - INFO - MainThread - Executing: update_student
+2025-06-07 17:47:51,164 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 17:47:51,166 - app.utils.decorators - ERROR - MainThread - Error while Executing: update_student : 'Student' object is not subscriptable
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\student_service.py", line 36, in update_student
+    if stu["student_id"] == student_id:
+       ~~~^^^^^^^^^^^^^^
+TypeError: 'Student' object is not subscriptable
+2025-06-07 17:53:03,667 - app.utils.decorators - INFO - MainThread - Executing: delete_students
+2025-06-07 17:53:03,668 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 17:53:03,669 - app.utils.decorators - INFO - MainThread - Executing: save_students
+2025-06-07 17:53:03,671 - app.service.student_service - INFO - MainThread - Students data saved
+2025-06-07 17:53:10,414 - app.utils.decorators - INFO - MainThread - Executing: list_students
+2025-06-07 17:53:10,416 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 17:53:36,661 - app.utils.decorators - INFO - MainThread - Executing: update_student
+2025-06-07 17:53:36,664 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 17:53:36,669 - app.utils.decorators - ERROR - MainThread - Error while Executing: update_student : 'Student' object is not subscriptable
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\student_service.py", line 36, in update_student
+    if stu["student_id"] == student_id:
+       ~~~^^^^^^^^^^^^^^
+TypeError: 'Student' object is not subscriptable
+2025-06-07 17:53:46,624 - app.utils.decorators - INFO - MainThread - Executing: search_student_by_name
+2025-06-07 17:53:46,626 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 17:55:25,869 - app.utils.decorators - INFO - MainThread - Executing: list_students
+2025-06-07 17:55:25,869 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 17:55:59,461 - app.utils.decorators - INFO - MainThread - Executing: add_book
+2025-06-07 17:55:59,463 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-07 17:55:59,478 - app.utils.decorators - INFO - MainThread - Executing: save_books
+2025-06-07 17:55:59,480 - app.service.book_service - INFO - MainThread - Books data saved
+2025-06-07 17:56:43,249 - app.utils.decorators - INFO - MainThread - Executing: update_book
+2025-06-07 17:56:43,249 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-07 17:56:43,265 - app.utils.decorators - ERROR - MainThread - Error while Executing: update_book : 'Book' object is not subscriptable
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\book_service.py", line 35, in update_book
+    if book["book_id"] == book_id:
+       ~~~~^^^^^^^^^^^
+TypeError: 'Book' object is not subscriptable
+2025-06-07 17:56:59,695 - app.utils.decorators - INFO - MainThread - Executing: search_books_by_title
+2025-06-07 17:56:59,697 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-07 17:57:05,983 - app.utils.decorators - INFO - MainThread - Executing: search_books_by_title
+2025-06-07 17:57:05,985 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-07 17:57:12,858 - app.utils.decorators - INFO - MainThread - Executing: search_books_by_title
+2025-06-07 17:57:12,859 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-07 17:57:40,326 - app.utils.decorators - INFO - MainThread - Executing: delete_book
+2025-06-07 17:57:40,333 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-07 17:57:40,334 - app.utils.decorators - INFO - MainThread - Executing: save_books
+2025-06-07 17:57:40,336 - app.service.book_service - INFO - MainThread - Books data saved
+2025-06-07 17:58:34,867 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-07 17:58:34,867 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-07 17:58:34,868 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-07 17:58:34,871 - app.utils.decorators - INFO - MainThread - Executing: save_books
+2025-06-07 17:58:34,873 - app.service.book_service - INFO - MainThread - Books data saved
+2025-06-07 17:58:34,873 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-07 17:58:34,874 - app.utils.decorators - ERROR - MainThread - Error while Executing: save_issued : [Errno 2] No such file or directory: 'data/issued.json'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 22, in save_issued
+    with open(ISSUE_FILE, "w") as f:
+         ~~~~^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/issued.json'
+2025-06-07 17:59:35,907 - app.utils.decorators - INFO - MainThread - Executing: list_record_books
+2025-06-07 17:59:35,907 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-07 17:59:53,702 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-07 17:59:53,704 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-07 17:59:53,708 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-07 18:30:01,875 - app.utils.decorators - INFO - MainThread - Executing: list_students
+2025-06-07 18:30:01,878 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 18:30:32,266 - app.utils.decorators - INFO - MainThread - Executing: add_student
+2025-06-07 18:30:32,268 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 18:30:32,273 - app.utils.decorators - INFO - MainThread - Executing: save_students
+2025-06-07 18:30:32,274 - app.service.student_service - INFO - MainThread - Students data saved
+2025-06-07 18:30:38,579 - app.utils.decorators - INFO - MainThread - Executing: list_students
+2025-06-07 18:30:38,581 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 18:31:15,037 - app.utils.decorators - INFO - MainThread - Executing: update_student
+2025-06-07 18:31:15,039 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 18:31:15,044 - app.utils.decorators - ERROR - MainThread - Error while Executing: update_student : 'Student' object has no attribute 'get'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\student_service.py", line 34, in update_student
+    students = [Student.from_dict(s) for s in students]
+                ~~~~~~~~~~~~~~~~~^^^
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\models\student.py", line 19, in from_dict
+    student_id= data.get("student_id"),
+                ^^^^^^^^
+AttributeError: 'Student' object has no attribute 'get'
+2025-06-07 18:35:17,844 - app.utils.decorators - INFO - MainThread - Executing: list_students
+2025-06-07 18:35:17,846 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 18:35:17,852 - app.utils.decorators - ERROR - MainThread - Error while Executing: list_students : 'dict' object has no attribute 'student_id'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\student_service.py", line 56, in list_students
+    print(f"{stu.student_id} - {stu.name} - {stu.department} - {stu.year}")
+             ^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'student_id'
+2025-06-07 18:36:31,157 - app.utils.decorators - INFO - MainThread - Executing: list_students
+2025-06-07 18:36:31,159 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 18:36:31,163 - app.utils.decorators - ERROR - MainThread - Error while Executing: list_students : 'dict' object has no attribute 'student_id'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\student_service.py", line 57, in list_students
+    print(f"{stu.student_id} - {stu.name} - {stu.department} - {stu.year}")
+             ^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'student_id'
+2025-06-07 18:41:09,960 - app.utils.decorators - INFO - MainThread - Executing: list_students
+2025-06-07 18:41:09,962 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 18:41:09,963 - app.utils.decorators - ERROR - MainThread - Error while Executing: list_students : 'dict' object has no attribute 'student_id'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\student_service.py", line 56, in list_students
+    print(f"{stu.student_id} - {stu.name} - {stu.department} - {stu.year}")
+             ^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'student_id'
+2025-06-07 18:46:20,273 - app.utils.decorators - INFO - MainThread - Executing: list_students
+2025-06-07 18:46:20,275 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 18:46:20,281 - app.utils.decorators - ERROR - MainThread - Error while Executing: list_students : 'dict' object has no attribute 'student_id'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\student_service.py", line 58, in list_students
+    print(f"{stu.student_id} - {stu.name} - {stu.department} - {stu.year}")
+             ^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'student_id'
+2025-06-07 18:47:52,671 - app.utils.decorators - INFO - MainThread - Executing: list_students
+2025-06-07 18:47:52,674 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 18:48:36,124 - app.utils.decorators - INFO - MainThread - Executing: update_student
+2025-06-07 18:48:36,126 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 18:48:36,130 - app.utils.decorators - ERROR - MainThread - Error while Executing: update_student : 'Student' object has no attribute 'get'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\student_service.py", line 34, in update_student
+    students = [Student.from_dict(s) for s in students]
+                ~~~~~~~~~~~~~~~~~^^^
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\models\student.py", line 19, in from_dict
+    student_id= data.get("student_id"),
+                ^^^^^^^^
+AttributeError: 'Student' object has no attribute 'get'
+2025-06-07 18:52:01,475 - app.utils.decorators - INFO - MainThread - Executing: list_students
+2025-06-07 18:52:01,477 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 18:52:16,313 - app.utils.decorators - INFO - MainThread - Executing: update_student
+2025-06-07 18:52:16,315 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 18:52:16,316 - app.utils.decorators - INFO - MainThread - Executing: save_students
+2025-06-07 18:52:16,321 - app.service.student_service - INFO - MainThread - Students data saved
+2025-06-07 18:52:21,027 - app.utils.decorators - INFO - MainThread - Executing: list_students
+2025-06-07 18:52:21,029 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 18:52:49,674 - app.utils.decorators - INFO - MainThread - Executing: add_student
+2025-06-07 18:52:49,676 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 18:52:49,681 - app.utils.decorators - INFO - MainThread - Executing: save_students
+2025-06-07 18:52:49,683 - app.service.student_service - INFO - MainThread - Students data saved
+2025-06-07 18:52:55,404 - app.utils.decorators - INFO - MainThread - Executing: list_students
+2025-06-07 18:52:55,407 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 18:53:17,021 - app.utils.decorators - INFO - MainThread - Executing: update_student
+2025-06-07 18:53:17,023 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 18:53:17,024 - app.utils.decorators - INFO - MainThread - Executing: save_students
+2025-06-07 18:53:17,025 - app.service.student_service - INFO - MainThread - Students data saved
+2025-06-07 18:53:19,483 - app.utils.decorators - INFO - MainThread - Executing: list_students
+2025-06-07 18:53:19,484 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 18:53:46,287 - app.utils.decorators - INFO - MainThread - Executing: delete_students
+2025-06-07 18:53:46,289 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 18:53:46,291 - app.utils.decorators - INFO - MainThread - Executing: save_students
+2025-06-07 18:53:46,296 - app.service.student_service - INFO - MainThread - Students data saved
+2025-06-07 18:53:48,980 - app.utils.decorators - INFO - MainThread - Executing: list_students
+2025-06-07 18:53:48,982 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 18:54:07,672 - app.utils.decorators - INFO - MainThread - Executing: search_student_by_name
+2025-06-07 18:54:07,674 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-07 18:54:41,606 - app.utils.decorators - INFO - MainThread - Executing: add_book
+2025-06-07 18:54:41,608 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-07 18:54:41,611 - app.utils.decorators - INFO - MainThread - Executing: save_books
+2025-06-07 18:54:41,613 - app.service.book_service - INFO - MainThread - Books data saved
+2025-06-07 18:57:49,839 - app.utils.decorators - INFO - MainThread - Executing: add_book
+2025-06-07 18:57:49,842 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-07 18:57:49,863 - app.utils.decorators - INFO - MainThread - Executing: save_books
+2025-06-07 18:57:49,865 - app.service.book_service - INFO - MainThread - Books data saved
+2025-06-07 18:58:26,880 - app.utils.decorators - INFO - MainThread - Executing: update_book
+2025-06-07 18:58:26,882 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-07 18:58:26,900 - app.utils.decorators - ERROR - MainThread - Error while Executing: update_book : 'Book' object has no attribute 'get'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\book_service.py", line 34, in update_book
+    books = [Book.from_dict(b) for b in books]
+             ~~~~~~~~~~~~~~^^^
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\models\book.py", line 21, in from_dict
+    return cls(
+             ^^
+AttributeError: 'Book' object has no attribute 'get'
+2025-06-07 19:03:24,299 - app.utils.decorators - INFO - MainThread - Executing: update_book
+2025-06-07 19:03:24,299 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-07 19:03:24,301 - app.utils.decorators - ERROR - MainThread - Error while Executing: update_book : 'Book' object has no attribute 'get'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\book_service.py", line 34, in update_book
+    books = [Book.from_dict(b) for b in books]
+             ~~~~~~~~~~~~~~^^^
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\models\book.py", line 21, in from_dict
+    return cls(
+             ^^
+AttributeError: 'Book' object has no attribute 'get'
+2025-06-07 19:04:31,929 - app.utils.decorators - INFO - MainThread - Executing: update_book
+2025-06-07 19:04:31,931 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-07 19:04:31,932 - app.utils.decorators - ERROR - MainThread - Error while Executing: update_book : 'Book' object has no attribute 'get'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\book_service.py", line 34, in update_book
+    books = [Book.from_dict(b) for b in books]
+             ~~~~~~~~~~~~~~^^^
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\models\book.py", line 21, in from_dict
+    return cls(
+             ^^
+AttributeError: 'Book' object has no attribute 'get'
+2025-06-07 19:05:20,672 - app.utils.decorators - INFO - MainThread - Executing: search_books_by_title
+2025-06-07 19:05:20,673 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-07 19:05:32,624 - app.utils.decorators - INFO - MainThread - Executing: delete_book
+2025-06-07 19:05:32,626 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-07 19:05:32,627 - app.utils.decorators - INFO - MainThread - Executing: save_books
+2025-06-07 19:05:32,633 - app.service.book_service - INFO - MainThread - Books data saved
+2025-06-07 19:05:50,543 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-07 19:05:50,545 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-07 19:05:50,564 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-07 19:05:50,565 - app.utils.decorators - INFO - MainThread - Executing: save_books
+2025-06-07 19:05:50,569 - app.service.book_service - INFO - MainThread - Books data saved
+2025-06-07 19:05:50,569 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-07 19:05:50,574 - app.utils.decorators - ERROR - MainThread - Error while Executing: save_issued : [Errno 2] No such file or directory: 'data/issued.json'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 22, in save_issued
+    with open(ISSUE_FILE, "w") as f:
+         ~~~~^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/issued.json'
+2025-06-07 19:06:52,064 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-07 19:06:52,064 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-07 19:06:52,079 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-07 19:07:19,325 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-07 19:07:19,327 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-07 19:07:19,332 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-07 19:07:33,810 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-07 19:07:33,812 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-07 19:07:33,813 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-07 19:07:46,340 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-07 19:07:46,342 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-07 19:07:46,347 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-07 19:07:53,080 - app.utils.decorators - INFO - MainThread - Executing: list_record_books
+2025-06-07 19:07:53,082 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-07 19:08:06,113 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-07 19:08:06,115 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-07 19:08:06,116 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-07 19:08:06,120 - app.utils.decorators - INFO - MainThread - Executing: save_books
+2025-06-07 19:08:06,122 - app.service.book_service - INFO - MainThread - Books data saved
+2025-06-07 19:08:06,123 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-07 19:08:06,123 - app.utils.decorators - ERROR - MainThread - Error while Executing: save_issued : [Errno 2] No such file or directory: 'data/issued.json'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 22, in save_issued
+    with open(ISSUE_FILE, "w") as f:
+         ~~~~^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/issued.json'
+2025-06-07 19:08:19,284 - app.utils.decorators - INFO - MainThread - Executing: list_record_books
+2025-06-07 19:08:19,286 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 16:32:01,385 - app.utils.decorators - INFO - MainThread - Executing: add_student
+2025-06-10 16:32:01,388 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-10 16:32:01,418 - app.utils.decorators - INFO - MainThread - Executing: save_students
+2025-06-10 16:32:01,420 - app.service.student_service - INFO - MainThread - Students data saved
+2025-06-10 16:33:21,776 - app.utils.decorators - INFO - MainThread - Executing: add_student
+2025-06-10 16:33:21,778 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-10 16:33:21,800 - app.utils.decorators - INFO - MainThread - Executing: save_students
+2025-06-10 16:33:21,802 - app.service.student_service - INFO - MainThread - Students data saved
+2025-06-10 16:34:11,581 - app.utils.decorators - INFO - MainThread - Executing: update_student
+2025-06-10 16:34:11,583 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-10 16:34:11,613 - app.utils.decorators - INFO - MainThread - Executing: save_students
+2025-06-10 16:34:11,615 - app.service.student_service - INFO - MainThread - Students data saved
+2025-06-10 16:34:19,538 - app.utils.decorators - INFO - MainThread - Executing: list_students
+2025-06-10 16:34:19,540 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-10 16:35:46,235 - app.utils.decorators - INFO - MainThread - Executing: delete_students
+2025-06-10 16:35:46,237 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-10 16:35:46,242 - app.utils.decorators - INFO - MainThread - Executing: save_students
+2025-06-10 16:35:46,244 - app.service.student_service - INFO - MainThread - Students data saved
+2025-06-10 16:35:49,758 - app.utils.decorators - INFO - MainThread - Executing: list_students
+2025-06-10 16:35:49,761 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-10 16:36:03,643 - app.utils.decorators - INFO - MainThread - Executing: search_student_by_name
+2025-06-10 16:36:03,645 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-10 16:36:46,197 - app.utils.decorators - INFO - MainThread - Executing: add_book
+2025-06-10 16:36:46,199 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-10 16:36:46,223 - app.utils.decorators - INFO - MainThread - Executing: save_books
+2025-06-10 16:36:46,224 - app.service.book_service - INFO - MainThread - Books data saved
+2025-06-10 16:37:48,437 - app.utils.decorators - INFO - MainThread - Executing: list_books
+2025-06-10 16:37:48,438 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-10 16:39:09,115 - app.utils.decorators - INFO - MainThread - Executing: update_book
+2025-06-10 16:39:09,117 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-10 16:39:09,121 - app.utils.decorators - INFO - MainThread - Executing: save_books
+2025-06-10 16:39:09,122 - app.service.book_service - INFO - MainThread - Books data saved
+2025-06-10 16:39:13,111 - app.utils.decorators - INFO - MainThread - Executing: list_books
+2025-06-10 16:39:13,113 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-10 16:39:26,269 - app.utils.decorators - INFO - MainThread - Executing: search_books_by_title
+2025-06-10 16:39:26,270 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-10 16:39:48,888 - app.utils.decorators - INFO - MainThread - Executing: delete_book
+2025-06-10 16:39:48,891 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-10 16:39:48,894 - app.utils.decorators - INFO - MainThread - Executing: save_books
+2025-06-10 16:39:48,896 - app.service.book_service - INFO - MainThread - Books data saved
+2025-06-10 16:39:53,086 - app.utils.decorators - INFO - MainThread - Executing: list_books
+2025-06-10 16:39:53,091 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-10 16:40:21,644 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-10 16:40:21,644 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-10 16:40:21,645 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 16:40:21,646 - app.utils.decorators - ERROR - MainThread - Error while Executing: load_issued : IssueRecord.__init__() missing 1 required positional argument: 'issue_date'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 18, in load_issued
+    return [IssueRecord(**i) for i in issued_date]
+            ~~~~~~~~~~~^^^^^
+TypeError: IssueRecord.__init__() missing 1 required positional argument: 'issue_date'
+2025-06-10 16:40:21,669 - app.utils.decorators - ERROR - MainThread - Error while Executing: issue_book : 'NoneType' object has no attribute 'append'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 34, in issue_book
+    issued.append(IssueRecord(student_id, book_id, datetime.now().strftime("%Y-%m-%d")))
+    ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'append'
+2025-06-10 16:42:46,285 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-10 16:42:46,287 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-10 16:42:46,293 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 16:42:46,294 - app.utils.decorators - ERROR - MainThread - Error while Executing: load_issued : IssueRecord.__init__() missing 1 required positional argument: 'issue_date'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 18, in load_issued
+    return [IssueRecord(**i) for i in issued_date]
+            ~~~~~~~~~~~^^^^^
+TypeError: IssueRecord.__init__() missing 1 required positional argument: 'issue_date'
+2025-06-10 16:42:46,309 - app.utils.decorators - ERROR - MainThread - Error while Executing: issue_book : 'NoneType' object has no attribute 'append'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 34, in issue_book
+    issued.append((IssueRecord(student_id, book_id, datetime.now().strftime("%Y-%m-%d"))))
+    ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'append'
+2025-06-10 16:44:27,074 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-10 16:44:27,076 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 16:44:27,081 - app.utils.decorators - ERROR - MainThread - Error while Executing: load_issued : IssueRecord.__init__() missing 1 required positional argument: 'issue_date'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 18, in load_issued
+    return [IssueRecord(**i) for i in issued_date]
+            ~~~~~~~~~~~^^^^^
+TypeError: IssueRecord.__init__() missing 1 required positional argument: 'issue_date'
+2025-06-10 16:44:27,084 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-10 16:44:27,088 - app.utils.decorators - ERROR - MainThread - Error while Executing: return_book : 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 45, in return_book
+    for rec in issued:
+               ^^^^^^
+TypeError: 'NoneType' object is not iterable
+2025-06-10 16:53:57,883 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-10 16:53:57,885 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-10 16:53:57,892 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 16:53:57,893 - app.utils.decorators - ERROR - MainThread - Error while Executing: load_issued : IssueRecord.__init__() missing 1 required positional argument: 'issue_date'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 18, in load_issued
+    return [IssueRecord(**i) for i in issued_date]
+            ~~~~~~~~~~~^^^^^
+TypeError: IssueRecord.__init__() missing 1 required positional argument: 'issue_date'
+2025-06-10 16:53:57,909 - app.utils.decorators - ERROR - MainThread - Error while Executing: issue_book : 'NoneType' object has no attribute 'append'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 34, in issue_book
+    issued.append({"student_id": student_id , "book_id": book_id, "time":datetime.now().strftime("%Y-%m-%d")})
+    ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'append'
+2025-06-10 16:55:28,726 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-10 16:55:28,727 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-10 16:55:28,729 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 16:55:28,730 - app.utils.decorators - ERROR - MainThread - Error while Executing: load_issued : IssueRecord.__init__() missing 1 required positional argument: 'issue_date'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 18, in load_issued
+    return [IssueRecord(**i) for i in issued_date]
+            ~~~~~~~~~~~^^^^^
+TypeError: IssueRecord.__init__() missing 1 required positional argument: 'issue_date'
+2025-06-10 16:55:56,702 - app.utils.decorators - INFO - MainThread - Executing: list_books
+2025-06-10 16:55:56,705 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-10 16:56:32,416 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-10 16:56:32,417 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-10 16:56:32,418 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 16:56:32,419 - app.utils.decorators - ERROR - MainThread - Error while Executing: load_issued : IssueRecord.__init__() missing 1 required positional argument: 'issue_date'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 18, in load_issued
+    return [IssueRecord(**i) for i in issued_date]
+            ~~~~~~~~~~~^^^^^
+TypeError: IssueRecord.__init__() missing 1 required positional argument: 'issue_date'
+2025-06-10 16:56:32,422 - app.utils.decorators - ERROR - MainThread - Error while Executing: issue_book : 'NoneType' object has no attribute 'append'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 34, in issue_book
+    issued.append({"student_id": student_id , "book_id": book_id, "time":datetime.now().strftime("%Y-%m-%d")})
+    ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'append'
+2025-06-10 17:00:16,522 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-10 17:00:16,524 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-10 17:00:16,529 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 17:00:16,530 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-10 17:00:16,531 - app.utils.decorators - ERROR - MainThread - Error while Executing: save_issued : 'dict' object has no attribute 'to_dict'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 23, in save_issued
+    json.dump([r.to_dict() for r in records], f, indent=4)
+               ^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'to_dict'
+2025-06-10 17:01:29,418 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-10 17:01:29,420 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-10 17:01:29,428 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 17:01:29,429 - app.utils.decorators - ERROR - MainThread - Error while Executing: load_issued : Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 17, in load_issued
+    issued_date = json.load(f)
+  File "C:\Users\svcs\anaconda3\envs\Python_git_3.12\Lib\json\__init__.py", line 293, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "C:\Users\svcs\anaconda3\envs\Python_git_3.12\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\svcs\anaconda3\envs\Python_git_3.12\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\svcs\anaconda3\envs\Python_git_3.12\Lib\json\decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-06-10 17:01:29,450 - app.utils.decorators - ERROR - MainThread - Error while Executing: issue_book : 'NoneType' object has no attribute 'append'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 34, in issue_book
+    issued.append({"student_id": student_id , "book_id": book_id, "time":datetime.now().strftime("%Y-%m-%d")})
+    ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'append'
+2025-06-10 18:19:28,771 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-10 18:19:28,773 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 18:19:28,775 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-10 18:19:28,776 - app.service.issue_service - INFO - MainThread - saved issued records
+2025-06-10 18:19:40,508 - app.utils.decorators - INFO - MainThread - Executing: list_record_books
+2025-06-10 18:19:40,510 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 18:19:40,527 - app.utils.decorators - ERROR - MainThread - Error while Executing: list_record_books : 'dict' object has no attribute 'student_id'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 61, in list_record_books
+    print(f"Student ID: {rec.student_id} | Book ID: {rec.book_id} | Issued: {rec.issue_date} | Returned: {rec.return_date}")
+                         ^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'student_id'
+2025-06-10 18:19:59,214 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-10 18:19:59,216 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 18:19:59,221 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-10 18:19:59,223 - app.utils.decorators - ERROR - MainThread - Error while Executing: return_book : 'dict' object has no attribute 'student_id'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 42, in return_book
+    if rec.student_id == student_id and rec.book_id == book_id and rec.return_date is None:
+       ^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'student_id'
+2025-06-10 18:23:38,858 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-10 18:23:38,860 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 18:23:38,865 - app.utils.decorators - ERROR - MainThread - Error while Executing: return_book : 'dict' object has no attribute 'student_id'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 42, in return_book
+    if rec.student_id == student_id and rec.book_id == book_id and rec.return_date is None:
+       ^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'student_id'
+2025-06-10 18:25:03,506 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-10 18:25:03,508 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 18:25:03,514 - app.utils.decorators - ERROR - MainThread - Error while Executing: return_book : 'return_date'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 42, in return_book
+    if rec["student_id"] == student_id and rec["book_id"] == book_id and rec["return_date"] is None:
+                                                                         ~~~^^^^^^^^^^^^^^^
+KeyError: 'return_date'
+2025-06-10 18:26:10,345 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-10 18:26:10,346 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 18:27:40,129 - app.utils.decorators - INFO - MainThread - Executing: list_record_books
+2025-06-10 18:27:40,131 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 18:27:40,136 - app.utils.decorators - ERROR - MainThread - Error while Executing: list_record_books : 'dict' object has no attribute 'student_id'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 59, in list_record_books
+    print(f"Student ID: {rec.student_id} | Book ID: {rec.book_id} | Issued: {rec.issue_date} | Returned: {rec.return_date}")
+                         ^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'student_id'
+2025-06-10 18:30:09,478 - app.utils.decorators - INFO - MainThread - Executing: list_record_books
+2025-06-10 18:30:09,480 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 18:30:09,485 - app.utils.decorators - ERROR - MainThread - Error while Executing: list_record_books : 'issue_date'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 59, in list_record_books
+    print(f"Student ID: {rec['student_id']} | Book ID: {rec['book_id']} | Issued: {rec['issue_date']} | Returned: {rec.get('return_date', 'Not Returned')}")
+                                                                                   ~~~^^^^^^^^^^^^^^
+KeyError: 'issue_date'
+2025-06-10 18:32:42,116 - app.utils.decorators - INFO - MainThread - Executing: list_record_books
+2025-06-10 18:32:42,118 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 18:32:42,120 - app.utils.decorators - ERROR - MainThread - Error while Executing: list_record_books : 'issue_date'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 59, in list_record_books
+    print(f"Student ID: {rec['student_id']} | Book ID: {rec['book_id']} | Issued: {rec['issue_date']} | Returned: {rec.get('return_date', 'Not Returned')}")
+                                                                                   ~~~^^^^^^^^^^^^^^
+KeyError: 'issue_date'
+2025-06-10 18:37:37,738 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-10 18:37:37,738 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 18:37:37,739 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-10 18:37:37,741 - app.utils.decorators - ERROR - MainThread - Error while Executing: save_issued : Object of type datetime is not JSON serializable
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 26, in save_issued
+    json.dump(data, f, indent=4)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\svcs\anaconda3\envs\Python_git_3.12\Lib\json\__init__.py", line 179, in dump
+    for chunk in iterable:
+                 ^^^^^^^^
+  File "C:\Users\svcs\anaconda3\envs\Python_git_3.12\Lib\json\encoder.py", line 430, in _iterencode
+    yield from _iterencode_list(o, _current_indent_level)
+  File "C:\Users\svcs\anaconda3\envs\Python_git_3.12\Lib\json\encoder.py", line 326, in _iterencode_list
+    yield from chunks
+  File "C:\Users\svcs\anaconda3\envs\Python_git_3.12\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\svcs\anaconda3\envs\Python_git_3.12\Lib\json\encoder.py", line 439, in _iterencode
+    o = _default(o)
+  File "C:\Users\svcs\anaconda3\envs\Python_git_3.12\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type datetime is not JSON serializable
+2025-06-10 18:40:23,943 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-10 18:40:23,944 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 18:40:23,960 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-10 18:40:23,961 - app.service.issue_service - INFO - MainThread - saved issued records
+2025-06-10 18:41:02,041 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-10 18:41:02,041 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 18:41:02,042 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-10 18:41:02,042 - app.service.issue_service - INFO - MainThread - saved issued records
+2025-06-10 18:43:17,514 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-10 18:43:17,516 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 18:43:17,522 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-10 18:43:17,523 - app.service.issue_service - INFO - MainThread - saved issued records
+2025-06-10 18:51:19,508 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-10 18:51:19,509 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 18:51:32,840 - app.utils.decorators - INFO - MainThread - Executing: list_record_books
+2025-06-10 18:51:32,842 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 18:51:32,846 - app.utils.decorators - ERROR - MainThread - Error while Executing: list_record_books : 'issue_date'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 59, in list_record_books
+    print(f"Student ID: {rec['student_id']} | Book ID: {rec['book_id']} | Issued: {rec['issue_date']} | Returned: {rec.get('return_date', 'Not Returned')}")
+                                                                                   ~~~^^^^^^^^^^^^^^
+KeyError: 'issue_date'
+2025-06-10 18:52:33,998 - app.utils.decorators - INFO - MainThread - Executing: list_record_books
+2025-06-10 18:52:34,001 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 18:52:34,004 - app.utils.decorators - ERROR - MainThread - Error while Executing: list_record_books : 'issue_date'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 59, in list_record_books
+    print(f"Student ID: {rec['student_id']} | Book ID: {rec['book_id']} | Issued: {rec['issue_date']} | Returned: {rec.get('return_date', 'Not Returned')}")
+                                                                                   ~~~^^^^^^^^^^^^^^
+KeyError: 'issue_date'
+2025-06-10 18:57:03,279 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-10 18:57:03,281 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 18:57:58,995 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-10 18:57:58,997 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 18:57:59,003 - app.utils.decorators - ERROR - MainThread - Error while Executing: return_book : 'return_date'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 42, in return_book
+    if rec["student_id"] == student_id and rec["book_id"] == book_id and rec["return_date"] is None:
+                                                                         ~~~^^^^^^^^^^^^^^^
+KeyError: 'return_date'
+2025-06-10 19:02:48,646 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-10 19:02:48,648 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:02:48,654 - app.utils.decorators - ERROR - MainThread - Error while Executing: return_book : 'return_date'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 42, in return_book
+    if rec["student_id"] == student_id and rec["book_id"] == book_id:
+    
+KeyError: 'return_date'
+2025-06-10 19:07:20,166 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-10 19:07:20,173 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:07:38,063 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-10 19:07:38,066 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:08:37,421 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-10 19:08:37,423 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:09:38,362 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-10 19:09:38,364 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:16:58,256 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-10 19:16:58,258 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:18:24,850 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-10 19:18:24,851 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:18:27,418 - app.utils.decorators - INFO - MainThread - Executing: list_record_books
+2025-06-10 19:18:27,419 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:18:27,421 - app.utils.decorators - ERROR - MainThread - Error while Executing: list_record_books : 'issue_date'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 59, in list_record_books
+    print(f"Student ID: {rec['student_id']} | Book ID: {rec['book_id']} | Issued: {rec['issue_date']} | Returned: {rec.get('return_date', 'Not Returned')}")
+                                                                                   ~~~^^^^^^^^^^^^^^
+KeyError: 'issue_date'
+2025-06-10 19:19:39,058 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-10 19:19:39,060 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:31:52,659 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-10 19:31:52,662 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:31:52,663 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-10 19:31:52,664 - app.service.issue_service - INFO - MainThread - saved issued records
+2025-06-10 19:32:08,772 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-10 19:32:08,773 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:32:08,779 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-10 19:32:08,780 - app.service.issue_service - INFO - MainThread - saved issued records
+2025-06-10 19:33:33,014 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-10 19:33:33,016 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:33:33,019 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-10 19:33:33,020 - app.service.issue_service - INFO - MainThread - saved issued records
+2025-06-10 19:34:31,391 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-10 19:34:31,393 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:34:31,395 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-10 19:34:31,400 - app.service.issue_service - INFO - MainThread - saved issued records
+2025-06-10 19:35:34,126 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-10 19:35:34,127 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:35:34,128 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-10 19:35:34,129 - app.service.issue_service - INFO - MainThread - saved issued records
+2025-06-10 19:35:53,971 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-10 19:35:53,973 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:35:53,979 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-10 19:35:53,981 - app.service.issue_service - INFO - MainThread - saved issued records
+2025-06-10 19:36:03,680 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-10 19:36:03,682 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:36:03,683 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-10 19:36:03,688 - app.service.issue_service - INFO - MainThread - saved issued records
+2025-06-10 19:36:15,729 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-10 19:36:15,731 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:36:15,737 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-10 19:36:15,738 - app.service.issue_service - INFO - MainThread - saved issued records
+2025-06-10 19:36:34,097 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-10 19:36:34,099 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:36:34,100 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-10 19:36:34,105 - app.service.issue_service - INFO - MainThread - saved issued records
+2025-06-10 19:38:49,812 - app.utils.decorators - INFO - MainThread - Executing: list_record_books
+2025-06-10 19:38:49,813 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:38:49,814 - app.utils.decorators - ERROR - MainThread - Error while Executing: list_record_books : 'issue_date'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 61, in list_record_books
+    else:
+    
+KeyError: 'issue_date'
+2025-06-10 19:39:21,654 - app.utils.decorators - INFO - MainThread - Executing: list_record_books
+2025-06-10 19:39:21,656 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:39:21,657 - app.utils.decorators - ERROR - MainThread - Error while Executing: list_record_books : 'issue_date'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 61, in list_record_books
+KeyError: 'issue_date'
+2025-06-10 19:39:27,776 - app.utils.decorators - INFO - MainThread - Executing: list_record_books
+2025-06-10 19:39:27,779 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:42:55,353 - app.utils.decorators - INFO - MainThread - Executing: list_record_books
+2025-06-10 19:42:55,355 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:42:55,360 - app.utils.decorators - ERROR - MainThread - Error while Executing: list_record_books : 'issue_date'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 63, in list_record_books
+    print(f"Student ID: {rec['student_id']} | Book ID: {rec['book_id']} | Issued: {rec['issue_date']})")
+                                                                                   ~~~^^^^^^^^^^^^^^
+KeyError: 'issue_date'
+2025-06-10 19:43:35,729 - app.utils.decorators - INFO - MainThread - Executing: list_record_books
+2025-06-10 19:43:35,730 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:43:35,735 - app.utils.decorators - ERROR - MainThread - Error while Executing: list_record_books : 'issue_date'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 63, in list_record_books
+    print(f"Student ID: {rec['student_id']} | Book ID: {rec['book_id']} | Issued: {rec['issue_date']}")
+                                                                                   ~~~^^^^^^^^^^^^^^
+KeyError: 'issue_date'
+2025-06-10 19:45:19,224 - app.utils.decorators - INFO - MainThread - Executing: return_book
+2025-06-10 19:45:19,226 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:45:19,227 - app.service.issue_service - INFO - MainThread - Successfully returned
+2025-06-10 19:45:19,232 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-10 19:45:19,233 - app.service.issue_service - INFO - MainThread - saved issued records
+2025-06-10 19:45:22,486 - app.utils.decorators - INFO - MainThread - Executing: list_record_books
+2025-06-10 19:45:22,488 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:53:18,547 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-10 19:53:18,549 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:53:18,550 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-10 19:53:18,555 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-10 19:53:18,556 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-10 19:53:18,557 - app.service.issue_service - INFO - MainThread - saved issued records
+2025-06-10 19:53:49,558 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-10 19:53:49,560 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:53:49,565 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-10 19:53:49,566 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-10 19:53:49,567 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-10 19:53:49,568 - app.service.issue_service - INFO - MainThread - saved issued records
+2025-06-10 19:56:34,777 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-10 19:56:34,779 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-10 19:56:34,780 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-10 19:56:34,785 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-10 19:56:34,786 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-10 19:56:34,787 - app.service.issue_service - INFO - MainThread - saved issued records
+2025-06-12 16:45:26,481 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-12 16:45:26,483 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-12 16:45:26,488 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-12 16:45:26,507 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-12 16:45:26,531 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-12 16:45:26,532 - app.service.issue_service - INFO - MainThread - saved issued records
+2025-06-12 16:49:34,951 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-12 16:49:34,953 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-12 16:49:34,957 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-12 16:49:34,958 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-12 16:49:34,959 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-12 16:49:34,960 - app.service.issue_service - INFO - MainThread - saved issued records
+2025-06-12 16:57:08,709 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-12 16:57:08,711 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-12 16:57:08,716 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-12 16:57:08,717 - app.service.issue_service - INFO - MainThread - saved issued records
+2025-06-12 17:03:31,972 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-12 17:03:31,977 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-12 17:03:31,981 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-12 17:03:31,984 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-12 17:03:31,985 - app.utils.decorators - ERROR - MainThread - Error while Executing: issue_book : 'list' object has no attribute 'keys'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 35, in issue_book
+    if student_id in students.keys() and book_id in books.keys():
+                     ^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'keys'
+2025-06-12 17:15:33,137 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-12 17:15:33,138 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-12 17:15:33,142 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-12 17:15:33,143 - app.utils.decorators - ERROR - MainThread - Error while Executing: issue_book : 'Book' object is not subscriptable
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 35, in issue_book
+    book_avail = [book["book_id"] for book in books]
+                  ~~~~^^^^^^^^^^^
+TypeError: 'Book' object is not subscriptable
+2025-06-12 17:16:26,973 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-12 17:16:26,975 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-12 17:16:26,980 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-12 17:16:26,980 - app.utils.decorators - ERROR - MainThread - Error while Executing: issue_book : list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 35, in issue_book
+    book_avail = [books["book_id"] for book in books]
+                  ~~~~~^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2025-06-12 17:23:02,835 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-12 17:23:02,837 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-12 17:23:02,838 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-12 17:23:02,843 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-12 17:23:02,844 - app.utils.decorators - ERROR - MainThread - Error while Executing: issue_book : IssueRecord.__init__() missing 1 required positional argument: 'issue_date'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 46, in issue_book
+    new_record = IssueRecord(student_id, book_id)
+TypeError: IssueRecord.__init__() missing 1 required positional argument: 'issue_date'
+2025-06-12 17:24:23,758 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-12 17:24:23,759 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-12 17:24:23,761 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-12 17:24:23,765 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-12 17:24:23,766 - app.utils.decorators - ERROR - MainThread - Error while Executing: issue_book : IssueRecord.__init__() missing 1 required positional argument: 'issue_date'
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\utils\decorators.py", line 11, in wrapper
+    return func(*args,**kwargs)
+  File "D:\Gen_AI_Train\Lib_Management_Cli\app\service\issue_service.py", line 46, in issue_book
+    new_record = IssueRecord(student_id, book_id)
+TypeError: IssueRecord.__init__() missing 1 required positional argument: 'issue_date'
+2025-06-12 17:26:07,042 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-12 17:26:07,045 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-12 17:26:07,048 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-12 17:26:07,049 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-12 17:26:07,051 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-12 17:26:07,052 - app.service.issue_service - INFO - MainThread - saved issued records
+2025-06-12 17:26:27,845 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-12 17:26:27,847 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-12 17:26:27,849 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-12 17:26:27,853 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-12 17:26:27,854 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-12 17:26:27,855 - app.service.issue_service - INFO - MainThread - saved issued records
+2025-06-12 17:27:15,933 - app.utils.decorators - INFO - MainThread - Executing: issue_book
+2025-06-12 17:27:15,936 - app.utils.decorators - INFO - MainThread - Executing: load_students
+2025-06-12 17:27:15,941 - app.utils.decorators - INFO - MainThread - Executing: load_books
+2025-06-12 17:27:15,941 - app.utils.decorators - INFO - MainThread - Executing: load_issued
+2025-06-12 17:27:15,942 - app.utils.decorators - INFO - MainThread - Executing: save_issued
+2025-06-12 17:27:15,944 - app.service.issue_service - INFO - MainThread - saved issued records
