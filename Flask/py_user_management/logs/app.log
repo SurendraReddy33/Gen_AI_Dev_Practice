@@ -1,0 +1,12 @@
+2025-05-08 16:45:53,914 [INFO] [_internal.py:187 _log()] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-08 16:45:53,915 [INFO] [_internal.py:187 _log()] [33mPress CTRL+C to quit[0m
+2025-05-08 16:45:53,921 [INFO] [_internal.py:187 _log()]  * Restarting with stat
+2025-05-08 16:45:54,282 [WARNING] [_internal.py:187 _log()]  * Debugger is active!
+2025-05-08 16:45:54,287 [INFO] [_internal.py:187 _log()]  * Debugger PIN: 625-952-037
+2025-05-08 16:48:11,316 [INFO] [_internal.py:187 _log()] 127.0.0.1 - - [08/May/2025 16:48:11] "POST /register HTTP/1.1" 200 -
+2025-05-08 16:48:19,079 [INFO] [_internal.py:187 _log()] 127.0.0.1 - - [08/May/2025 16:48:19] "[33mGET /users HTTP/1.1[0m" 404 -
+2025-05-08 16:48:29,046 [INFO] [_internal.py:187 _log()] 127.0.0.1 - - [08/May/2025 16:48:29] "[33mGET /users HTTP/1.1[0m" 404 -
+2025-05-08 16:48:51,951 [INFO] [_internal.py:187 _log()] 127.0.0.1 - - [08/May/2025 16:48:51] "[33mGET /users HTTP/1.1[0m" 404 -
+2025-05-08 16:49:14,894 [INFO] [app.py:67 login()] User found is <model.user.User object at 0x000001DBFA741A60> and cred matched
+2025-05-08 16:49:14,894 [INFO] [_internal.py:187 _log()] 127.0.0.1 - - [08/May/2025 16:49:14] "POST /user/login HTTP/1.1" 200 -

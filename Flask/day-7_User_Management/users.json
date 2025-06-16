@@ -1,0 +1,44 @@
+[
+    {
+        "first_name": "voonna",
+        "last_name": "gowri",
+        "email": "voonna@gmail.com",
+        "dob": "05/05/2025",
+        "password": "gowriganesh"
+    },
+    {
+        "first_name": "surendra",
+        "last_name": "reddy",
+        "email": "surendra@gmail.com",
+        "dob": "05/05/2025",
+        "password": "gandra"
+    },
+    {
+        "first_name": "pavan",
+        "last_name": "kumar",
+        "email": "pavan@gmail.com",
+        "dob": "05/05/2025",
+        "password": "kpk"
+    },
+    {
+        "first_name": "joe",
+        "last_name": "biden",
+        "email": "biden@gmail.com",
+        "dob": "05/05/2025",
+        "password": "america"
+    },
+    {
+        "first_name": "surendra",
+        "last_name": "reddy",
+        "email": "surendra@gmail.com",
+        "dob": "05/05/2025",
+        "password": "gandra"
+    },
+    {
+        "first_name": "donald",
+        "last_name": "trump",
+        "email": "donald@gmail.com",
+        "dob": "05/05/2025",
+        "password": "usa"
+    }
+]

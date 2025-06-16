@@ -1,0 +1,120 @@
+2025-05-06 19:03:38,026 |  INFO | helpers | load_from_json | line:45 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\departments.json 
+2025-05-06 19:03:42,616 |  INFO | helpers | load_from_json | line:45 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\roles.json 
+2025-05-06 19:03:42,995 |  INFO | helpers | load_from_json | line:45 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\employees.json 
+2025-05-06 19:04:51,126 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\departments.json 
+2025-05-06 19:04:59,444 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\departments.json 
+2025-05-06 19:06:05,307 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\employees.json 
+2025-05-06 19:06:05,308 |  INFO | helpers | save_to_json | line:30 | saved data to the file: {file} 
+2025-05-06 19:06:10,225 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\employees.json 
+2025-05-06 19:12:11,303 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\departments.json 
+2025-05-06 19:12:11,304 |  INFO | department | list_departments | line:29 | All departments loaded.... 
+2025-05-06 19:22:41,274 |  DEBUG | decorators | wrapper | line:8 | Entering the function : list_departments 
+2025-05-06 19:22:41,277 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\departments.json 
+2025-05-06 19:22:41,277 |  INFO | department | list_departments | line:31 | All departments loaded.... 
+2025-05-06 19:22:41,286 |  DEBUG | decorators | wrapper | line:11 | Exiting the fucntion : list_departments 
+2025-05-06 19:35:17,013 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\roles.json 
+2025-05-06 19:35:47,918 |  DEBUG | decorators | wrapper | line:8 | Entering the function : list_roles 
+2025-05-06 19:35:47,920 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\roles.json 
+2025-05-06 19:35:47,929 |  DEBUG | decorators | wrapper | line:11 | Exiting the function : list_roles 
+2025-05-06 19:35:50,826 |  DEBUG | decorators | wrapper | line:8 | Entering the function : add_role 
+2025-05-06 19:35:50,826 |  ERROR | decorators | wrapper | line:14 | An error occurred in the function : add_role : Trace 'classmethod' object is not callable 
+2025-05-06 19:35:57,648 |  DEBUG | decorators | wrapper | line:8 | Entering the function : add_role 
+2025-05-06 19:35:57,649 |  ERROR | decorators | wrapper | line:14 | An error occurred in the function : add_role : Trace 'classmethod' object is not callable 
+2025-05-06 19:36:09,693 |  DEBUG | decorators | wrapper | line:8 | Entering the function : list_roles 
+2025-05-06 19:36:09,695 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\roles.json 
+2025-05-06 19:36:09,697 |  DEBUG | decorators | wrapper | line:11 | Exiting the function : list_roles 
+2025-05-06 19:36:13,291 |  DEBUG | decorators | wrapper | line:8 | Entering the function : add_role 
+2025-05-06 19:36:13,291 |  ERROR | decorators | wrapper | line:14 | An error occurred in the function : add_role : Trace 'classmethod' object is not callable 
+2025-05-06 19:36:32,839 |  DEBUG | decorators | wrapper | line:8 | Entering the function : add_role 
+2025-05-06 19:36:32,839 |  ERROR | decorators | wrapper | line:14 | An error occurred in the function : add_role : Trace 'classmethod' object is not callable 
+2025-05-06 19:37:06,984 |  DEBUG | decorators | wrapper | line:8 | Entering the function : list_roles 
+2025-05-06 19:37:06,985 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\roles.json 
+2025-05-06 19:37:06,987 |  DEBUG | decorators | wrapper | line:11 | Exiting the function : list_roles 
+2025-05-06 19:37:09,385 |  DEBUG | decorators | wrapper | line:8 | Entering the function : add_role 
+2025-05-06 19:37:09,386 |  ERROR | decorators | wrapper | line:14 | An error occurred in the function : add_role : Trace 'classmethod' object is not callable 
+2025-05-06 19:38:53,812 |  DEBUG | decorators | wrapper | line:8 | Entering the function : add_role 
+2025-05-06 19:38:53,812 |  ERROR | decorators | wrapper | line:14 | An error occurred in the function : add_role : Trace 'classmethod' object is not callable 
+2025-05-06 19:40:38,187 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\departments.json 
+2025-05-06 19:40:38,188 |  INFO | helpers | save_to_json | line:30 | saved data to the file: {file} 
+2025-05-06 19:40:41,675 |  DEBUG | decorators | wrapper | line:8 | Entering the function : list_departments 
+2025-05-06 19:40:41,684 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\departments.json 
+2025-05-06 19:40:41,684 |  INFO | department | list_departments | line:31 | All departments loaded.... 
+2025-05-06 19:40:41,703 |  DEBUG | decorators | wrapper | line:11 | Exiting the function : list_departments 
+2025-05-06 19:41:33,587 |  DEBUG | decorators | wrapper | line:8 | Entering the function : list_roles 
+2025-05-06 19:41:33,590 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\roles.json 
+2025-05-06 19:41:33,600 |  DEBUG | decorators | wrapper | line:11 | Exiting the function : list_roles 
+2025-05-06 19:41:37,025 |  DEBUG | decorators | wrapper | line:8 | Entering the function : add_role 
+2025-05-06 19:41:37,025 |  ERROR | decorators | wrapper | line:14 | An error occurred in the function : add_role : Trace 'classmethod' object is not callable 
+2025-05-06 19:41:54,701 |  DEBUG | decorators | wrapper | line:8 | Entering the function : list_roles 
+2025-05-06 19:41:54,701 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\roles.json 
+2025-05-06 19:41:54,704 |  DEBUG | decorators | wrapper | line:11 | Exiting the function : list_roles 
+2025-05-06 19:41:56,692 |  DEBUG | decorators | wrapper | line:8 | Entering the function : add_role 
+2025-05-06 19:41:56,692 |  ERROR | decorators | wrapper | line:14 | An error occurred in the function : add_role : Trace 'classmethod' object is not callable 
+2025-05-06 19:42:30,295 |  DEBUG | decorators | wrapper | line:8 | Entering the function : list_roles 
+2025-05-06 19:42:30,299 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\roles.json 
+2025-05-06 19:42:30,308 |  DEBUG | decorators | wrapper | line:11 | Exiting the function : list_roles 
+2025-05-06 19:43:56,229 |  DEBUG | decorators | wrapper | line:8 | Entering the function : list_departments 
+2025-05-06 19:43:56,232 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\departments.json 
+2025-05-06 19:43:56,232 |  INFO | department | list_departments | line:31 | All departments loaded.... 
+2025-05-06 19:43:56,242 |  DEBUG | decorators | wrapper | line:11 | Exiting the function : list_departments 
+2025-05-06 19:43:57,106 |  DEBUG | decorators | wrapper | line:8 | Entering the function : list_roles 
+2025-05-06 19:43:57,110 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\roles.json 
+2025-05-06 19:43:57,118 |  DEBUG | decorators | wrapper | line:11 | Exiting the function : list_roles 
+2025-05-06 19:43:57,719 |  DEBUG | decorators | wrapper | line:8 | Entering the function : list_employees 
+2025-05-06 19:43:57,723 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\employees.json 
+2025-05-06 19:43:57,729 |  DEBUG | decorators | wrapper | line:11 | Exiting the function : list_employees 
+2025-05-06 19:44:28,377 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\departments.json 
+2025-05-06 19:44:28,379 |  INFO | department | list_departments | line:31 | All departments loaded.... 
+2025-05-06 19:44:28,726 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\roles.json 
+2025-05-06 19:44:29,100 |  ERROR | decorators | wrapper | line:14 | An error occurred in the function : add_employee : Trace 'classmethod' object is not callable 
+2025-05-06 19:45:28,215 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\departments.json 
+2025-05-06 19:45:28,215 |  INFO | department | list_departments | line:31 | All departments loaded.... 
+2025-05-06 19:45:33,355 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\roles.json 
+2025-05-06 19:45:40,877 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\employees.json 
+2025-05-06 19:45:50,935 |  ERROR | decorators | wrapper | line:14 | An error occurred in the function : add_role : Trace 'classmethod' object is not callable 
+2025-05-06 19:50:31,241 |  DEBUG | decorators | wrapper | line:8 | Entering the function : list_departments 
+2025-05-06 19:50:31,242 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\departments.json 
+2025-05-06 19:50:31,243 |  INFO | department | list_departments | line:31 | All departments loaded.... 
+2025-05-06 19:50:31,244 |  DEBUG | decorators | wrapper | line:11 | Exiting the function : list_departments 
+2025-05-06 19:51:20,245 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\roles.json 
+2025-05-06 19:51:35,245 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\employees.json 
+2025-05-06 19:52:35,228 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\employees.json 
+2025-05-06 19:53:30,890 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\roles.json 
+2025-05-06 19:53:30,891 |  INFO | helpers | save_to_json | line:30 | saved data to the file: {file} 
+2025-05-06 19:54:06,645 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\employees.json 
+2025-05-06 19:55:15,599 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\employees.json 
+2025-05-06 19:55:15,600 |  INFO | helpers | save_to_json | line:30 | saved data to the file: {file} 
+2025-05-06 19:55:26,243 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\employees.json 
+2025-05-06 19:56:34,698 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\roles.json 
+2025-05-06 19:57:14,200 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\roles.json 
+2025-05-06 19:57:14,200 |  INFO | helpers | save_to_json | line:30 | saved data to the file: {file} 
+2025-05-06 19:58:06,618 |  DEBUG | decorators | wrapper | line:8 | Entering the function : list_departments 
+2025-05-06 19:58:06,621 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\departments.json 
+2025-05-06 19:58:06,621 |  INFO | department | list_departments | line:31 | All departments loaded.... 
+2025-05-06 19:58:06,632 |  DEBUG | decorators | wrapper | line:11 | Exiting the function : list_departments 
+2025-05-06 19:58:45,871 |  DEBUG | decorators | wrapper | line:8 | Entering the function : list_departments 
+2025-05-06 19:58:45,875 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\departments.json 
+2025-05-06 19:58:45,875 |  INFO | department | list_departments | line:31 | All departments loaded.... 
+2025-05-06 19:58:45,891 |  DEBUG | decorators | wrapper | line:11 | Exiting the function : list_departments 
+2025-05-06 19:59:43,188 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\departments.json 
+2025-05-06 19:59:43,189 |  INFO | helpers | save_to_json | line:30 | saved data to the file: {file} 
+2025-05-06 20:55:23,163 |  DEBUG | decorators | wrapper | line:8 | Entering the function : list_departments 
+2025-05-06 20:55:23,182 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\departments.json 
+2025-05-06 20:55:23,182 |  INFO | department | list_departments | line:32 | All departments loaded.... 
+2025-05-06 20:55:23,184 |  DEBUG | decorators | wrapper | line:11 | Exiting the function : list_departments 
+2025-05-06 20:56:02,257 |  DEBUG | decorators | wrapper | line:8 | Entering the function : list_employees 
+2025-05-06 20:56:02,260 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\employees.json 
+2025-05-06 20:56:02,260 |  ERROR | decorators | wrapper | line:14 | An error occurred in the function : list_employees : Trace name 'logger' is not defined 
+2025-05-06 20:56:48,145 |  DEBUG | decorators | wrapper | line:8 | Entering the function : list_employees 
+2025-05-06 20:56:48,151 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\employees.json 
+2025-05-06 20:56:48,152 |  ERROR | decorators | wrapper | line:14 | An error occurred in the function : list_employees : Trace name 'logger' is not defined 
+2025-05-06 20:57:34,651 |  DEBUG | decorators | wrapper | line:8 | Entering the function : list_employees 
+2025-05-06 20:57:34,652 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\employees.json 
+2025-05-06 20:57:34,653 |  INFO | employee | list_employees | line:47 | All Employees loaded.... 
+2025-05-06 20:57:34,654 |  DEBUG | decorators | wrapper | line:11 | Exiting the function : list_employees 
+2025-05-06 20:58:09,055 |  DEBUG | decorators | wrapper | line:8 | Entering the function : list_roles 
+2025-05-06 20:58:09,064 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\roles.json 
+2025-05-06 20:58:09,078 |  DEBUG | decorators | wrapper | line:11 | Exiting the function : list_roles 
+2025-05-06 20:59:05,067 |  DEBUG | decorators | wrapper | line:8 | Entering the function : list_roles 
+2025-05-06 20:59:05,070 |  INFO | helpers | load_from_json | line:46 | Loaded data from JSON File : D:\Gen_AI_Train\services\..\json\roles.json 
+2025-05-06 20:59:05,080 |  DEBUG | decorators | wrapper | line:11 | Exiting the function : list_roles 

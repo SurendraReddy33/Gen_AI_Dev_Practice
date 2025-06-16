@@ -1,0 +1,38 @@
+[
+    {
+        "emp_id": "1",
+        "first_name": "surendra",
+        "last_name": "reddy",
+        "doj": "2025-05-01",
+        "salary": "50000",
+        "department": "IT - Delivery",
+        "role": "Software Developer"
+    },
+    {
+        "emp_id": "2",
+        "first_name": "pavan",
+        "last_name": "kumar",
+        "doj": "2025-05-01",
+        "salary": "30000",
+        "department": "IT - Dev",
+        "role": "Developer"
+    },
+    {
+        "emp_id": "3",
+        "first_name": "vonna",
+        "last_name": "gowri",
+        "doj": "2025-05-05",
+        "salary": "70000",
+        "department": "IT - Testing",
+        "role": "Tester"
+    },
+    {
+        "emp_id": "4",
+        "first_name": "vijay",
+        "last_name": "sai",
+        "doj": "2025-05-05",
+        "salary": "55000",
+        "department": "IT",
+        "role": "developer"
+    }
+]

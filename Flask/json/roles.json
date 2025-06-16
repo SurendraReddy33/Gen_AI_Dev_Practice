@@ -1,0 +1,22 @@
+[
+    {
+        "role_id": "1",
+        "role_name": "Software Developer"
+    },
+    {
+        "role_id": "2",
+        "role_name": "HR Manager"
+    },
+    {
+        "role_id": "3",
+        "role_name": "Infra Developer (SAAS)"
+    },
+    {
+        "role_id": "5",
+        "role_name": "developer"
+    },
+    {
+        "role_id": "10",
+        "role_name": "Manager"
+    }
+]

@@ -1,0 +1,211 @@
+[
+    {
+        "emp_id": "E101",
+        "name": "Amit Sharma",
+        "department": "Finance",
+        "salary": 60000,
+        "designation": "Analyst",
+        "location": "Delhi",
+        "dob": "1988-04-22",
+        "projects": []
+    },
+    {
+        "emp_id": "E102",
+        "name": "Neha Patel",
+        "department": "HR",
+        "salary": 45000,
+        "designation": "Manager",
+        "location": "Mumbai",
+        "dob": "1990-06-12",
+        "projects": [
+            {
+                "project_id": "P001",
+                "name": "HireX",
+                "status": "completed"
+            }
+        ]
+    },
+    {
+        "emp_id": "E103",
+        "name": "Raj Malhotra",
+        "department": "IT",
+        "salary": 75000,
+        "designation": "Developer",
+        "location": "Bangalore",
+        "dob": "1992-07-15",
+        "projects": [
+            {
+                "project_id": "P002",
+                "name": "FinTrack",
+                "status": "active"
+            },
+            {
+                "project_id": "P003",
+                "name": "SmartHR",
+                "status": "completed"
+            }
+        ]
+    },
+    {
+        "emp_id": "E104",
+        "name": "Sneha Reddy",
+        "department": "QA",
+        "salary": 58000,
+        "designation": "QA Engineer",
+        "location": "Hyderabad",
+        "dob": "1993-09-10",
+        "projects": []
+    },
+    {
+        "emp_id": "E105",
+        "name": "Vikram Deshmukh",
+        "department": "IT",
+        "salary": 82000,
+        "designation": "Tech Lead",
+        "location": "Pune",
+        "dob": "1987-02-28",
+        "projects": [
+            {
+                "project_id": "P004",
+                "name": "CoreBank",
+                "status": "active"
+            }
+        ]
+    },
+    {
+        "emp_id": "E106",
+        "name": "Priya Iyer",
+        "department": "HR",
+        "salary": 47000,
+        "designation": "Executive",
+        "location": "Chennai",
+        "dob": "1991-12-05",
+        "projects": []
+    },
+    {
+        "emp_id": "E107",
+        "name": "Manoj Tiwari",
+        "department": "Finance",
+        "salary": 69000,
+        "designation": "Auditor",
+        "location": "Lucknow",
+        "dob": "1985-05-13",
+        "projects": [
+            {
+                "project_id": "P005",
+                "name": "GSTSuite",
+                "status": "completed"
+            }
+        ]
+    },
+    {
+        "emp_id": "E108",
+        "name": "Anjali Verma",
+        "department": "IT",
+        "salary": 72000,
+        "designation": "Fullstack Developer",
+        "location": "Noida",
+        "dob": "1994-03-29",
+        "projects": [
+            {
+                "project_id": "P005",
+                "name": "GSTSuite",
+                "status": "completed"
+            }
+        ]
+    },
+    {
+        "emp_id": "E109",
+        "name": "Rohit Mehra",
+        "department": "Marketing",
+        "salary": 51000,
+        "designation": "Marketing Analyst",
+        "location": "Jaipur",
+        "dob": "1990-11-17",
+        "projects": []
+    },
+    {
+        "emp_id": "E110",
+        "name": "Divya Joshi",
+        "department": "Finance",
+        "salary": 63000,
+        "designation": "Accounts Manager",
+        "location": "Ahmedabad",
+        "dob": "1989-06-01",
+        "projects": [
+            {
+                "project_id": "P007",
+                "name": "LedgerPro",
+                "status": "completed"
+            }
+        ]
+    },
+    {
+        "emp_id": "E111",
+        "name": "Arjun Nair",
+        "department": "IT",
+        "salary": 84000,
+        "designation": "Architect",
+        "location": "Kochi",
+        "dob": "1984-10-12",
+        "projects": [
+            {
+                "project_id": "P008",
+                "name": "InfraX",
+                "status": "active"
+            }
+        ]
+    },
+    {
+        "emp_id": "E112",
+        "name": "Meena Khatri",
+        "department": "Operations",
+        "salary": 56000,
+        "designation": "Coordinator",
+        "location": "Bhopal",
+        "dob": "1993-08-18",
+        "projects": []
+    },
+    {
+        "emp_id": "E113",
+        "name": "Kunal Rao",
+        "department": "IT",
+        "salary": 79000,
+        "designation": "Backend Developer",
+        "location": "Nagpur",
+        "dob": "1988-09-09",
+        "projects": [
+            {
+                "project_id": "P009",
+                "name": "APISync",
+                "status": "active"
+            }
+        ]
+    },
+    {
+        "emp_id": "E114",
+        "name": "Tanvi Shah",
+        "department": "QA",
+        "salary": 54000,
+        "designation": "Tester",
+        "location": "Surat",
+        "dob": "1995-01-22",
+        "projects": [
+            {
+                "project_id": "P010",
+                "name": "AutoTest",
+                "status": "completed"
+            }
+        ]
+    },
+    {
+        "emp_id": "E115",
+        "name": "Suresh Yadav",
+        "department": "Support",
+        "salary": 43000,
+        "designation": "Support Engineer",
+        "location": "Patna",
+        "dob": "1992-04-02",
+        "projects": []
+    }
+]

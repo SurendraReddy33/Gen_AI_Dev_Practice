@@ -1,0 +1,30 @@
+
+
+
+Loggging - Python 
+    Level - Debug - Diagnostic - > Everything
+            Info  - User Added Successfully
+            Warning - 
+            Error   - 
+            Critical - 
+
+
+Loggging:
+    Exception Handling
+        Try
+            Line 1 -> Add User
+                Log the Message  (Level - Information)
+            Line 2
+            Line 3
+        Except
+            Log the Exception (Level - Error)
+            Log the Exception (Level - Debug)
+
+Logging Destination 
+1. File
+2. JSON File
+3. Database
+3.1 : MySQL 
+3.2 : SQL Server
+3.4 : NOSQL - Mongo
+3.5 : CloudWatch

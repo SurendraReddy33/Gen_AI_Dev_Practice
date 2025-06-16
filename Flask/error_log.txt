@@ -1,0 +1,10 @@
+
+Exception in divide_salary_by_employees:
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\day-3_logging_decorator.py", line 6, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Gen_AI_Train\day-3_logging_decorator.py", line 18, in divide_salary_by_employees
+    return salary / count
+           ~~~~~~~^~~~~~~
+ZeroDivisionError: division by zero

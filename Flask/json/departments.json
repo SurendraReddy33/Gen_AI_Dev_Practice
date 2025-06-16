@@ -1,0 +1,30 @@
+[
+    {
+        "dept_id": "1",
+        "dept_name": "IT - DELIVERY"
+    },
+    {
+        "dept_id": "2",
+        "dept_name": "IT - HUMAN RESOURCE"
+    },
+    {
+        "dept_id": "3",
+        "dept_name": "IT - INFRA"
+    },
+    {
+        "dept_id": "4",
+        "dept_name": "IT - DEV"
+    },
+    {
+        "dept_id": "1",
+        "dept_name": "NON - IT"
+    },
+    {
+        "dept_id": "5",
+        "dept_name": "Computer science"
+    },
+    {
+        "dept_id": "5",
+        "dept_name": "Devops"
+    }
+]

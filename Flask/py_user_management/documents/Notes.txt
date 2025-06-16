@@ -1,0 +1,53 @@
+# Client Requirement
+#   Module : UserManagement -> UserService
+#   Description : Write an API which will support below user features 
+#   Features : Register User, Update User, Change Password, Get User Profile, Login 
+#   Storage : JSON    
+
+# Questions
+# Flask, FastAPI  -> Flask   -- {Flask  does not Support Async built in - Import AsyncIO to make Async }
+# Operations : Sync, Async
+#   Sync -> One after Another
+#       Add Department {IT} {5 Seconds to Execute} ->[Delay(5)] -> Assign Employee -> {IT}
+#   Async -> One after Another
+#       Add Role {5 seconds}, Add Department {{5 seconds}}
+#       Python => Read Add Role -> [Start Executing  Add Role] -> Read Add Department -> [Start Executing  Add Department]
+#       Add Department {IT} {5 Seconds to Execute} ->[Delay(5)] -> Assign Employee -> {IT}
+#       await unless Add Department {IT} is Successful
+
+
+# Quick and Dirty Steps
+# requirements.txt
+pip install Flask==2.3.2
+pip install Werkzeug==2.3.6
+
+User Entity - first_name, last_name, email, dob, password
+
+Register -> Endpoint -> 
+    Request Payload - first_name, last_name, email, dob, password
+    Response - message = "User Added Successfully", Code = 200
+Login -> Endpoint -> 
+    Request Payload - email, password
+    Response - message = "User Logged Successfully", Code = 200
+Change Password -> Endpoint -> email, newpassword, oldpassword 
+    Request Payload - email, newpassword, oldpassword
+    Response - message = "Password Changed Successfully", Code = 201
+
+Change Password
+# Step 1  - > Get the values from User (email, oldpass, newpass)
+        # Step 2 - Assign Value to variables
+        # Step 3 - Load all Users 
+        # Step 4 - Find user with email id 
+        # Step 5 - if found then update the value (For loop)
+        # Step 5.1 - Updated. Save the JSON and Return 201
+        # Step 6 - Not found - Return 404
+
+        # Find the User -> if exists -> 
+
+
+        # Why my was having issues for 
+        # Load JSON -> Load File -> RETURN Dict -> Key and Value
+        # Read DICT as Object - DICT to Object (from_Dict) 
+        # Save Users -> Input -> Was Dict -> Key and Value -> Object
+        # Used from_Dict and To_Dict
+        # Used To_Dict => Object into Dict

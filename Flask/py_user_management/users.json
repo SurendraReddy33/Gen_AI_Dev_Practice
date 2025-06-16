@@ -1,0 +1,23 @@
+[
+    {
+        "first_name": "Ameyaan",
+        "last_name": "Parse",
+        "email": "ameet@gmail.com",
+        "dob": "01/01/2011",
+        "password": "zp@511786#"
+    },
+    {
+        "first_name": "Manish",
+        "last_name": "Kumar",
+        "email": "manish@gmail.com",
+        "dob": "01/01/2011",
+        "password": "zp@511786#"
+    },
+    {
+        "first_name": "mahesh",
+        "last_name": "babu",
+        "email": "mahesh@gmail.com",
+        "dob": "05/05/2025",
+        "password": "amb"
+    }
+]

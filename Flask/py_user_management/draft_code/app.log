@@ -1,0 +1,28 @@
+2025-05-08 10:42:10,899 [WARNING]  * Debugger is active!
+2025-05-08 10:42:10,910 [INFO]  * Debugger PIN: 995-688-366
+2025-05-08 10:42:41,943 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-08 10:42:41,943 [INFO] [33mPress CTRL+C to quit[0m
+2025-05-08 10:42:41,949 [INFO]  * Restarting with stat
+2025-05-08 10:42:42,418 [WARNING]  * Debugger is active!
+2025-05-08 10:42:42,426 [INFO]  * Debugger PIN: 995-688-366
+2025-05-08 10:46:58,663 [INFO]  * Detected change in 'C:\\AP\\py_user_management\\app.py', reloading
+2025-05-08 10:46:58,838 [INFO]  * Restarting with stat
+2025-05-08 10:46:59,376 [WARNING]  * Debugger is active!
+2025-05-08 10:46:59,384 [INFO]  * Debugger PIN: 995-688-366
+2025-05-08 10:47:10,422 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-08 10:47:10,422 [INFO] [33mPress CTRL+C to quit[0m
+2025-05-08 10:47:10,429 [INFO]  * Restarting with stat
+2025-05-08 10:47:10,881 [WARNING]  * Debugger is active!
+2025-05-08 10:47:10,889 [INFO]  * Debugger PIN: 995-688-366
+2025-05-08 10:47:18,610 [INFO] User found is None
+2025-05-08 10:47:18,611 [INFO] User found is zp@111
+2025-05-08 10:47:18,611 [INFO] 127.0.0.1 - - [08/May/2025 10:47:18] "[31m[1mPOST /user/login HTTP/1.1[0m" 401 -
+2025-05-08 10:47:32,518 [INFO] User found is {'first_name': 'Joe', 'last_name': 'Biden', 'email': 'JoeBiden@gmail.com', 'dob': '01/01/2011', 'password': 'zp@111'}
+2025-05-08 10:47:32,518 [INFO] User found is zp@111
+2025-05-08 10:47:32,519 [INFO] 127.0.0.1 - - [08/May/2025 10:47:32] "POST /user/login HTTP/1.1" 200 -
+2025-05-08 10:48:50,773 [INFO]  * Detected change in 'C:\\AP\\py_user_management\\app.py', reloading
+2025-05-08 10:48:50,838 [INFO]  * Restarting with stat
+2025-05-08 10:48:51,385 [WARNING]  * Debugger is active!
+2025-05-08 10:48:51,394 [INFO]  * Debugger PIN: 995-688-366
