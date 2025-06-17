@@ -1,0 +1,81 @@
+2025-06-17 11:54:21,039 - app.utils.decorators - INFO - MainThread - Executing: fetch_news_articles
+2025-06-17 11:54:21,039 - app.services.news_service - INFO - MainThread - Fetching news articles.....
+2025-06-17 11:54:22,271 - app.services.news_service - INFO - MainThread - Fetched 5 articles
+2025-06-17 11:54:22,272 - app.utils.decorators - INFO - MainThread - Executing: process_news_articles
+2025-06-17 11:54:22,276 - app.utils.decorators - INFO - MainThread - Executing: generate_headlines
+2025-06-17 11:54:39,995 - app.services.news_service - INFO - MainThread - Returing the generated headlines by decoding the tokenizer
+2025-06-17 11:54:40,011 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:40,289 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:40,290 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:40,386 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:40,391 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:40,487 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:40,488 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:40,579 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:40,580 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:40,670 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:40,671 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:40,761 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:40,762 - app.services.news_service - INFO - MainThread - Appended headlines for the article
+2025-06-17 11:54:40,772 - app.utils.decorators - INFO - MainThread - Executing: generate_headlines
+2025-06-17 11:54:46,283 - app.services.news_service - INFO - MainThread - Returing the generated headlines by decoding the tokenizer
+2025-06-17 11:54:46,302 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:46,505 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:46,506 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:46,598 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:46,598 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:46,699 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:46,699 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:46,813 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:46,814 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:46,909 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:46,910 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:47,009 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:47,010 - app.services.news_service - INFO - MainThread - Appended headlines for the article
+2025-06-17 11:54:47,018 - app.utils.decorators - INFO - MainThread - Executing: generate_headlines
+2025-06-17 11:54:52,277 - app.services.news_service - INFO - MainThread - Returing the generated headlines by decoding the tokenizer
+2025-06-17 11:54:52,290 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:52,437 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:52,437 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:52,532 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:52,532 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:52,627 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:52,628 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:52,730 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:52,731 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:52,825 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:52,825 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:52,925 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:52,926 - app.services.news_service - INFO - MainThread - Appended headlines for the article
+2025-06-17 11:54:52,936 - app.utils.decorators - INFO - MainThread - Executing: generate_headlines
+2025-06-17 11:54:58,349 - app.services.news_service - INFO - MainThread - Returing the generated headlines by decoding the tokenizer
+2025-06-17 11:54:58,360 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:58,532 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:58,532 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:58,596 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:58,597 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:58,707 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:58,707 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:58,801 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:58,802 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:58,892 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:58,893 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:54:58,982 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:54:58,983 - app.services.news_service - INFO - MainThread - Appended headlines for the article
+2025-06-17 11:54:58,993 - app.utils.decorators - INFO - MainThread - Executing: generate_headlines
+2025-06-17 11:55:04,453 - app.services.news_service - INFO - MainThread - Returing the generated headlines by decoding the tokenizer
+2025-06-17 11:55:04,467 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:55:04,645 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:55:04,646 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:55:04,753 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:55:04,754 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:55:04,859 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:55:04,860 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:55:04,976 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:55:04,977 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:55:05,086 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:55:05,086 - app.utils.decorators - INFO - MainThread - Executing: mean_embedding
+2025-06-17 11:55:05,178 - app.services.news_service - INFO - MainThread - Gnerated mean_embeddings
+2025-06-17 11:55:05,179 - app.services.news_service - INFO - MainThread - Appended headlines for the article
+2025-06-17 11:55:05,189 - app.utils.decorators - INFO - MainThread - Executing: save_to_json
+2025-06-17 11:55:05,191 - app.data.user_data - INFO - MainThread - Saved output to app\data\news_articles.json
