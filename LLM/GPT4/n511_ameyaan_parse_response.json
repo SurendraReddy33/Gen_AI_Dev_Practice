@@ -1,0 +1,46 @@
+{
+  "status": "ok",
+  "totalResults": 34421,
+  "articles": [
+    {
+      "source": {
+        "id": "the-verge",
+        "name": "The Verge"
+      },
+      "author": "Emma Roth",
+      "title": "Trump wants Apple to stop making more iPhones in India",
+      "description": "President Donald Trump told Apple CEO Tim Cook that he doesn’t want the company to move iPhone production to India. “I had a little problem with Tim Cook yesterday,” Trump said during his visit to Qatar. “You’re coming in with $500 billion, but now I hear you…",
+      "url": "https://www.theverge.com/news/667649/donald-trump-apple-stop-producing-iphones-india",
+      "urlToImage": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/03/STK466_ELECTION_2024_CVirginia_F.webp?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+      "publishedAt": "2025-05-15T14:18:30Z",
+      "content": "Were not interested in you building in India.\r\nWere not interested in you building in India.\r\nPresident Donald Trump told Apple CEO Tim Cook that he doesnt want the company to move iPhone production … [+814 chars]",
+      "headlines": [
+        { "score": 1, "text": "Trump tells Apple to stop iPhone production in India" },
+        { "score": 2, "text": "Trump opposes Apple's India manufacturing shift" },
+        { "score": 3, "text": "Trump warns Apple over India iPhone plans" },
+        { "score": 4, "text": "Apple's India move criticized by Trump" },
+        { "score": 5, "text": "Trump wants Apple to stay out of India for iPhones" }
+      ]
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "Four arrested over India cricket stadium crush",
+      "description": "Personnel from the cricket league - Royal Challengers Bengaluru - are among the four arrested.",
+      "url": "https://www.bbc.com/news/articles/cx2e1w4y23ro",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/ba5b/live/85f88300-4292-11f0-80b4-914a905be633.jpg",
+      "publishedAt": "2025-06-06T06:01:03Z",
+      "content": "Police in India have arrested at least four people in connection with the fatal crowd crush that took place in the southern city of Bengaluru earlier this week.\r\nOn Wednesday, 11 people were killed w… [+1247 chars]",
+      "headlines": [
+        { "score": 1, "text": "Four arrested after tragic Bengaluru stadium crush" },
+        { "score": 2, "text": "India stadium crowd crush: Four taken into custody" },
+        { "score": 3, "text": "Bengaluru cricket event tragedy leads to arrests" },
+        { "score": 4, "text": "Officials arrested after stadium crowd disaster" },
+        { "score": 5, "text": "Cricket league staff held in stadium crush case" }
+      ]
+    }
+  ]
+}

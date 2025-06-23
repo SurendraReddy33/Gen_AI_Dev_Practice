@@ -1,0 +1,40 @@
+04/06/2025
+
+Class Books - (Book_id, Book_name, Author, Zonar, Total_Copies).
+
+Methods:
+	Add Books to record,
+	Update Books,
+	View Books,
+	Delete Books.
+	
+
+
+	
+Class Admin - (Student_id, Book_id).
+	Student Condition:
+			if Student Belongs to Code:
+				Student can have access to view books
+					
+					
+	Books Condition:
+			if Books availability yes:
+				Manage books.	
+					
+			
+			
+
+
+Class Student - Register (Student_id, Username, Create Password, Branch, Year, Code) , Login (Student_id, Password).
+
+if Login Yes - Student can do operations Like
+					View all Books
+					check the Fav Book availability
+					if Availability Yes:
+						Student can read.
+						Return the book.
+					if Availability No:
+						Not Available Please select another book - (View all Books) 
+									
+if Login No - Student needs to give Correct Credentials
+
