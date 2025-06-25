@@ -1,0 +1,74 @@
+[
+    {
+        "student_id": "S002",
+        "name": "Bob",
+        "department": null,
+        "year": 1
+    },
+    {
+        "student_id": "S003",
+        "name": "Charlie",
+        "department": null,
+        "year": 3
+    },
+    {
+        "student_id": "S004",
+        "name": "Diana",
+        "department": null,
+        "year": 4
+    },
+    {
+        "student_id": "S005",
+        "name": "Ethan",
+        "department": null,
+        "year": 2
+    },
+    {
+        "student_id": "S006",
+        "name": "Fiona",
+        "department": null,
+        "year": 1
+    },
+    {
+        "student_id": "S007",
+        "name": "George",
+        "department": null,
+        "year": 3
+    },
+    {
+        "student_id": "S008",
+        "name": "Hannah",
+        "department": null,
+        "year": 4
+    },
+    {
+        "student_id": "S009",
+        "name": "Ivan",
+        "department": null,
+        "year": 2
+    },
+    {
+        "student_id": "S010",
+        "name": "Julia",
+        "department": null,
+        "year": 3
+    },
+    {
+        "student_id": "S001",
+        "name": "Surendra Reddy",
+        "department": "IT",
+        "year": "2025"
+    },
+    {
+        "student_id": "S015",
+        "name": "Vijay",
+        "department": "It",
+        "year": "2024"
+    },
+    {
+        "student_id": "S016",
+        "name": "Vijay Bhaskar",
+        "department": "It",
+        "year": "2024"
+    }
+]

@@ -1,0 +1,79 @@
+[
+    {
+        "book_id": "B002",
+        "title": "Advanced Data Structures",
+        "author": "Jane Smith",
+        "category": null,
+        "available": true
+    },
+    {
+        "book_id": "B004",
+        "title": "Database Systems",
+        "author": "Hector Garcia-Molina",
+        "category": null,
+        "available": true
+    },
+    {
+        "book_id": "B005",
+        "title": "Operating Systems Concepts",
+        "author": "Abraham Silberschatz",
+        "category": null,
+        "available": true
+    },
+    {
+        "book_id": "B006",
+        "title": "Introduction to Algorithms",
+        "author": "Thomas H. Cormen",
+        "category": null,
+        "available": true
+    },
+    {
+        "book_id": "B007",
+        "title": "Clean Code",
+        "author": "Robert C. Martin",
+        "category": null,
+        "available": true
+    },
+    {
+        "book_id": "B008",
+        "title": "The Pragmatic Programmer",
+        "author": "Andy Hunt",
+        "category": null,
+        "available": true
+    },
+    {
+        "book_id": "B009",
+        "title": "Deep Learning with Python",
+        "author": "François Chollet",
+        "category": null,
+        "available": true
+    },
+    {
+        "book_id": "B010",
+        "title": "You Don’t Know JS",
+        "author": "Kyle Simpson",
+        "category": null,
+        "available": true
+    },
+    {
+        "book_id": "B011",
+        "title": "You Can",
+        "author": "David",
+        "category": "Inspirational",
+        "available": true
+    },
+    {
+        "book_id": "B013",
+        "title": "Atomic Habits",
+        "author": "Steven",
+        "category": "Per Dev",
+        "available": true
+    },
+    {
+        "book_id": "B015",
+        "title": "Cosmos Space",
+        "author": "Newton",
+        "category": "Space",
+        "available": true
+    }
+]
