@@ -6,3 +6,9 @@ class Student(BaseModel):
     name: str
     department: Optional[str] = None
     year: Union[int, str]
+
+class UpdateStudent(BaseModel):
+    student_id: str
+    name: Optional[str] = None
+    department: Optional[str] = None
+    year: Optional[Union[int, str]] = None

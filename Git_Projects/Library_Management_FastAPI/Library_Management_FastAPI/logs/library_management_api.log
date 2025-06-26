@@ -4,3 +4,69 @@
 2025-06-25 16:17:17,438 - app.utils.decorators - INFO - Executing: load_books
 2025-06-25 16:22:44,031 - app.utils.decorators - INFO - Executing: list_students
 2025-06-25 16:22:44,031 - app.utils.decorators - INFO - Executing: load_students
+2025-06-25 18:14:47,056 - app.utils.decorators - INFO - Executing: add_book
+2025-06-25 18:14:47,057 - app.utils.decorators - INFO - Executing: load_books
+2025-06-25 18:14:47,063 - app.utils.decorators - INFO - Executing: save_books
+2025-06-25 18:14:47,066 - app.service.book_service - INFO - Books data saved
+2025-06-25 18:29:13,907 - app.utils.decorators - INFO - Executing: add_book
+2025-06-25 18:29:13,907 - app.utils.decorators - INFO - Executing: load_books
+2025-06-25 18:29:13,909 - app.utils.decorators - INFO - Executing: save_books
+2025-06-25 18:29:13,916 - app.service.book_service - INFO - Books data saved
+2025-06-25 18:33:28,368 - app.utils.decorators - INFO - Executing: update_book
+2025-06-25 18:33:28,369 - app.utils.decorators - INFO - Executing: load_books
+2025-06-25 18:33:28,391 - app.utils.decorators - INFO - Executing: save_books
+2025-06-25 18:33:28,392 - app.service.book_service - INFO - Books data saved
+2025-06-25 18:35:42,874 - app.utils.decorators - INFO - Executing: list_books
+2025-06-25 18:35:42,875 - app.utils.decorators - INFO - Executing: load_books
+2025-06-25 18:36:36,122 - app.utils.decorators - INFO - Executing: delete_book
+2025-06-25 18:36:36,123 - app.utils.decorators - INFO - Executing: load_books
+2025-06-25 18:36:36,125 - app.utils.decorators - INFO - Executing: save_books
+2025-06-25 18:36:36,129 - app.service.book_service - INFO - Books data saved
+2025-06-25 18:37:50,290 - app.utils.decorators - INFO - Executing: search_books_by_title
+2025-06-25 18:37:50,290 - app.utils.decorators - INFO - Executing: load_books
+2025-06-25 18:41:47,771 - app.utils.decorators - INFO - Executing: add_student
+2025-06-25 18:41:47,772 - app.utils.decorators - INFO - Executing: load_students
+2025-06-25 18:41:47,778 - app.utils.decorators - INFO - Executing: save_students
+2025-06-25 18:41:47,780 - app.service.student_service - INFO - Students data saved
+2025-06-25 18:45:01,288 - app.utils.decorators - INFO - Executing: update_student
+2025-06-25 18:45:01,289 - app.utils.decorators - INFO - Executing: load_students
+2025-06-25 18:45:01,292 - app.utils.decorators - INFO - Executing: save_students
+2025-06-25 18:45:01,297 - app.service.student_service - INFO - Students data saved
+2025-06-25 18:45:45,981 - app.utils.decorators - INFO - Executing: delete_student
+2025-06-25 18:45:45,981 - app.utils.decorators - INFO - Executing: load_students
+2025-06-25 18:45:45,984 - app.utils.decorators - INFO - Executing: save_students
+2025-06-25 18:45:45,989 - app.service.student_service - INFO - Students data saved
+2025-06-25 18:46:23,541 - app.utils.decorators - INFO - Executing: list_students
+2025-06-25 18:46:23,542 - app.utils.decorators - INFO - Executing: load_students
+2025-06-25 18:47:01,478 - app.utils.decorators - INFO - Executing: search_books_by_title
+2025-06-25 18:47:01,479 - app.utils.decorators - INFO - Executing: load_books
+2025-06-25 18:47:20,035 - app.utils.decorators - INFO - Executing: search_student_by_name
+2025-06-25 18:47:20,035 - app.utils.decorators - INFO - Executing: load_students
+2025-06-25 18:47:26,897 - app.utils.decorators - INFO - Executing: search_student_by_name
+2025-06-25 18:47:26,898 - app.utils.decorators - INFO - Executing: load_students
+2025-06-25 18:47:32,645 - app.utils.decorators - INFO - Executing: search_student_by_name
+2025-06-25 18:47:32,646 - app.utils.decorators - INFO - Executing: load_students
+2025-06-25 18:47:40,649 - app.utils.decorators - INFO - Executing: search_student_by_name
+2025-06-25 18:47:40,649 - app.utils.decorators - INFO - Executing: load_students
+2025-06-25 18:47:51,624 - app.utils.decorators - INFO - Executing: search_student_by_name
+2025-06-25 18:47:51,624 - app.utils.decorators - INFO - Executing: load_students
+2025-06-25 18:52:08,411 - app.utils.decorators - INFO - Executing: issue_book
+2025-06-25 18:52:08,412 - app.utils.decorators - INFO - Executing: load_students
+2025-06-25 18:52:08,417 - app.utils.decorators - INFO - Executing: load_books
+2025-06-25 18:52:26,597 - app.utils.decorators - INFO - Executing: issue_book
+2025-06-25 18:52:26,597 - app.utils.decorators - INFO - Executing: load_students
+2025-06-25 18:52:26,602 - app.utils.decorators - INFO - Executing: load_books
+2025-06-25 18:52:26,603 - app.utils.decorators - INFO - Executing: load_issued
+2025-06-25 18:52:26,606 - app.utils.decorators - INFO - Executing: save_issued
+2025-06-25 18:52:26,607 - app.service.issue_service - INFO - Issued records saved
+2025-06-25 18:52:26,608 - app.utils.decorators - INFO - Executing: save_books
+2025-06-25 18:52:26,609 - app.service.book_service - INFO - Books data saved
+2025-06-25 18:54:03,093 - app.utils.decorators - INFO - Executing: return_book
+2025-06-25 18:54:03,093 - app.utils.decorators - INFO - Executing: load_issued
+2025-06-25 18:54:03,096 - app.utils.decorators - INFO - Executing: load_books
+2025-06-25 18:54:03,097 - app.utils.decorators - INFO - Executing: save_issued
+2025-06-25 18:54:03,101 - app.service.issue_service - INFO - Issued records saved
+2025-06-25 18:54:03,102 - app.utils.decorators - INFO - Executing: save_books
+2025-06-25 18:54:03,104 - app.service.book_service - INFO - Books data saved
+2025-06-25 18:55:34,572 - app.utils.decorators - INFO - Executing: list_record_books
+2025-06-25 18:55:34,572 - app.utils.decorators - INFO - Executing: load_issued

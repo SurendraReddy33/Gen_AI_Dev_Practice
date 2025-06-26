@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 from app.utils.decorators import handle_exceptions
 from app.utils.logger import get_logger
-from app.service.book_service import load_books
+from app.service.book_service import load_books, save_books
 from app.service.student_service import load_students
 
 logger = get_logger(__name__)

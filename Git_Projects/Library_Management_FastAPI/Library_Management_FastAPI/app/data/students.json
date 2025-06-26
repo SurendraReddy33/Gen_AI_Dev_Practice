@@ -54,12 +54,6 @@
         "year": 3
     },
     {
-        "student_id": "S001",
-        "name": "Surendra Reddy",
-        "department": "IT",
-        "year": "2025"
-    },
-    {
         "student_id": "S015",
         "name": "Vijay",
         "department": "It",
@@ -70,5 +64,11 @@
         "name": "Vijay Bhaskar",
         "department": "It",
         "year": "2024"
+    },
+    {
+        "student_id": "S1",
+        "name": "Surendra",
+        "department": "Poet",
+        "year": "2025"
     }
 ]

@@ -6,4 +6,11 @@ class Book(BaseModel):
     title: str
     author: str
     category: Optional[str] = None
-    available: bool = True
+    available: bool
+
+class UpdateBook(BaseModel):
+    book_id: str
+    title: Optional[str] = None
+    author: Optional[str] = None
+    category: Optional[str] = None
+    available: Optional[bool] = None

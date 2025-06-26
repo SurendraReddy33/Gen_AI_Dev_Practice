@@ -8,9 +8,9 @@ app = FastAPI(
 )
 
 # Include routers
-app.include_router(book_router.router, prefix="/api")
-app.include_router(student_router.router, prefix="/api")
-app.include_router(issue_router.router, prefix="/api")
+app.include_router(book_router.router, prefix="/api/books")
+app.include_router(student_router.router, prefix="/api/students")
+app.include_router(issue_router.router, prefix="/api/issued")
 
 @app.get("/")
 def root():

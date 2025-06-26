@@ -7,22 +7,22 @@ from app.models.student import Student
 
 router = APIRouter()
 
-@router.post("/students/add")
+@router.post("/add")
 def create_student(student: Student):
     return add_student(student.dict())
 
-@router.put("/students/{student_id}")
-def modify_student(student_id: str, updates: dict):
-    return update_student(student_id, updates)
+@router.put("/update/{student_id}")
+def modify_student(student_id: str, UpdateStudent):
+    return update_student(student_id, UpdateStudent)
 
-@router.get("/students")
+@router.get("/list_students")
 def get_all_students():
     return list_students()
 
-@router.delete("/students/{student_id}")
+@router.delete("/delete/{student_id}")
 def remove_student(student_id: str):
     return delete_student(student_id)
 
-@router.get("/students/search/")
+@router.get("/search/{name}")
 def search_student(name: str):
     return search_student_by_name(name)

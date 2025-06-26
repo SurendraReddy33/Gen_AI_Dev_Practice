@@ -27,12 +27,12 @@ def add_book(book: dict):
     return {"message": "Book added successfully"}
 
 @handle_exceptions
-def update_book(book_id, updated_data):
+def update_book(book_id, UpdateBook):
     books = load_books()
     updated = False
     for book in books:
         if book.get("book_id") == book_id:
-            book.update(updated_data)
+            book.update(UpdateBook)
             updated = True
             break
     if updated:

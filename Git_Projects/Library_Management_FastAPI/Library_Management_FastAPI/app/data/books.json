@@ -44,13 +44,13 @@
     {
         "book_id": "B009",
         "title": "Deep Learning with Python",
-        "author": "François Chollet",
+        "author": "Fran\u00c3\u00a7ois Chollet",
         "category": null,
         "available": true
     },
     {
         "book_id": "B010",
-        "title": "You Don’t Know JS",
+        "title": "You Don\u00e2\u20ac\u2122t Know JS",
         "author": "Kyle Simpson",
         "category": null,
         "available": true

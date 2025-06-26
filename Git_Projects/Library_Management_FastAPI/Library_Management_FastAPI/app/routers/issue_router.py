@@ -5,14 +5,14 @@ from app.service.issue_service import (
 
 router = APIRouter()
 
-@router.post("/issue")
+@router.post("/issued_books/{student_id}/{book_id}")
 def issue(student_id: str, book_id: str):
     return issue_book(student_id, book_id)
 
-@router.post("/return")
+@router.post("/return/{student_id}/{book_id}")
 def return_issued(student_id: str, book_id: str):
     return return_book(student_id, book_id)
 
-@router.get("/issued")
+@router.get("/list_issued")
 def get_issued_books():
     return list_record_books()
