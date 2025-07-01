@@ -11,11 +11,11 @@ app = FastAPI()
 
 def save_news_articles(article : dict , query : str):
 
-    if not os.path.exists("articles"):
-        os.makedirs("articles")
+    if not os.path.exists("GPT4_news/articles"):
+        os.makedirs("GPT4_news/articles")
 
     query_clean = query.replace(" ", "_")
-    filename = f"articles/{query_clean}_articles.json"
+    filename = f"GPT4_news/articles/{query_clean}_articles.json"
 
     with open(filename,"w",encoding="utf-8") as f:
         json.dump(article,f,indent=4,ensure_ascii=False)
@@ -58,3 +58,6 @@ def fetch_news(
     Example: /fetch-news?query=AI&page_size=5
     """
     return download_news_articles(query, page_size)
+
+if __name__ == "__main__":
+    app()
