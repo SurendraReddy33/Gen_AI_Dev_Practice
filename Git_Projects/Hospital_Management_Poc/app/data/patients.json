@@ -1,0 +1,38 @@
+[
+    {
+        "patient_id": "P001",
+        "name": "Steven",
+        "age": "30",
+        "gender": "Male",
+        "diagnosis": "Fever",
+        "disease": "Heart"
+    },
+    {
+        "patient_id": "P003",
+        "name": "mia",
+        "age": "74",
+        "gender": "Male",
+        "diagnosis": "cold"
+    },
+    {
+        "patient_id": "P004",
+        "name": "David",
+        "age": "62",
+        "gender": "Male",
+        "diagnosis": "Allergy"
+    },
+    {
+        "patient_id": "P005",
+        "name": "Scar",
+        "age": "32",
+        "gender": "Male",
+        "diagnosis": "Allergy"
+    },
+    {
+        "patient_id": "P006",
+        "name": "Surendra",
+        "age": "23",
+        "gender": "Male",
+        "disease": "Cardio"
+    }
+]

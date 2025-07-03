@@ -1,0 +1,18 @@
+[
+    {
+        "doctor_id": "D001",
+        "name": "Bob",
+        "specialization": "Cardiology"
+    },
+    {
+        "doctor_id": "D003",
+        "name": "mithra",
+        "specialization": "pediatrics"
+    },
+    {
+        "doctor_id": "D006",
+        "name": "Surendra",
+        "speciality": "Cardio",
+        "available": true
+    }
+]

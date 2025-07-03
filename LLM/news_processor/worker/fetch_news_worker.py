@@ -11,10 +11,10 @@ from config.settings import (
     PAGE_SIZE,
     MAX_PAGES
 )
-from utiles.image_handler import handle_article_image
-from utiles.logger import get_logger
+from utils.image_handler import handle_article_image
+from utils.logger import get_logger
 from datetime import datetime,timezone
-from tqdm import tqdm
+from tqdm import tqdm 
 
 logger = get_logger(__name__)
 

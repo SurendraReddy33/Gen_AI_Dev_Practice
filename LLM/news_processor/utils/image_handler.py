@@ -22,6 +22,7 @@ def handle_article_image(url,folder_path,article_id):
         with open(image_path,"wb") as f:
             f.write(response.content)
 
+
         return image_path
     except Exception:
         return create_error_png(folder_path,article_id)

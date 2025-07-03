@@ -1,0 +1,78 @@
+2025-07-03 14:59:50,711 - app.utils.decorators - INFO - Executing: add_patient
+2025-07-03 14:59:50,711 - app.utils.decorators - INFO - Executing: load_patients
+2025-07-03 14:59:50,720 - app.utils.decorators - INFO - Executing: save_patients
+2025-07-03 14:59:50,720 - app.services.patient_service - INFO - patients data saved
+2025-07-03 15:04:11,137 - app.utils.decorators - INFO - Executing: update_patient
+2025-07-03 15:04:11,138 - app.utils.decorators - INFO - Executing: load_patients
+2025-07-03 15:04:11,138 - app.utils.decorators - INFO - Executing: save_patients
+2025-07-03 15:04:11,139 - app.services.patient_service - INFO - patients data saved
+2025-07-03 15:05:13,097 - app.utils.decorators - INFO - Executing: delete_patient
+2025-07-03 15:05:13,097 - app.utils.decorators - INFO - Executing: load_patients
+2025-07-03 15:05:13,098 - app.utils.decorators - INFO - Executing: save_patients
+2025-07-03 15:05:13,098 - app.services.patient_service - INFO - patients data saved
+2025-07-03 15:05:54,135 - app.utils.decorators - INFO - Executing: get_all_patients
+2025-07-03 15:05:54,135 - app.utils.decorators - INFO - Executing: load_patients
+2025-07-03 15:07:55,404 - app.utils.decorators - INFO - Executing: add_doctor
+2025-07-03 15:07:55,405 - app.utils.decorators - INFO - Executing: load_doctors
+2025-07-03 15:07:55,415 - app.utils.decorators - INFO - Executing: save_doctors
+2025-07-03 15:07:55,416 - app.services.doctor_service - INFO - doctors data saved
+2025-07-03 15:10:45,508 - app.utils.decorators - INFO - Executing: update_doctor
+2025-07-03 15:10:45,508 - app.utils.decorators - INFO - Executing: load_doctors
+2025-07-03 15:10:45,509 - app.utils.decorators - ERROR - Error in update_doctor: 'ModelMetaclass' object is not iterable
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Github\Gen_AI_Dev_Practice\Git_Projects\Hospital_Management_Poc\app\utils\decorators.py", line 11, in wrapper
+    return func(*args, **kwargs)
+  File "D:\Gen_AI_Train\Github\Gen_AI_Dev_Practice\Git_Projects\Hospital_Management_Poc\app\services\doctor_service.py", line 36, in update_doctor
+    d.update(UpdateDoctor)
+    ~~~~~~~~^^^^^^^^^^^^^^
+TypeError: 'ModelMetaclass' object is not iterable
+2025-07-03 15:10:53,240 - app.utils.decorators - INFO - Executing: update_doctor
+2025-07-03 15:10:53,240 - app.utils.decorators - INFO - Executing: load_doctors
+2025-07-03 15:10:53,241 - app.utils.decorators - ERROR - Error in update_doctor: 'ModelMetaclass' object is not iterable
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Github\Gen_AI_Dev_Practice\Git_Projects\Hospital_Management_Poc\app\utils\decorators.py", line 11, in wrapper
+    return func(*args, **kwargs)
+  File "D:\Gen_AI_Train\Github\Gen_AI_Dev_Practice\Git_Projects\Hospital_Management_Poc\app\services\doctor_service.py", line 36, in update_doctor
+    d.update(UpdateDoctor)
+    ~~~~~~~~^^^^^^^^^^^^^^
+TypeError: 'ModelMetaclass' object is not iterable
+2025-07-03 15:11:57,187 - app.utils.decorators - INFO - Executing: update_doctor
+2025-07-03 15:11:57,187 - app.utils.decorators - INFO - Executing: load_doctors
+2025-07-03 15:11:57,188 - app.utils.decorators - ERROR - Error in update_doctor: 'ModelMetaclass' object is not iterable
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Github\Gen_AI_Dev_Practice\Git_Projects\Hospital_Management_Poc\app\utils\decorators.py", line 11, in wrapper
+    return func(*args, **kwargs)
+  File "D:\Gen_AI_Train\Github\Gen_AI_Dev_Practice\Git_Projects\Hospital_Management_Poc\app\services\doctor_service.py", line 36, in update_doctor
+    d.update(UpdateDoctor)
+    ~~~~~~~~^^^^^^^^^^^^^^
+TypeError: 'ModelMetaclass' object is not iterable
+2025-07-03 15:12:04,790 - app.utils.decorators - INFO - Executing: update_doctor
+2025-07-03 15:12:04,790 - app.utils.decorators - INFO - Executing: load_doctors
+2025-07-03 15:12:04,792 - app.utils.decorators - ERROR - Error in update_doctor: 'ModelMetaclass' object is not iterable
+Traceback (most recent call last):
+  File "D:\Gen_AI_Train\Github\Gen_AI_Dev_Practice\Git_Projects\Hospital_Management_Poc\app\utils\decorators.py", line 11, in wrapper
+    return func(*args, **kwargs)
+  File "D:\Gen_AI_Train\Github\Gen_AI_Dev_Practice\Git_Projects\Hospital_Management_Poc\app\services\doctor_service.py", line 36, in update_doctor
+    d.update(UpdateDoctor)
+    ~~~~~~~~^^^^^^^^^^^^^^
+TypeError: 'ModelMetaclass' object is not iterable
+2025-07-03 15:13:56,935 - app.utils.decorators - INFO - Executing: delete_doctor
+2025-07-03 15:13:56,936 - app.utils.decorators - INFO - Executing: load_doctors
+2025-07-03 15:13:56,936 - app.utils.decorators - INFO - Executing: save_doctors
+2025-07-03 15:13:56,937 - app.services.doctor_service - INFO - doctors data saved
+2025-07-03 15:14:53,572 - app.utils.decorators - INFO - Executing: list_doctors
+2025-07-03 15:14:53,572 - app.utils.decorators - INFO - Executing: load_doctors
+2025-07-03 15:16:58,888 - app.utils.decorators - INFO - Executing: add_appointment
+2025-07-03 15:16:58,896 - app.utils.decorators - INFO - Executing: load_appointments
+2025-07-03 15:16:58,917 - app.utils.decorators - INFO - Executing: save_appointments
+2025-07-03 15:16:58,918 - app.services.appointment_service - INFO - appointments data saved
+2025-07-03 15:17:41,834 - app.utils.decorators - INFO - Executing: delete_appointment
+2025-07-03 15:17:41,834 - app.utils.decorators - INFO - Executing: load_appointments
+2025-07-03 15:17:41,835 - app.utils.decorators - INFO - Executing: save_appointments
+2025-07-03 15:17:41,835 - app.services.appointment_service - INFO - appointments data saved
+2025-07-03 15:20:43,136 - app.utils.decorators - INFO - Executing: update_appointment
+2025-07-03 15:20:43,136 - app.utils.decorators - INFO - Executing: load_appointments
+2025-07-03 15:20:43,137 - app.utils.decorators - INFO - Executing: save_appointments
+2025-07-03 15:20:43,137 - app.services.appointment_service - INFO - appointments data saved
+2025-07-03 15:21:27,852 - app.utils.decorators - INFO - Executing: list_appointments
+2025-07-03 15:21:27,852 - app.utils.decorators - INFO - Executing: load_appointments

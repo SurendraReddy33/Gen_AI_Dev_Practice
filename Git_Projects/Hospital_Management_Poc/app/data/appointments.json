@@ -1,0 +1,25 @@
+[
+    {
+        "appointment_id": "A002",
+        "patient_id": "P001",
+        "doctor_id": "D001",
+        "date": "2025-08-01",
+        "reason": "Chest Pain",
+        "appointment_date": "2025-07-06",
+        "status": "Scheduled"
+    },
+    {
+        "appointment_id": "A003",
+        "patient_id": "P003",
+        "doctor_id": "D003",
+        "date": "2025-08-01",
+        "reason": "Chest Pain"
+    },
+    {
+        "appointment_id": "A006",
+        "patient_id": "P001",
+        "doctor_id": "D001",
+        "appointment_date": "2025-07-06",
+        "status": "Scheduled"
+    }
+]
