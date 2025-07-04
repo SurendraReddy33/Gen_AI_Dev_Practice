@@ -46,5 +46,11 @@
         "book_id": "B015",
         "issue_date": "2025-06-25",
         "return_date": "2025-06-25"
+    },
+    {
+        "student_id": "S1",
+        "book_id": "B015",
+        "issue_date": "2025-07-03",
+        "return_date": null
     }
 ]

@@ -8,3 +8,12 @@ class Patient(BaseModel):
     gender: str
     disease: Optional[str] = None
 
+
+class UpdatePatient(BaseModel):
+    patient_id: str
+    name: Optional[str]
+    age: Optional[str]
+    gender: Optional[str] = None
+    disease: Optional[str] = None
+
+

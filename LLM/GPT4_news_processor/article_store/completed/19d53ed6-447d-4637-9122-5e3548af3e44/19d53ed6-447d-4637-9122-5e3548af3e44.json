@@ -1,0 +1,17 @@
+{
+  "source": {
+    "id": "the-times-of-india",
+    "name": "The Times of India"
+  },
+  "author": "AP",
+  "title": "G7 leaders try to salvage their summit after Trump's early exit effectively makes it the 'G6'",
+  "description": "The G7 summit in Canada faced disruption with Trump's early departure amidst escalating tensions between Israel and Iran. Despite disagreements, leaders issued a statement on Iran's nuclear ambitions and de-escalation. Trump's stance on Ukraine and trade poli\u2026",
+  "url": "https://economictimes.indiatimes.com/news/international/world-news/g7-leaders-try-to-salvage-their-summit-after-trumps-early-exit-effectively-makes-it-the-g6/articleshow/121915144.cms",
+  "urlToImage": "https://img.etimg.com/thumb/msid-121915158,width-1200,height-630,imgsize-287190,overlay-economictimes/articleshow.jpg",
+  "publishedAt": "2025-06-17T17:17:45Z",
+  "content": "Six of the Group of Seven leaders were trying as their summit wraps up Tuesday, to show the wealthy nations' club still has the clout to shape world events despite the early departure of US President\u2026 [+5960 chars]",
+  "fetched_at": "2025-07-04T06:10:03.779273+00:00",
+  "article_image_original": "queue/19d53ed6-447d-4637-9122-5e3548af3e44/19d53ed6-447d-4637-9122-5e3548af3e44_articleshow.jpg",
+  "recommended_category": "Given the title, description, content of a news article, identify the most suitable category from the list Politics,Finance,Health,Science,Technology,Sports,Crypto Currency,Other,Entertainment. If none matches then return 'Other'. For the remainder you must indicate the category.\n\nClick to expand...",
+  "gpt4_suggestion_category": "Given the title, description, content of a news article, suggest a sytentic category name that best describes its subject. e.g. 'Crypto', 'Climate Newss of news', etc. The phrase can also be used for articles that relate to specific subjects or news"
+}

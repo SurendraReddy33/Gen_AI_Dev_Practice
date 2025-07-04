@@ -70,3 +70,15 @@
 2025-06-25 18:54:03,104 - app.service.book_service - INFO - Books data saved
 2025-06-25 18:55:34,572 - app.utils.decorators - INFO - Executing: list_record_books
 2025-06-25 18:55:34,572 - app.utils.decorators - INFO - Executing: load_issued
+2025-07-03 17:37:01,091 - app.utils.decorators - INFO - Executing: list_books
+2025-07-03 17:37:01,092 - app.utils.decorators - INFO - Executing: load_books
+2025-07-03 17:37:13,904 - app.utils.decorators - INFO - Executing: list_students
+2025-07-03 17:37:13,905 - app.utils.decorators - INFO - Executing: load_students
+2025-07-03 17:37:31,986 - app.utils.decorators - INFO - Executing: issue_book
+2025-07-03 17:37:31,986 - app.utils.decorators - INFO - Executing: load_students
+2025-07-03 17:37:31,990 - app.utils.decorators - INFO - Executing: load_books
+2025-07-03 17:37:31,993 - app.utils.decorators - INFO - Executing: load_issued
+2025-07-03 17:37:32,009 - app.utils.decorators - INFO - Executing: save_issued
+2025-07-03 17:37:32,011 - app.service.issue_service - INFO - Issued records saved
+2025-07-03 17:37:32,012 - app.utils.decorators - INFO - Executing: save_books
+2025-07-03 17:37:32,016 - app.service.book_service - INFO - Books data saved

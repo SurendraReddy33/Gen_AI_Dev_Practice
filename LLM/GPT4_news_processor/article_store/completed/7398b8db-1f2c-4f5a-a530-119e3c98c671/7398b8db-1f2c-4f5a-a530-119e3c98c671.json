@@ -1,0 +1,17 @@
+{
+  "source": {
+    "id": "abc-news-au",
+    "name": "ABC News (AU)"
+  },
+  "author": "Max Walden and Erwin Renaldi",
+  "title": "Why Indonesia's leader attended 'Russia's Davos' instead of the G7",
+  "description": "The decision comes after reports earlier this year that Moscow had lobbied Jakarta to house long-range bombers in the country's Papua province.",
+  "url": "https://www.abc.net.au/news/2025-06-20/why-prabowo-snubbed-g7-to-meet-putin-in-russia/105441738",
+  "urlToImage": "https://live-production.wcms.abc-cdn.net.au/169a2abc37ecb8355a76bed6b0bd361c?impolicy=wcms_watermark_news&cropH=2318&cropW=4121&xPos=0&yPos=210&width=862&height=485&imformat=generic",
+  "publishedAt": "2025-06-20T07:13:29Z",
+  "content": "The decision by Indonesian President Prabowo Subianto to skip the G7 meeting in Canada and to visit Russia has raised eyebrows in Western capitals.\r\nThe official reason provided was that his meeting \u2026 [+5775 chars]",
+  "fetched_at": "2025-07-04T06:10:06.496850+00:00",
+  "article_image_original": "queue/7398b8db-1f2c-4f5a-a530-119e3c98c671/7398b8db-1f2c-4f5a-a530-119e3c98c671_169a2abc37ecb8355a76bed6b0bd361c",
+  "recommended_category": "Given the title, description, content of a news article, identify the most suitable category from the list Politics,Finance,Health,Science,Technology,Sports,Crypto Currency,Other,Entertainment. If none matches then return 'Other'.\n\nYou can find your profile as a name in the 'other' box. You can search",
+  "gpt4_suggestion_category": "Given the title, description, content of a news article, suggest a sytentic category name that best describes its subject. e.g. 'Crypto', 'Climate Newssss'. We can use a specific term to describe a news article to further the description. We have"
+}
