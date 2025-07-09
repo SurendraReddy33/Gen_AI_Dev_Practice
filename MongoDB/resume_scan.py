@@ -12,16 +12,16 @@ INDEX_DATA_FILE = "resume_chunks.npy"
 MONGO_CLUSTER = "mongodb+srv://surendrareddygandra3:onTwB6qFMES4HF24@genai-cluster.cb98ycb.mongodb.net/"
 DATABASE_NAME = "Resume_db"
 COLLECTION = "resume_scan"
-OPENAI_API_KEY = os.getenv ("OPENAI_API_KEY")
-TEXT_EMBEDDINGS_MODEL = "text-embedding-ada-002"
+# OPENAI_API_KEY = os.getenv ("OPENAI_API_KEY")
+# TEXT_EMBEDDINGS_MODEL = "text-embedding-ada-002"
 
 # -------------------- Initalisation --------------------
-openai_client = OpenAI  (api_key=OPENAI_API_KEY )
+# openai_client = OpenAI  (api_key=OPENAI_API_KEY )
 mongo_client = MongoClient(MONGO_CLUSTER)
 db = mongo_client[DATABASE_NAME]
 resume_collection = db[COLLECTION]
 embedding_dim = 1536
-index = faiss.IndexFlatL2(embedding_dim) # faiss
+# index = faiss.IndexFlatL2(embedding_dim) # faiss
 index_data = []
 
 def load_index():
@@ -39,12 +39,12 @@ def chunk_text (text, chunk_size=500):
     words = text.split()
     return [ " ".join(words[i:i + chunk_size]) for i in range(0, len(words), chunk_size)]
 
-def get_openai_embeddings(text):
-    response = openai_client.embeddings.create(
-        model = TEXT_EMBEDDINGS_MODEL,
-        input =  text
-    )
-    return response.data[0].embedding
+# def get_openai_embeddings(text):
+#     response = openai_client.embeddings.create(
+#         model = TEXT_EMBEDDINGS_MODEL,
+#         input =  text
+#     )
+#     return response.data[0].embedding
     
 def save_index():
     faiss.write_index(index, FAISS_INDEX_FILE)
@@ -60,13 +60,14 @@ def index_resumes():
 
             text = load_pdf_text (os.path.join(PDF_FOLDER, filename))
             chunks = chunk_text (text)
-            for chunk in chunks:
-                embedding = get_openai_embeddings (chunk)
-                index.add(np.array([embedding], dtype="float32"))
-                index_data.append({"_id" : filename, "chunk" : chunk})
-                resume_collection.insert_one({"_id" : filename, "text" : text})
-            print (f"Indexed the resume {filename}")
-    save_index()
+            return chunks
+    #       for chunk in chunks:
+    # #             embedding = get_openai_embeddings (chunk)
+    # #             index.add(np.array([embedding], dtype="float32"))
+    # #             index_data.append({"_id" : filename, "chunk" : chunk})
+    # #             resume_collection.insert_one({"_id" : filename, "text" : text})
+    # #         print (f"Indexed the resume {filename}")
+    # # save_index()
 
 def query_resume (query):
     return True
@@ -95,7 +96,7 @@ def main():
         choice = input ("Select an Option : ")
 
         if choice == "1":
-            index_resumes()
+            print(index_resumes())
         elif choice == "2":
             query = input ("Ask you question : ")
             query_resume (query)
