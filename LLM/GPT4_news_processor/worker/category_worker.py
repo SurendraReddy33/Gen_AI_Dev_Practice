@@ -16,10 +16,6 @@ ARTICLE_STORE_BASE = os.getenv("ARTICLE_STORE_BASE", "article_store")
 os.makedirs(ARTICLE_STORE_BASE,exist_ok=True)
 
 
-# Connect to Db 
-
-
-
 INPROGRESS_DIR = os.path.join(ARTICLE_STORE_BASE, "inprogress")
 COMPLETED_DIR = os.path.join(ARTICLE_STORE_BASE, "completed")
 FAILED_DIR = os.path.join(ARTICLE_STORE_BASE, "failed")
