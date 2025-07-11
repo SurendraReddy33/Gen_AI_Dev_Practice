@@ -16,7 +16,7 @@ COLLECTION = "resume_scan"
 # TEXT_EMBEDDINGS_MODEL = "text-embedding-ada-002"
 
 # -------------------- Initalisation --------------------
-# openai_client = OpenAI  (api_key=OPENAI_API_KEY )
+# openai_client = OpenAI  (api_key=OPENAI_API_KEY)
 mongo_client = MongoClient(MONGO_CLUSTER)
 db = mongo_client[DATABASE_NAME]
 resume_collection = db[COLLECTION]
