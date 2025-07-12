@@ -23,9 +23,10 @@ question = "What sectors will benifit from the tarrif removal"
 
 prompt = f"\nContext: {context} \n \n Question {question} \n Answer"
 
+
 input_ids = tokenizer.encode (prompt, return_tensors ="pt")
 
-output_ids = head_model.generate(input_ids, max_length=100, do_sample=True, num_return_sequences=3, temperature=0.8)
+output_ids = head_model.generate(input_ids, max_length=100, do_sample=True, num_return_sequences=3, temperature=0.7)
 
 # Use a Loop here
 answer_text_0 = tokenizer.decode(output_ids[0], skip_special_tokens = True)
