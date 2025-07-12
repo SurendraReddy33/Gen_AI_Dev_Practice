@@ -44,7 +44,7 @@ def query_resume(context, query):
 
     input_ids = tokenizer.encode (prompt, return_tensors ="pt")
 
-    output_ids = head_model.generate(input_ids, max_length=2000, do_sample=True, num_return_sequences=1, temperature=0.7)
+    output_ids = head_model.generate(input_ids, max_length=1000, do_sample=True, num_return_sequences=1, temperature=0.8)
 
     # Use a Loop here
     answer_text_0 = tokenizer.decode(output_ids[0], skip_special_tokens = True)
