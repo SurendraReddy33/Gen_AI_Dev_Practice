@@ -23,17 +23,17 @@ dimension = 768  # GPT-2 hidden size
 faiss_index = faiss.IndexFlatL2(dimension)
 chunk_metadata = []
  
-# 📄 Load and clean text from PDF
+#  Load and clean text from PDF
 def load_pdf_text(pdf_path):
     pdf_doc = fitz.open(pdf_path)
     return "\n".join([" ".join(page.get_text().split()) for page in pdf_doc])  # clean spaces/newlines
  
-# # 🔪 Chunk text
+# #  Chunk text
 # def chunk_text(text, chunk_size=200):
 #     words = text.split()
 #     return [" ".join(words[i:i + chunk_size]) for i in range(0, len(words), chunk_size)]
  
-# 🧩 Get embedding from GPT-2 using last token (like EOS)
+# Get embedding from GPT-2 using last token (like EOS)
 def embed_with_gpt2(text):
     inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=512)
     with torch.no_grad():
@@ -42,7 +42,7 @@ def embed_with_gpt2(text):
     embedding = last_hidden[-1]  # Use final token's vector
     return embedding.numpy()
  
-# 🏗️ Index all resume chunks
+#  Index all resume chunks
 def index_resumes():
     global chunk_metadata
     chunk_metadata.clear()
@@ -63,14 +63,14 @@ def index_resumes():
     if vectors:
         vectors_np = normalize(np.vstack(vectors).astype('float32'))
         faiss_index.add(vectors_np)
-        print(f"✅ Indexed {len(chunk_metadata)} chunks from resumes.")
+        print(f" Indexed {len(chunk_metadata)} chunks from resumes.")
     else:
-        print("⚠️ No PDFs found or no chunks generated.")
+        print(" No PDFs found or no chunks generated.")
  
 # 🔍 Query resumes + generate answer using GPT-2
 def query_resumes(query, top_k=3):
     if faiss_index.ntotal == 0:
-        print("⚠️ Index is empty. Run option 1 first.")
+        print(" Index is empty. Run option 1 first.")
         return
  
     query_embedding = embed_with_gpt2(query)
@@ -78,7 +78,7 @@ def query_resumes(query, top_k=3):
  
     distances, indices = faiss_index.search(query_embedding, top_k)
  
-    print(f"\n🔍 Top {top_k} matches for: \"{query}\"\n")
+    print(f"\n Top {top_k} matches for: \"{query}\"\n")
  
     for i, idx in enumerate(indices[0]):
         if idx == -1: continue
@@ -103,16 +103,16 @@ def query_resumes(query, top_k=3):
  
         print(f"{i + 1}. File: {match['filename']}")
         print(f" Distance: {distances[0][i]:.4f}")
-        print(f" ➤ Answer: {answer}")
+        print(f" Answer: {answer}")
         print("-" * 50)
  
-# 🚦 Main menu
+# Main menu
 def main():
     print("\n=== GPT-2 + FAISS Resume Search & Q&A ===")
     while True:
-        print("\n1️⃣ Index resumes")
-        print("2️⃣ Ask a question")
-        print("3️⃣ Exit")
+        print("\n1. Index resumes")
+        print("2. Ask a question")
+        print("3. Exit")
         choice = input("Choose an option: ")
  
         if choice == "1":
@@ -121,10 +121,10 @@ def main():
             query = input("Enter your question: ")
             query_resumes(query)
         elif choice == "3":
-            print("👋 Goodbye!")
+            print("Goodbye!")
             break
         else:
-            print("❌ Invalid option. Try again.")
+            print("Invalid option. Try again.")
  
 if __name__ == "__main__":
     main()
