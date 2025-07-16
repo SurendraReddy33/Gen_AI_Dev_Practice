@@ -37,20 +37,20 @@ index_data = []
  
  
 # ---------------------------------- define tokenizer and model --------------------------
-#tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
-# model = GPT2LMHeadModel.from_pretrained("gpt2")
-#model = GPT2Model.from_pretrained("gpt2")
+tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
+model = GPT2LMHeadModel.from_pretrained("gpt2")
+model = GPT2Model.from_pretrained("gpt2")
  
  
 # use local embedding model
 model = SentenceTransformer('all-MiniLM-L6-v2')
  
-#qa_pipeline = pipeline("question-answering",model = "deepset/roberta-base-squad2")
+qa_pipeline = pipeline("question-answering",model = "deepset/roberta-base-squad2")
  
 #by default GPT2 model is not having pad_tokens
-#tokenizer.pad_token = tokenizer.eos_token
+tokenizer.pad_token = tokenizer.eos_token
  
-#model.pad_token_id = model.config.eos_token_id
+model.pad_token_id = model.config.eos_token_id
  
 def load_index():
     global index,index_data
@@ -70,27 +70,27 @@ def chunk_text (text, chunk_size=500):
     words = text.split()
     return [ " ".join(words[i:i + chunk_size]) for i in range(0, len(words), chunk_size)]
  
-# def get_openai_embeddings(text):
-#     response = openai_client.embeddings.create(
-#         model = TEXT_EMBEDDINGS_MODEL,
-#         input =  text
-#     )
-#     return response.data[0].embedding
+def get_openai_embeddings(text):
+    response = openai_client.embeddings.create(
+        model = TEXT_EMBEDDINGS_MODEL,
+        input =  text
+    )
+    return response.data[0].embedding
  
-# def get_embeddings(chunked_text):
-#     """
-#     Gets the mean embedding from the input_text
+def get_embeddings(chunked_text):
+    """
+    Gets the mean embedding from the input_text
  
-#     Args:
-#         input_text : Text to get the mean embedding
-#     """
+    Args:
+        input_text : Text to get the mean embedding
+    """
  
-#     tokens = tokenizer(chunked_text,return_tensors="pt")  # Gets the result in PY Tensor format
+    tokens = tokenizer(chunked_text,return_tensors="pt")  # Gets the result in PY Tensor format
  
-#     with torch.no_grad():  # Load the model for basic operations and not for training
-#         model_output = model(**tokens)   # In the PY- TF format
-#         full_embeddings = model_output.last_hidden_state
-#         return full_embeddings.squeeze(0).numpy().astype('float32').reshape(1,-1)
+    with torch.no_grad():  # Load the model for basic operations and not for training
+        model_output = model(**tokens)   # In the PY- TF format
+        full_embeddings = model_output.last_hidden_state
+        return full_embeddings.squeeze(0).numpy().astype('float32').reshape(1,-1)
      
    
 def save_index():
