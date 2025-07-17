@@ -70,12 +70,12 @@ def chunk_text (text, chunk_size=500):
     words = text.split()
     return [ " ".join(words[i:i + chunk_size]) for i in range(0, len(words), chunk_size)]
  
-def get_openai_embeddings(text):
-    response = openai_client.embeddings.create(
-        model = TEXT_EMBEDDINGS_MODEL,
-        input =  text
-    )
-    return response.data[0].embedding
+# def get_openai_embeddings(text):
+#     # response = openai_client.embeddings.create(
+#     #     model = TEXT_EMBEDDINGS_MODEL,
+#         input =  text
+#     )
+#     return response.data[0].embedding
  
 def get_embeddings(chunked_text):
     """

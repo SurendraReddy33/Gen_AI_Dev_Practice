@@ -23,9 +23,6 @@ dimension = 768  # GPT-2 hidden size
 faiss_index = faiss.IndexFlatL2(dimension)
 chunk_metadata = []
  
-# 
-# 
-# 
 #  Load and clean text from PDF
 def load_pdf_text(pdf_path):
     pdf_doc = fitz.open(pdf_path)
