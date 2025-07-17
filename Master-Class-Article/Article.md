@@ -24,7 +24,7 @@ Understanding how these componenets work together helps in building applications
 3.[Vectors](#3-vectors)
 4.[FAISS - Similarity Search](#4-faiss---similarity-search)
 5.[MongoDB](#5-mongodb)
-6.[Combined workflow](#6-combined workflow)
+6.[Combined workflow](#6-combined-workflow)
 7.[Sample Use Case](#7-sample-use-case)
 8.[Conclusion](#8-conclusion)
 
