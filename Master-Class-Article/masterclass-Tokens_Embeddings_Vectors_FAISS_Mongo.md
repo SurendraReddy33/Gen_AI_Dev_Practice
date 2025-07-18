@@ -160,11 +160,18 @@ print("Encoded input IDs:", encoded['input_ids'])
 
 ## Section 9: Knowledge Check: Interview Questions on Tokens
 
-1. **What is tokenization, and why is it needs in NLP?**
-2. **List three types of tokenization with examples.?**
-3. **What is the difference between word-level and subword-level.?**
-4. **Which type of tokenization is used by models like GPT and Llama.?**
-5. **Can tokenization affect the performance of an NLP model? How?**
+1. **What is Token?**
+2. **What is tokenization, and why is it needs in NLP?**
+3. **List three types of tokenization with examples.?**
+4. **What is the difference between word-level and subword-level.?**
+5. **Which type of tokenization is used by models like GPT and Llama.?**
+6. **Can tokenization affect the performance of an NLP model? How?**
+7. **What Does a Language Model (LM) do?**
+8. **What is Hugging Face best known for?**
+9. **What benefits do LLMs provide over smaller models?**
+10. **List two popular models available through the Hugging Face Transformers library?**
+11. **What is the purpose of the line tokenize.tokenize(text)?**
+12. **What are the advantages of using encode_plus() over encode()?**
 
 ---
 
