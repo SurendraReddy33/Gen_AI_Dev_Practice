@@ -14,14 +14,10 @@ Understanding how these componenets work together helps in building applications
 
 ---
 
-
 # 1. Understanding Tokens
-
----
 
 ## Section 1: What is a Token?
 
-### Explanation: 
 Tokens are the smallest meaningful units into which text is broken down before it can be processed by machines.Depending on the tokenizer, tokens can be words, sub-words, or characters.
 
 ### Examples: 
@@ -61,21 +57,7 @@ print(tokens)
 ```
 --- 
 
-## Section 4: Installation
-
-Make sure Python 3.6+ is installed
-
-### Create a Virtual environment
-python -m venv gpt_tokens_env
-
-gpt_tokens_env\Scripts\activate.bat
-
-### Install required Libraries
-pip install `transformers`
-
----
-
-## Section 5: 🤖 What is a Model?
+## Section 4: 🤖 What is a Model?
  
 A **model** in programming or machine learning is a representation of a system, concept, or logic. It is used to make decisions, predictions, or structure data.
  
@@ -84,7 +66,7 @@ A **model** in programming or machine learning is a representation of a system, 
  
 ---
  
-## Section 6: 📘 What is a Language Model (LM)?
+## Section 5: 📘 What is a Language Model (LM)?
  
 A **Language Model** is a type of ML model designed to understand, generate, and predict human language.
  
@@ -103,7 +85,7 @@ A **Language Model** is a type of ML model designed to understand, generate, and
  
 ---
  
-## Section 7: 🧠 What is a Large Language Model (LLM)?
+## Section 6: 🧠 What is a Large Language Model (LLM)?
  
 A **Large Language Model (LLM)** is a **language model** with **billions of parameters**, trained on massive datasets.
  
@@ -121,59 +103,22 @@ A **Large Language Model (LLM)** is a **language model** with **billions of para
 | Claude       | Anthropic | Proprietary| Safer conversational AI        |
  
 ---
- 
-### 🧩 Summary
- 
-| Term   | Meaning                                              |
-|--------|------------------------------------------------------|
-| Model  | A structured representation used in apps or ML       |
-| LM     | ML model trained to understand/generate human text   |
-| LLM    | A very large LM with advanced language capabilities  |
 
-## Section 8: Transformers
+## Section 7: Transformers
 
 `Transformers` are cutting-edge deep learning architectures that have transformed the field of Natural Language Processing (NLP). Transformers rely on self-attention mechanisms, allowing them to understand context across entire sequences rather than token-by-token like RNNs. They are used in popular models like GPT, BERT...
 
 ## Transformers with GPT Tokenizer
 
-- Provided by Hugging Face under 'transformers' library.
+- Provided by `Hugging Face` under transformers library.
 - Pretrained with vocabulary specific to GPT2 or GPT4.
 - Converts text -> tokens -> IDs
 
----
-
-## Section 9: Hugging Face
-### 🤗 About Hugging Face
- 
 **Hugging Face** is a leading open-source AI company that provides a powerful platform for working with **natural language processing (NLP)**, **machine learning**, and **transformers-based models**. It is best known for the `transformers` library, which offers access to **state-of-the-art pre-trained models** like BERT, GPT, RoBERTa, T5, and many more.
- 
-### 🔧 What Does Hugging Face Offer?
- 
-- **Transformers Library**  
-  A Python library for loading and using pre-trained transformer models for tasks like text classification, tokenization, text generation, translation, and more.
- 
-- **Tokenizers Library**  
-  Fast and efficient tokenizers optimized for NLP pipelines, supporting BPE, WordPiece, SentencePiece, and other algorithms.
- 
-- **Datasets Library**  
-  Curated collection of ready-to-use NLP datasets that integrate easily with training loops.
- 
-- **Inference API**  
-  Cloud-hosted models accessible via simple API calls, enabling inference without heavy compute infrastructure.
- 
-- **Model Hub**  
-  A central repository of 100,000+ pre-trained models contributed by the community and research labs.
- 
-### 🧠 Why Use Hugging Face?
- 
-- Simple, unified API for working with a wide variety of models
-- Plug-and-play for research and production NLP tasks
-- Continuously updated and community-supported
-- Compatible with PyTorch, TensorFlow, and JAX
 
 ---
 
-## Section 10: GPT Tokenizer Source Code
+## Section 8: GPT Tokenizer Source Code
 
 ```python
 ## Source Code
@@ -210,9 +155,10 @@ print("Encoded input IDs:", encoded['input_ids'])
 - **Tokens**: ['Hello', ' , ', 'my', 'name', 'is', 'Sur', 'endra', '!']
 - **Token IDs**: [15496, 11, 616, 1483, 318, 12911, 13799, 0]
 
+### [Click Here to see more about Hugging Face](Split_Content/Hugging_face.md)
 ---
 
-## Section 11: Knowledge Check: Interview Questions on Tokens
+## Section 9: Knowledge Check: Interview Questions on Tokens
 
 1. **What is tokenization, and why is it needs in NLP?**
 2. **List three types of tokenization with examples.?**
@@ -254,17 +200,7 @@ Embeddings are **numerical representations of words, sentences, or documents** i
  
 ---
  
-## Section 4: 🔍 Examples of Embedding Use Cases
- 
-- **Semantic Search**: Matching user queries to similar content
-- **Intent Recognition**: Understanding user goals in chatbots
-- **Question Answering**: Embedding both context and query for retrieval
-- **Clustering**: Grouping similar texts together
-- **Anomaly Detection**: Comparing embeddings to identify outliers
- 
----
- 
-## Section 5: 🤗 Using Hugging Face for Embeddings (with GPT and Transformers)
+## Section 4: 🤗 Using Hugging Face for Embeddings (with GPT and Transformers)
  
 ```python
 from transformers import GPT2Tokenizer, GPT2Model
@@ -293,25 +229,16 @@ print(embeddings.shape)
 
 ---
 
-## Section 6: Libraries Used:
+## Section 5: Libraries Used:
  
 - transformers: for GPT model and tokenizer
-- torch: for handling model input/output tensors
+- `torch`: for handling model input/output tensors
 
 ### 🔧 `torch`
  
 `torch` is the core library of **PyTorch**, an open-source deep learning framework developed by Facebook's AI Research lab. It is widely used for building and training neural networks and supports dynamic computation graphs.
  
-In the context of GPT and embeddings, `torch` is essential for:
- 
-- Creating and manipulating **tensors** (multi-dimensional arrays).
-- Sending data to CPU/GPU for faster computation.
-- Feeding input data into models and retrieving output.
-- Converting token IDs into embeddings and vice versa.
-
----
-
-## Section 7: ❓ Knowledge Check : Interview Questions on Embeddings 
+## Section 6: ❓ Knowledge Check : Interview Questions on Embeddings 
  
 1. What are embeddings and why are they important in NLP?
 2. How does GPT generate embeddings from input tokens?
@@ -380,34 +307,7 @@ vectors = outputs.last_hidden_state  # Shape: [1, seq_len, hidden_size]
  
 ---
  
-## Section 5: 📐 Distance Metrics (Vector Similarity)
- 
-To compare vectors, we use distance or similarity metrics:
- 
-| Metric               | Use Case                          | Range             |
-|----------------------|-----------------------------------|-------------------|
-| Cosine Similarity     | Semantic similarity               | -1 to 1           |
-| Euclidean Distance    | Geometric distance (straight line)| 0 to ∞            |
-| Manhattan Distance    | Sum of absolute differences       | 0 to ∞            |
-| Dot Product           | Used in attention mechanisms      | -∞ to ∞           |
- 
-**Note**: Higher cosine similarity means more semantically similar.
- 
----
- 
-## Section 6: 🛠️ Common Libraries Used for Vector Operations
- 
-| Library         | Purpose                                                                 |
-|------------------|-------------------------------------------------------------------------|
-| `numpy`          | A fundamental library for numerical computing in Python. It provides support for arrays, matrices, and vector operations. |
-| `scikit-learn`   | A machine learning library that offers tools for clustering, classification, regression, and includes distance metrics (cosine, Euclidean) and normalization methods. |
-| `scipy`          | A scientific computing library built on NumPy, used for advanced mathematical functions like spatial distances and linear algebra. |
-| `torch`          | A deep learning framework (PyTorch) that supports tensor operations, GPU acceleration, and model training/inference. Used for working with embeddings and neural networks. |
-| `transformers`   | Hugging Face library that provides pre-trained models like GPT, BERT, etc., and tools to generate embeddings and perform NLP tasks. |
-| `faiss`          | Facebook AI Similarity Search – a library for efficient similarity search and clustering of dense vectors. Used for fast retrieval of similar embeddings. |
----
- 
-## Section 7: 🧠 Sample Code: Generate Sentence Vector using GPT
+## Section 5: 🧠 Sample Code: Generate Sentence Vector using GPT
  
 ```python
 from transformers import GPT2Tokenizer, GPT2Model
@@ -425,9 +325,10 @@ with torch.no_grad():
 sentence_vector = output.last_hidden_state.mean(dim=1)
 print(sentence_vector)
 ```
+### [Click Here to see more content about Vectors](Split_content/vectors.md)
 ---
 
-## Section 8: Knowledge Check: Interview Questions on Vectors
+## Section 6: Knowledge Check: Interview Questions on Vectors
 
 1. What is a vector in the context of Natural Language Processing (NLP)?
 2. How are word embeddings different from sentence embeddings?
@@ -448,71 +349,18 @@ print(sentence_vector)
  
 FAISS is a library developed by Facebook AI Research to efficiently search and cluster dense vectors. It is highly optimized and widely used for large-scale similarity search in NLP, computer vision, and recommendation systems.
  
- 
 ### 📌 Overview
  
 **FAISS** stands for **Facebook AI Similarity Search**. It is a powerful library used to perform similarity search on dense vectors with support for **CPU** and **GPU**, optimized for speed and memory efficiency.
  
-### 🚀 Key Features
- 
-- ⚡ Fast nearest-neighbor search (exact & approximate)
-- 💻 Works on CPU and GPU
-- 🧠 Supports billions of vectors
-- 🔍 Multiple index types for different trade-offs
-- 📏 Supports different distance metrics (L2, IP, Cosine)
-- 🧩 Easy integration with Python/NumPy
- 
----
-
 ## Section 2: ✅ When to Use FAISS?
  
-When working with millions of text/document vectors.
- 
-To perform semantic search or recommendation systems.
- 
-To handle vector similarity tasks at scale.
- 
-For approximate nearest neighbor (ANN) searches with high performance.
- 
-## Section 3: 🗂️ Index Types
- 
-| Index Type       | Description                                                           |
-|------------------|-----------------------------------------------------------------------|
-| `IndexFlatL2`    | Brute-force search using Euclidean (L2) distance                     |
-| `IndexFlatIP`    | Brute-force search using Inner Product (dot product)                 |
-| `IndexIVFFlat`   | Inverted index with flat quantization (efficient on large datasets)  |
-| `IndexIVFPQ`     | Inverted index with product quantization (low memory + fast search)  |
-| `IndexHNSW`      | Graph-based index (Hierarchical Navigable Small World)               |
-| `IndexLSH`       | Locality Sensitive Hashing for binary vectors                        |
-| `IndexPQ`        | Product Quantizer index (compresses vectors to save memory)          |
- 
----
- 
-## Section 4: 📏 Distance Metrics
- 
-| Metric     | Description                          |
-|------------|--------------------------------------|
-| `L2`       | Euclidean Distance                   |
-| `IP`       | Inner Product (Dot Product)          |
-| `Cosine`   | Cosine Similarity (normalized L2/IP) |
- 
-> ℹ️ For Cosine similarity, normalize vectors before adding/searching.
- 
----
- 
-## Section 5: 📚 Libraries Commonly Used with FAISS
- 
-| Library        | Purpose                                           |
-|----------------|---------------------------------------------------|
-| `faiss`        | Core library for indexing and vector search       |
-| `numpy`        | Numerical operations and vector handling          |
-| `torch`        | Generate embeddings (e.g., using Transformer models) |
-| `transformers` | Convert text to vector embeddings using BERT/GPT |
-| `sklearn`      | Optional: clustering, evaluation, preprocessing   |
- 
----
- 
-## Section 6: ⚙️ Installation
+- When working with millions of text/document vectors. 
+- perform semantic search or recommendation systems. 
+- To handle vector similarity tasks at scale. 
+- For approximate nearest neighbor (ANN) searches with high performance.
+  
+## Section 3: ⚙️ Installation
  
 ### CPU version
 pip install faiss-cpu
@@ -522,7 +370,7 @@ pip install faiss-gpu
 
 ---
 
-## Section 7: 🧪 Sample Code
+## Section 4: 🧪 Sample Code
 
 ```python
 import faiss
@@ -551,10 +399,10 @@ D, I = index.search(embedding, k=1)
 print("Distances:", D)
 print("Indices:", I)
 ```
- 
+### [Click Here to see more about Faiss](Split_content/Faiss.md) 
 ---
  
-## Section 8: ✅ Knowledge Check : Interview Questions on FAISS
+## Section 5: ✅ Knowledge Check : Interview Questions on FAISS
  
 1. What is FAISS used for?
 2. Which company developed FAISS?
@@ -704,31 +552,7 @@ db.users.deleteMany({age: { $lt: 20} });
 ```
 ---
 
-## Section 5: Query Operations
- 
-**This table summarizes the most commonly used query operations in MongoDB:**
- 
-| Operator / Method        | Description                                     | Example Usage                                         |
-|--------------------------|-------------------------------------------------|--------------------------------------------------------|
-| `{ field: value }`       | Match documents where `field` equals `value`   | `{ name: "John" }`                                |
-| `$gt`, `$lt`, `$gte`, `$lte` | Comparison (greater/less than)                | `{ age: { $gt: 18 } }`                                |
-| `$ne`                    | Not equal to                                    | `{ status: { $ne: "inactive" } }`                     |
-| `$in`, `$nin`            | Match values in/not in a list                   | `{ city: { $in: ["Vijayawada", "Hyderabad"] } }`      |
-| `$and`                   | Combine multiple conditions (AND)              | `{ $and: [{ age: { $gt: 18 } }, { status: "active" }] }` |
-| `$or`                    | Match any condition (OR)                       | `{ $or: [{ age: { $lt: 18 } }, { status: "inactive" }] }` |
-| `$not`                   | Negate a condition                             | `{ age: { $not: { $gt: 30 } } }`                      |
-| `$exists`                | Check if field exists                          | `{ email: { $exists: true } }`                        |
-| `$regex`                 | Pattern matching (like SQL LIKE)               | `{ name: { $regex: "^S" } }`                          |
-| `find().limit()`         | Limit number of results                        | `db.users.find().limit(5)`                           |
-| `find().sort()`          | Sort results ascending/descending              | `db.users.find().sort({ age: -1 })`                  |
-| `find().count()`         | Count number of matching documents             | `db.users.find({ age: { $gt: 20 } }).count()`         |
-| `findOne()`              | Fetch a single document                        | `db.users.findOne({ name: "John" })`              |
- 
-> 📝 Use `db.collection.find(query)` to apply most of the above queries.
-
----
-
-## Section 6: MongoDB Configuration with Python
+## Section 5: MongoDB Configuration with Python
 
 ### Installation
 
@@ -750,7 +574,7 @@ collection = db["users"]
 ```
 ---
 
-## Section 7: MongoDB Connection with FastAPI
+## Section 6: MongoDB Connection with FastAPI
 
 #### Prerequisites
 
@@ -763,7 +587,7 @@ pip install pymongo fastapi uvicorn
 ```
 ---
 
-## Section 8: Integrating with FastAPI
+## Section 7: Integrating with FastAPI
 
 ```python
 from fastapi import FastAPI
@@ -789,7 +613,9 @@ def get_users():
 
 ---
 
-## Section 9: Knowledge Check: Interview Questions on MongoDB
+### [Click Here to see more about MongoDB](Split_Content/mongodb.md)
+
+## Section 8: Knowledge Check: Interview Questions on MongoDB
 
 ### 📌 MongoDB Basics
  
@@ -805,15 +631,13 @@ def get_users():
 7. What are $gt, $lt, $in, $regex?
 8. How do you sort, limit, and project fields?
 9. What is the difference between update_one() and update_many()?
- 
- 
+  
 ### 🐍 PyMongo
  
 10. How do you connect to MongoDB using PyMongo?
 11. How do you insert, find, update, and delete documents?
 12. How do you work with nested documents? 
 13. How do you count or aggregate documents?
- 
  
 ### 🚀 FastAPI + MongoDB
  
