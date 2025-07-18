@@ -1,6 +1,4 @@
-# Mastering Tokens, EMbeddings, Vectors, FAISS, and MongoDB
-
----
+# Masterclass: Understanding Tokens, Embeddings, Vectors, FAISS, and MongoDB
 
 ## Overview
 
@@ -14,83 +12,83 @@ This Document focuses on five essential concepts :
 
 Understanding how these componenets work together helps in building applications involving semantic search, text similarity, and efficient data retrieval.
 
+---
+
+
+# 1. Understanding Tokens
 
 ---
 
-## Table of Contents
+## Section 1: What is a Token?
 
-1.[Tokens](#1-tokens)
-2.[Embeddings](#2-embeddings)
-3.[Vectors](#3-vectors)
-4.[FAISS - Similarity Search](#4-faiss---similarity-search)
-5.[MongoDB](#5-mongodb)
-6.[Combined workflow](#6-combined-workflow)
-7.[Sample Use Case](#7-sample-use-case)
-8.[Conclusion](#8-conclusion)
+### Explanation: 
+Tokens are the smallest meaningful units into which text is broken down before it can be processed by machines.Depending on the tokenizer, tokens can be words, sub-words, or characters.
 
----------------------------------------------------------------------------------
-
-# 1. Tokens
-
-**Definition:**
-Tokens are the smallest meaningful units into which text is broken diwn before ut can be processed by machines.
-
-IN Natural Language Processing (NLP), Tokenization is the first step where raw text is split into parts such as :
-
+### Examples: 
 - **Words** -> '"The cat sat"' -> '["The", "cat", "sat"]'
 - **Subwords** -> '"unhappiness"' -> '["un", "happi", "ness"]'
 - **Characters** -> '"Hi" -> '["H", "i"]'
 
-**Why Tokenization is important:**
+---
 
-- Enables models to handle text more efficiently
-- Reduces complexity by simplifying input 
-- Helps in creating embeddings from textual data
-
-**Example in Python:**
-'''python
-from nltk.tokenize import word_tokenize
-
-text = "Natural Language Processing is fun!"
-tokens = word_tokenize(text)
-print(tokens) # ['Natural', 'Language', 'Processing', 'is', 'fun', '!']
-
---- 
-
-## Tokenization in GPT Models
+## Section 2: Tokenization in GPT Models
 
 - Efficientlty represents rare and common words
 - Breaks unknown words into known subword tokens
 - Each token maps to a specific token ID
 
-Example:
-'"unbelievable"' -> '["un", "believ", "able"]' -> '[1234, 5678, 4321]'
+### Example:
+`"unbelievable"` -> `["un", "believ", "able"]` -> `[1234, 5678, 4321]`
 
-## Installation
+---
+
+## Section 3: Why Tokenization is important:
+
+- Enables models to handle text more efficiently
+- Reduces complexity by simplifying input 
+- Helps in creating embeddings from textual data
+
+### GPT Tokenization Example:
+```python
+from nltk.tokenize import word_tokenize
+
+text = "Natural Language Processing is fun!"
+tokens = word_tokenize(text)
+print(tokens) 
+
+# Sample Output: 
+# ['Natural', 'Language', 'Processing', 'is', 'fun', '!']
+```
+--- 
+
+## Section 4: Installation
 
 Make sure Python 3.6+ is installed
 
-# Create a Virtual environment
+### Create a Virtual environment
 python -m venv gpt_tokens_env
 
-# Windows
 gpt_tokens_env\Scripts\activate.bat
 
-# Install required Libraries
-pip install transformers
+### Install required Libraries
+pip install `transformers`
 
-## Transformers
+---
 
-Transformers are cutting-edge deep learning architectures that have transformed the field of Natural Language Processing (NLP). Transformers rely on self-attention mechanisms, allowing them to understand context across entire sequences rather than token-by-token like RNNs. They are used in popular models like GPT, BERT...
+## Section 5: Transformers
 
-## GPT Tokenizer
+`Transformers` are cutting-edge deep learning architectures that have transformed the field of Natural Language Processing (NLP). Transformers rely on self-attention mechanisms, allowing them to understand context across entire sequences rather than token-by-token like RNNs. They are used in popular models like GPT, BERT...
+
+## Transformers with GPT Tokenizer
 
 - Provided by Hugging Face under 'transformers' library.
 - Pretrained with vocabulary specific to GPT2 or GPT4.
 - Converts text -> tokens -> IDs
 
-## Hugging Face
-## 🤗 About Hugging Face
+---
+
+## Section 6: Hugging Face
+### 🤗 About Hugging Face
  
 **Hugging Face** is a leading open-source AI company that provides a powerful platform for working with **natural language processing (NLP)**, **machine learning**, and **transformers-based models**. It is best known for the `transformers` library, which offers access to **state-of-the-art pre-trained models** like BERT, GPT, RoBERTa, T5, and many more.
  
@@ -117,14 +115,12 @@ Transformers are cutting-edge deep learning architectures that have transformed 
 - Plug-and-play for research and production NLP tasks
 - Continuously updated and community-supported
 - Compatible with PyTorch, TensorFlow, and JAX
- 
-### 📦 Installation
- 
 
-pip install transformers
-pip install datasets
+---
 
-```bash
+## Section 7: GPT Tokenizer Source Code
+
+```python
 ## Source Code
 
 from transformers import GPT2Tokenizer
@@ -154,35 +150,35 @@ encoded = tokenizer.encode_plus(
 print("Encoded input IDs:", encoded['input_ids'])
 
 ```
-## Output:
+### Output:
 
-Tokens: ['Hello', ',', 'my', 'name', 'is', 'Sur', 'endra', '!']
-Token IDs: [15496, 11, 616, 1483, 318, 12911, 13799, 0]
+- **Tokens**: ['Hello', ' , ', 'my', 'name', 'is', 'Sur', 'endra', '!']
+- **Token IDs**: [15496, 11, 616, 1483, 318, 12911, 13799, 0]
 
 
-### Knowledge Check: Tokens
+## Section 8: Knowledge Check: Interview Questions on Tokens
 
-1. **What is tokenization, and ehy is it needs in NLP?**
-2. **List three types of tokenization with examples.**
-3. **What is the difference between word-level and subword-level.**
-4. **Which type of tokenization is used by models like GPT and Llama.**
+1. **What is tokenization, and why is it needs in NLP?**
+2. **List three types of tokenization with examples.?**
+3. **What is the difference between word-level and subword-level.?**
+4. **Which type of tokenization is used by models like GPT and Llama.?**
 5. **Can tokenization affect the performance of an NLP model? How?**
 
--------------------------------------------------------------------------------------
+---
 
-# 2.📌 Embeddings in NLP and Transformers
+# 2.📌 Understanding Embeddings 
  
-## 🧠 What Are Embeddings?
+## Section 1: 🧠 What Are Embeddings?
  
 Embeddings are **numerical representations of words, sentences, or documents** in a continuous vector space. These vectors capture **semantic meaning**, allowing machine learning models to understand relationships between words beyond just raw text.
  
-For example:
+### Example:
 - The words **"king"** and **"queen"** will have similar embeddings.
 - The vector operation: `embedding("king") - embedding("man") + embedding("woman") ≈ embedding("queen")`
  
 ---
  
-## 🧩 Why Are Embeddings Important?
+## Section 2: 🧩 Why Are Embeddings Important?
  
 - **Captures context & meaning** in vector form
 - Makes **semantic similarity** and **clustering** possible
@@ -191,7 +187,7 @@ For example:
  
 ---
  
-## 🏗️ Types of Embeddings
+## Section 3: 🏗️ Types of Embeddings
  
 | Type | Description |
 |------|-------------
@@ -202,7 +198,7 @@ For example:
  
 ---
  
-## 🔍 Examples of Embedding Use Cases
+## Section 4: 🔍 Examples of Embedding Use Cases
  
 - **Semantic Search**: Matching user queries to similar content
 - **Intent Recognition**: Understanding user goals in chatbots
@@ -212,7 +208,7 @@ For example:
  
 ---
  
-## 🤗 Using Hugging Face for Embeddings (with GPT and Transformers)
+## Section 5: 🤗 Using Hugging Face for Embeddings (with GPT and Transformers)
  
 ```python
 from transformers import GPT2Tokenizer, GPT2Model
@@ -237,17 +233,16 @@ embeddings = outputs.last_hidden_state
 print(embeddings.shape)
 ```
 
-## Output:
-torch.Size([1,6,768])
+**Each token is converted into a 768-dimensional vector using GPT-2 embedding layer.**
 
-Each token is converted into a 768-dimensional vector using GPT-2 embedding layer.
+---
 
-## Libraries Used:
+## Section 6: Libraries Used:
  
 - transformers: for GPT model and tokenizer
 - torch: for handling model input/output tensors
 
-## 🔧 `torch`
+### 🔧 `torch`
  
 `torch` is the core library of **PyTorch**, an open-source deep learning framework developed by Facebook's AI Research lab. It is widely used for building and training neural networks and supports dynamic computation graphs.
  
@@ -258,7 +253,7 @@ In the context of GPT and embeddings, `torch` is essential for:
 - Feeding input data into models and retrieving output.
 - Converting token IDs into embeddings and vice versa.
 
-## ❓ Knowledge Check Questions: Embeddings (GPT-Based)
+## ❓ Knowledge Check : Interview Questions on Embeddings 
  
 1. What are embeddings and why are they important in NLP?
 2. How does GPT generate embeddings from input tokens?
@@ -271,13 +266,17 @@ In the context of GPT and embeddings, `torch` is essential for:
 9. How do embeddings change with slight changes in input text?
 10. How do positional embeddings work in GPT models?
 
-# 3.📊 Vectors
+---
 
-## 📌 Definition
+# 3.📊 Understanding Vectors
+
+## Section 1: What are Vectors?
  
 In Natural Language Processing (NLP), **vectors** are numerical representations of text data (words, sentences, or documents). These vectors allow machines to understand and compute similarities, relationships, or perform downstream tasks such as search, classification, or clustering.
  
-## 🧠 How Vectors are Used
+---
+
+## Section 2: 🧠 How Vectors are Used?
  
 Vectors are essential for:
 - Capturing the **semantic meaning** of words or phrases
@@ -286,13 +285,16 @@ Vectors are essential for:
 - Clustering or grouping similar documents
 - Input to classifiers or other ML models
  
-## 🔄 From Tokens to Vectors (GPT Workflow)
+---
+
+## Section 3: 🔄 From Tokens to Vectors (GPT Workflow)
  
 1. **Tokenization** – Text is split into tokens using a GPT tokenizer (e.g., `GPT2Tokenizer`).
 2. **Embedding** – Tokens are converted into dense vectors via the GPT model (`GPT2Model`).
 3. **Vector Output** – Output from GPT includes hidden states which are high-dimensional vectors representing context-aware meaning.
  
-Example flow:
+### Example flow:
+
 ```python
 from transformers import GPT2Tokenizer, GPT2Model
 import torch
@@ -307,11 +309,11 @@ vectors = outputs.last_hidden_state  # Shape: [1, seq_len, hidden_size]
 
 ```
 
-These vectors are often obtained from pre-trained models like GPT using their hidden states (embeddings).
+**These vectors are often obtained from pre-trained models like GPT using their hidden states (embeddings).**
  
 ---
  
-## 🧩 Types of Vectors
+## Section 4: 🧩 Types of Vectors
  
 1. **Word Vectors** – Represent individual words (e.g., using Word2Vec, GloVe).
 2. **Sentence Vectors** – Represent full sentences (e.g., Sentence Transformers, GPT outputs).
@@ -320,7 +322,7 @@ These vectors are often obtained from pre-trained models like GPT using their hi
  
 ---
  
-## 📐 Distance Metrics (Vector Similarity)
+## Section 5: 📐 Distance Metrics (Vector Similarity)
  
 To compare vectors, we use distance or similarity metrics:
  
@@ -335,7 +337,7 @@ To compare vectors, we use distance or similarity metrics:
  
 ---
  
-## 🛠️ Common Libraries Used for Vector Operations
+## Section 6: 🛠️ Common Libraries Used for Vector Operations
  
 | Library         | Purpose                                                                 |
 |------------------|-------------------------------------------------------------------------|
@@ -347,7 +349,7 @@ To compare vectors, we use distance or similarity metrics:
 | `faiss`          | Facebook AI Similarity Search – a library for efficient similarity search and clustering of dense vectors. Used for fast retrieval of similar embeddings. |
 ---
  
-## 🧠 Sample Code: Generate Sentence Vector using GPT
+## Section 7: 🧠 Sample Code: Generate Sentence Vector using GPT
  
 ```python
 from transformers import GPT2Tokenizer, GPT2Model
@@ -365,8 +367,9 @@ with torch.no_grad():
 sentence_vector = output.last_hidden_state.mean(dim=1)
 print(sentence_vector)
 ```
+---
 
-### Knowledge Check: Vectors
+## Section 8: Knowledge Check: Interview Questions on Vectors
 
 1. What is a vector in the context of Natural Language Processing (NLP)?
 2. How are word embeddings different from sentence embeddings?
@@ -379,21 +382,20 @@ print(sentence_vector)
 9. What types of mathematical operations can be performed on vectors using `numpy`?
 10. Why is vector normalization important in similarity comparison?
 
-# 4. FAISS
+---
 
-# 🔍 FAISS (Facebook AI Similarity Search)
+# 4. Understanding FAISS
+
+## Section 1: 🔍 What is FAISS (Facebook AI Similarity Search)
  
 FAISS is a library developed by Facebook AI Research to efficiently search and cluster dense vectors. It is highly optimized and widely used for large-scale similarity search in NLP, computer vision, and recommendation systems.
  
----
  
-## 📌 Overview
+### 📌 Overview
  
 **FAISS** stands for **Facebook AI Similarity Search**. It is a powerful library used to perform similarity search on dense vectors with support for **CPU** and **GPU**, optimized for speed and memory efficiency.
  
----
- 
-## 🚀 Key Features
+### 🚀 Key Features
  
 - ⚡ Fast nearest-neighbor search (exact & approximate)
 - 💻 Works on CPU and GPU
@@ -403,8 +405,18 @@ FAISS is a library developed by Facebook AI Research to efficiently search and c
 - 🧩 Easy integration with Python/NumPy
  
 ---
+
+## Section 2: ✅ When to Use FAISS?
  
-## 🗂️ Index Types
+When working with millions of text/document vectors.
+ 
+To perform semantic search or recommendation systems.
+ 
+To handle vector similarity tasks at scale.
+ 
+For approximate nearest neighbor (ANN) searches with high performance.
+ 
+## Section 3: 🗂️ Index Types
  
 | Index Type       | Description                                                           |
 |------------------|-----------------------------------------------------------------------|
@@ -418,7 +430,7 @@ FAISS is a library developed by Facebook AI Research to efficiently search and c
  
 ---
  
-## 📏 Distance Metrics
+## Section 4: 📏 Distance Metrics
  
 | Metric     | Description                          |
 |------------|--------------------------------------|
@@ -430,7 +442,7 @@ FAISS is a library developed by Facebook AI Research to efficiently search and c
  
 ---
  
-## 📚 Libraries Commonly Used with FAISS
+## Section 5: 📚 Libraries Commonly Used with FAISS
  
 | Library        | Purpose                                           |
 |----------------|---------------------------------------------------|
@@ -442,16 +454,19 @@ FAISS is a library developed by Facebook AI Research to efficiently search and c
  
 ---
  
-## ⚙️ Installation
+## Section 6: ⚙️ Installation
  
 ### CPU version
 pip install faiss-cpu
  
 ### GPU version
 pip install faiss-gpu
- 
-## 🧪 Sample Code
-```bash
+
+---
+
+## Section 7: 🧪 Sample Code
+
+```python
 import faiss
 import numpy as np
 from transformers import AutoTokenizer, AutoModel
@@ -481,17 +496,7 @@ print("Indices:", I)
  
 ---
  
-## ✅ When to Use FAISS?
- 
-When working with millions of text/document vectors.
- 
-To perform semantic search or recommendation systems.
- 
-To handle vector similarity tasks at scale.
- 
-For approximate nearest neighbor (ANN) searches with high performance.
-
-## ✅ Knowledge Check : FAISS
+## Section 8: ✅ Knowledge Check : Interview Questions on FAISS
  
 1. What is FAISS used for?
 2. Which company developed FAISS?
@@ -505,9 +510,170 @@ For approximate nearest neighbor (ANN) searches with high performance.
 10. Why is normalization important for cosine similarity?
  
 ---
+
+# 5.📦 Understanding MongoDB
+
+## Section 1: Overview
+
+MongoDB is a **NoSQL**, document-oriented database designed for scalability, performance, and ease of development. It stores data in flexible, JSON-like documents, making it ideal for modern applications.
  
+---
+ 
+## Section 2: 🧩 Key Features
+ 
+| Feature                | Description                                                                 |
+|------------------------|-----------------------------------------------------------------------------|
+| **Document-based**     | Stores data as BSON (Binary JSON) documents                                |
+| **Schema-less**        | No rigid schema — each document can have different fields                  |
+| **Scalable**           | Supports horizontal scaling with sharding                                  |
+| **Indexing**           | Supports single field, compound, text, geospatial indexes                  |
+| **Aggregation**        | Powerful aggregation pipeline for data transformation                     |
+| **Replication**        | Provides high availability via replica sets                                |
+| **ACID Transactions**  | Multi-document ACID transactions (since MongoDB 4.0)                       |
+ 
+---
+ 
+## Section 3: Core Componenets
+
+- **Database**: Container for collections.
+- **Collection**: Group of Documents (like Tables in SQL).
+- **Document**: BSON (Binary-JSON) format, analogous to a row in RDBMS.
+
+### Example:
+
+```json
+{
+  "name": "John",
+  "email": "john@example.com",
+  "skills": ["Python", "MongoDB", "FastAPI"],
+  "is_active": true
+}
+```
+---
+
+## Section 4: CRUD Operations 
+
+### 📥 CREATE - Inserting Documents in MongoDB
+ 
+**To insert new data into a MongoDB collection, use:**
+ 
+**➤ `insertOne()`**
+- Inserts a **single document** into the collection.
+ 
+```js
+db.users.insertOne({
+  name: "Surendra",
+  age: 22,
+  email: "surendra@example.com"
+})
+```
+
+**➤ `insertMany()`**
+- Inserts **multiple documents** into the collection at once.
+
+```js
+db.users.insertMany(
+  {
+    name: "John",
+    age: 22,
+    email: "John@example.com"
+  },
+  {
+    name: "David",
+    age: 25,
+    email: "David@example.com"
+  }
+)
+```
+---
+
+### 📖 READ - Retrieving Documents from MongoDB
+ 
+**To read or fetch data from a MongoDB collection, we use:**
+ 
+#### 🔹 `find()` - Returns a **cursor** to all matching documents
+ 
+#### ➤ Example: Find all documents
+ 
+```js
+db.users.find();
+```
+#### ➤ Example: Find with Condition
+
+```js
+db.users.find({age: { $gt:21 }});
+```
+
+#### ➤ Example: Find One Document
+
+```js
+db.users.findOne({ name: "John" });
+```
+---
+
+### UPDATE - Modify Documents
+
+#### ➤ Update One Document
+
+```js
+db.users.updateOne(
+  { name: "John" },
+  { $set: {age: 22 }}
+);
+```
+#### ➤ Update Many Documents
+
+```js
+db.users.updateMany(
+  { age: { $lt:23 } },
+  { $set: { status: "young" } }
+);
+```
+---
+
+### DELETE - Remove Documents
+
+#### ➤ Delete One Document
+
+```js
+db.users.deleteOne( { name: "John" } );
+```
+
+#### ➤ Delete Many Documents
+
+```js
+db.users.deleteMany({age: { $lt: 20} });
+```
+---
+
+## Section 5: Query Operations
+ 
+**This table summarizes the most commonly used query operations in MongoDB:**
+ 
+| Operator / Method        | Description                                     | Example Usage                                         |
+|--------------------------|-------------------------------------------------|--------------------------------------------------------|
+| `{ field: value }`       | Match documents where `field` equals `value`   | `{ name: "John" }`                                |
+| `$gt`, `$lt`, `$gte`, `$lte` | Comparison (greater/less than)                | `{ age: { $gt: 18 } }`                                |
+| `$ne`                    | Not equal to                                    | `{ status: { $ne: "inactive" } }`                     |
+| `$in`, `$nin`            | Match values in/not in a list                   | `{ city: { $in: ["Vijayawada", "Hyderabad"] } }`      |
+| `$and`                   | Combine multiple conditions (AND)              | `{ $and: [{ age: { $gt: 18 } }, { status: "active" }] }` |
+| `$or`                    | Match any condition (OR)                       | `{ $or: [{ age: { $lt: 18 } }, { status: "inactive" }] }` |
+| `$not`                   | Negate a condition                             | `{ age: { $not: { $gt: 30 } } }`                      |
+| `$exists`                | Check if field exists                          | `{ email: { $exists: true } }`                        |
+| `$regex`                 | Pattern matching (like SQL LIKE)               | `{ name: { $regex: "^S" } }`                          |
+| `find().limit()`         | Limit number of results                        | `db.users.find().limit(5)`                           |
+| `find().sort()`          | Sort results ascending/descending              | `db.users.find().sort({ age: -1 })`                  |
+| `find().count()`         | Count number of matching documents             | `db.users.find({ age: { $gt: 20 } }).count()`         |
+| `findOne()`              | Fetch a single document                        | `db.users.findOne({ name: "John" })`              |
+ 
+> 📝 Use `db.collection.find(query)` to apply most of the above queries.
 
 
+ 
+ 
+ 
+ 
+ 
 
 
 
