@@ -75,7 +75,62 @@ pip install `transformers`
 
 ---
 
-## Section 5: Transformers
+## Section 5: 🤖 What is a Model?
+ 
+A **model** in programming or machine learning is a representation of a system, concept, or logic. It is used to make decisions, predictions, or structure data.
+ 
+- In **FastAPI / Python**, a model often refers to a **Pydantic model** or a **database model** used to define the schema of data.
+- In **Machine Learning (ML)**, a model is trained on data to make predictions or classifications.
+ 
+---
+ 
+## Section 6: 📘 What is a Language Model (LM)?
+ 
+A **Language Model** is a type of ML model designed to understand, generate, and predict human language.
+ 
+- Trained on large amounts of text data.
+- Can perform tasks like autocomplete, translation, summarization, question answering, etc.
+- Example tasks:  
+  - Predict the next word in a sentence.  
+  - Generate human-like responses to text input.
+ 
+### Examples of Language Models:
+| Model Name     | Developer | Description                             |
+|----------------|-----------|-----------------------------------------|
+| GPT-2          | OpenAI    | Autoregressive LM for text generation   |
+| BERT           | Google    | Bidirectional encoder for understanding |
+| RoBERTa        | Facebook  | Robust BERT variant                     |
+ 
+---
+ 
+## Section 7: 🧠 What is a Large Language Model (LLM)?
+ 
+A **Large Language Model (LLM)** is a **language model** with **billions of parameters**, trained on massive datasets.
+ 
+### Key Features of LLMs:
+- Can generate paragraphs of coherent text.
+- Understand context deeply.
+- Can handle Q&A, summarization, code generation, etc.
+ 
+### Examples of LLMs:
+| Model        | Developer | Parameters | Notable Use                    |
+|--------------|-----------|------------|--------------------------------|
+| GPT-3        | OpenAI    | 175B       | Chatbots, creative writing     |
+| GPT-4        | OpenAI    | ~1T (est.) | Advanced reasoning, coding     |
+| LLaMA 2      | Meta      | 7B - 65B   | Open-source research           |
+| Claude       | Anthropic | Proprietary| Safer conversational AI        |
+ 
+---
+ 
+### 🧩 Summary
+ 
+| Term   | Meaning                                              |
+|--------|------------------------------------------------------|
+| Model  | A structured representation used in apps or ML       |
+| LM     | ML model trained to understand/generate human text   |
+| LLM    | A very large LM with advanced language capabilities  |
+
+## Section 8: Transformers
 
 `Transformers` are cutting-edge deep learning architectures that have transformed the field of Natural Language Processing (NLP). Transformers rely on self-attention mechanisms, allowing them to understand context across entire sequences rather than token-by-token like RNNs. They are used in popular models like GPT, BERT...
 
@@ -87,7 +142,7 @@ pip install `transformers`
 
 ---
 
-## Section 6: Hugging Face
+## Section 9: Hugging Face
 ### 🤗 About Hugging Face
  
 **Hugging Face** is a leading open-source AI company that provides a powerful platform for working with **natural language processing (NLP)**, **machine learning**, and **transformers-based models**. It is best known for the `transformers` library, which offers access to **state-of-the-art pre-trained models** like BERT, GPT, RoBERTa, T5, and many more.
@@ -118,7 +173,7 @@ pip install `transformers`
 
 ---
 
-## Section 7: GPT Tokenizer Source Code
+## Section 10: GPT Tokenizer Source Code
 
 ```python
 ## Source Code
@@ -157,7 +212,7 @@ print("Encoded input IDs:", encoded['input_ids'])
 
 ---
 
-## Section 8: Knowledge Check: Interview Questions on Tokens
+## Section 11: Knowledge Check: Interview Questions on Tokens
 
 1. **What is tokenization, and why is it needs in NLP?**
 2. **List three types of tokenization with examples.?**
@@ -256,7 +311,7 @@ In the context of GPT and embeddings, `torch` is essential for:
 
 ---
 
-## ❓ Knowledge Check : Interview Questions on Embeddings 
+## Section 7: ❓ Knowledge Check : Interview Questions on Embeddings 
  
 1. What are embeddings and why are they important in NLP?
 2. How does GPT generate embeddings from input tokens?
