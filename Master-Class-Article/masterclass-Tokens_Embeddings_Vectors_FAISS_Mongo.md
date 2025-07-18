@@ -155,6 +155,7 @@ print("Encoded input IDs:", encoded['input_ids'])
 - **Tokens**: ['Hello', ' , ', 'my', 'name', 'is', 'Sur', 'endra', '!']
 - **Token IDs**: [15496, 11, 616, 1483, 318, 12911, 13799, 0]
 
+---
 
 ## Section 8: Knowledge Check: Interview Questions on Tokens
 
@@ -252,6 +253,8 @@ In the context of GPT and embeddings, `torch` is essential for:
 - Sending data to CPU/GPU for faster computation.
 - Feeding input data into models and retrieving output.
 - Converting token IDs into embeddings and vice versa.
+
+---
 
 ## ❓ Knowledge Check : Interview Questions on Embeddings 
  
@@ -667,6 +670,104 @@ db.users.deleteMany({age: { $lt: 20} });
 | `findOne()`              | Fetch a single document                        | `db.users.findOne({ name: "John" })`              |
  
 > 📝 Use `db.collection.find(query)` to apply most of the above queries.
+
+---
+
+## Section 6: MongoDB Configuration with Python
+
+### Installation
+
+```bash
+pip install pymongo
+```
+
+```python
+from pymongo import MongoClient
+
+# Create connection to local MongoDB server
+client = MongoClient("mongodb: //localhost:27017/")
+
+# Access database
+db = client["mydatabase"]
+
+# Access collection
+collection = db["users"]
+```
+---
+
+## Section 7: MongoDB Connection with FastAPI
+
+#### Prerequisites
+
+- Python installed
+- MongoDB running locally or on Atlas
+- Libraries:
+
+```bash
+pip install pymongo fastapi uvicorn
+```
+---
+
+## Section 8: Integrating with FastAPI
+
+```python
+from fastapi import FastAPI
+from pymongo import MongoClient
+ 
+app = FastAPI()
+client = MongoClient("mongodb://localhost:27017/")
+db = client["testdb"]
+collection = db["users"]
+ 
+@app.post("/add/")
+def add_user(name: str, age: int):
+    user = {"name": name, "age": age}
+    collection.insert_one(user)
+    return {"message": "User added"}
+ 
+@app.get("/users/")
+def get_users():
+    return list(collection.find({}, {"_id": 0}))
+```
+**To run the app:**
+- uvicorn main:app --reload
+
+---
+
+## Section 9: Knowledge Check: Interview Questions on MongoDB
+
+### 📌 MongoDB Basics
+ 
+1. What is MongoDB and how is it different from RDBMS? 
+2. What is a document and a collection? 
+3. What is BSON?
+4. What port does MongoDB use by default?
+5. What is the purpose of _id?
+ 
+### ⚙️ Query Operations
+ 
+6. How do you filter documents using conditions?
+7. What are $gt, $lt, $in, $regex?
+8. How do you sort, limit, and project fields?
+9. What is the difference between update_one() and update_many()?
+ 
+ 
+### 🐍 PyMongo
+ 
+10. How do you connect to MongoDB using PyMongo?
+11. How do you insert, find, update, and delete documents?
+12. How do you work with nested documents? 
+13. How do you count or aggregate documents?
+ 
+ 
+### 🚀 FastAPI + MongoDB
+ 
+14. What is motor? 
+15. How do you create a MongoDB connection with FastAPI? 
+16. How to handle _id field (ObjectId) in responses? 
+17. How to define Pydantic models for requests?
+
+
 
 
  
