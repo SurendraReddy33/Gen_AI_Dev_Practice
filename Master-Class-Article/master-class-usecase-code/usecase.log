@@ -1,0 +1,25 @@
+2025-07-21 16:02:51,919 - app.services.prompt_service - INFO - MainThread - Received prompt: Generating Vectors and Gpt2 response for the given prompt
+2025-07-21 16:03:02,412 - app.services.prompt_service - INFO - MainThread - Generated text: Generating Vectors and Gpt2 response for the given prompt.
+
+The following code snippet shows how to generate a Vectors and Gpt2 response for the given prompt.
+
+import { Vectors } from './Vectors'; import { Gpt2 } from './Gpt2'; import { Vectors } from './Vectors/Gpt2'; import { Vectors } from './Vectors/Gpt2
+2025-07-21 16:03:03,446 - app.services.prompt_service - INFO - MainThread - Document inserted into MongoDB
+2025-07-21 16:05:13,155 - app.services.prompt_service - INFO - MainThread - Received prompt: Master-class to generate and store embeddings through prompt and also gpt2 response for prompt
+2025-07-21 16:05:18,522 - app.services.prompt_service - INFO - MainThread - Generated text: Master-class to generate and store embeddings through prompt and also gpt2 response for prompt.
+
+The following code snippet shows how to generate a gpt2 response for a prompt.
+
+import gpt2 from ' gpt2 ' ; import gpt2.response from ' gpt2.response.gpt2 ' ; import gpt2.response.gpt2.response from ' gpt2.response.gpt2.response.gpt
+2025-07-21 16:05:18,663 - app.services.prompt_service - INFO - MainThread - Document inserted into MongoDB
+2025-07-21 16:07:18,449 - app.services.prompt_service - INFO - MainThread - Semantic search for: store
+2025-07-21 16:07:18,540 - app.services.prompt_service - INFO - MainThread - Top match: Master-class to generate and store embeddings through prompt and also gpt2 response for prompt (Score: 0.0460)
+2025-07-21 16:08:00,292 - app.services.prompt_service - INFO - MainThread - Received prompt: Master-class to generate and store embeddings through prompt and also gpt2 response for prompt
+2025-07-21 16:08:05,855 - app.services.prompt_service - INFO - MainThread - Generated text: Master-class to generate and store embeddings through prompt and also gpt2 response for prompt.
+
+The following code snippet shows how to generate a gpt2 response for a prompt.
+
+import gpt2 from ' gpt2 ' ; import gpt2.response from ' gpt2.response.gpt2 ' ; import gpt2.response.gpt2.response from ' gpt2.response.gpt2.response.gpt
+2025-07-21 16:08:05,992 - app.services.prompt_service - INFO - MainThread - Document inserted into MongoDB
+2025-07-21 16:08:13,328 - app.services.prompt_service - INFO - MainThread - Semantic search for: store
+2025-07-21 16:08:13,493 - app.services.prompt_service - INFO - MainThread - Top match: Master-class to generate and store embeddings through prompt and also gpt2 response for prompt (Score: 0.0460)

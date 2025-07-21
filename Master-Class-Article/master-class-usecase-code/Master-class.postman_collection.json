@@ -1,0 +1,35 @@
+{
+	"info": {
+		"_postman_id": "de9cb564-7d91-4cd0-a2bb-05ade094666e",
+		"name": "Master-class",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44744021",
+		"_collection_link": "https://surendrareddy-5782033.postman.co/workspace/Surendra-Reddy's-Workspace~f556d798-1795-4403-8ade-460abd7f75f0/collection/44744021-de9cb564-7d91-4cd0-a2bb-05ade094666e?action=share&source=collection_link&creator=44744021"
+	},
+	"item": [
+		{
+			"name": "Generate and store",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "health",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Search",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
