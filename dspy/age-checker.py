@@ -1,7 +1,8 @@
 import dspy
 
 class AgeChecker(dspy.predict):
-    super().__init__(signature="name, age -> message")
+    def __init__(self):
+        super().__init__(signature="name, age -> message")
 
     def forward(self, name: str, age:str) -> str:
         age = int(age)
