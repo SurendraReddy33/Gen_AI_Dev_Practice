@@ -1,13 +1,13 @@
-from pydantic import BaseModel, Emailstr, Field, validator
+from pydantic import BaseModel, EmailStr, Field, validator
 from fastapi import HTTPException
 from typing import Optional
 import re
 
-class RegisterRequest(BaseModel):
+class Register_Request(BaseModel):
     first_name : str
     last_name : str
     username : str
-    email : Emailstr
+    email : EmailStr
     phone_number : int
     password : str
     dob : str
@@ -26,7 +26,7 @@ class RegisterRequest(BaseModel):
             raise ValueError("Password must be 8-20 chars, include uppercase, lowercase, number, special char")
         return v
     
-class RegisterResponse(BaseModel):
+class Register_Response(BaseModel):
     message : str
     username : str
     email : str
