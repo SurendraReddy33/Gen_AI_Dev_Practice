@@ -31,3 +31,7 @@ class Register_Response(BaseModel):
     username : str
     email : str
 
+class Login_Request(BaseModel):
+    identifier: str  # email or username
+    password: str
+
