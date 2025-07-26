@@ -1,0 +1,21 @@
+1. Register_Endpoint :
+ 
+Request :
+    First_name ,
+    last_name  = while giving response to the user it should (firstname + lastname)
+    username - mandatory - str
+    email  - mandatory - str -Also it should check ending @gmail.com else raise Error.
+    phone_number - mandatory - int 
+    password - it should store in an encryption format. - str 
+    DOB, 
+    DOJ,
+    Address. - str
+    it will provide by the user .
+    Internally in database it should maintain 
+    one feild  status : Active and Inactive ( if user exceed maximum attempts  for 3 times we mark this status as inactive for 24hrs. )
+    * timestamp (name based meaning full conventation ) - for password creation maintain timestamp - After everyonemonth user need to change his password(change_password is another Endpoint)
+    Else it should not allow login (we will define this logic in login Endpoint)
+    Do not allow duplicate email,phone_number,username .
+ 
+Response :
+   return username successfully registered with email id.

@@ -9,5 +9,4 @@ prompt = PromptTemplate.from_template("What is a good name for a company that ma
 llm = OpenAI()
 chain = LLMChain(prompt=prompt, llm=llm)
 
- 
 print(chain.run("sports shoes"))
