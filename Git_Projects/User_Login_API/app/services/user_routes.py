@@ -1,7 +1,8 @@
 from fastapi import APIRouter, Header
-from app.models.user_models import Register_Request, Register_Response, Login_Request, LoginResponse, UpdateDetailsRequest, UpdateDetailsResponse, ChangePassword
-from app.services.user_service import register_user,login_user, update_user_details, change_password
+from app.models.user_models import Register_Request, Register_Response, Login_Request, LoginResponse, UpdateDetailsRequest, UpdateDetailsResponse, ChangePassword, ForgotPasswordRequest, VerifyOtpRequest
+from app.services.user_service import register_user,login_user, update_user_details, change_password, forgot_password, verify_otp_and_reset_password
 from app.utils.decorator import handle_exceptions
+
  
 router = APIRouter()
 
@@ -29,3 +30,13 @@ async def update_user_route(
 async def change_password_route(change_request: ChangePassword):
     return await change_password(change_request)
 
+@handle_exceptions
+@router.post("/Forgot_Password")
+async def Forgot_password(data:ForgotPasswordRequest):
+    return await forgot_password(data)
+
+
+@handle_exceptions
+@router.post("/verify-otp")
+async def otp_verification_reset_password(data:VerifyOtpRequest):
+    return await verify_otp_and_reset_password(data)

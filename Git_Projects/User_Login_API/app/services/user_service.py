@@ -1,13 +1,18 @@
 from app.db.mongo_db import user_collection
 from app.core.security import hash_password, verify_password, create_jwt_token, verify_jwt
-from app.models.user_models import Register_Request, Login_Request, UpdateDetailsRequest, ChangePassword
+from app.models.user_models import Register_Request, Login_Request, UpdateDetailsRequest, ChangePassword, ForgotPasswordRequest, VerifyOtpRequest
 from app.utils.logger import get_logger
+from app.utils.email_otp import send_otp_email
 from datetime import datetime, timedelta
 from fastapi import HTTPException
 import bcrypt
 import os
  
-logger = get_logger(__name__) 
+logger = get_logger(__name__)
+
+app_password = os.getenv("App_password")
+ 
+otp_store = {}
 
 async def register_user(user_data: Register_Request):
     # Check if user already exists
@@ -169,3 +174,50 @@ async def change_password(change_request: ChangePassword):
         raise HTTPException(status_code=500, detail=" Failed to update password")
     
     return {"message": "Password changed successfully"}
+
+async def forgot_password(data:ForgotPasswordRequest):
+    user = await user_collection.find_one({
+        "$or": [{"username":data.username_or_email},{"email":data.username_or_email}]
+    })
+    if not user:
+        logger.warning(f"User not found for email or username: {data.username_or_email}")
+        raise HTTPException(status_code = 404,
+                            detail= f"User Not Found")
+    otp = send_otp_email(
+        receiver_email=user["email"],
+        sender_email="gsrgsreddy3@gmail.com",
+        app_password=app_password
+    )
+
+    otp_store[data.username_or_email]= {"otp":otp,"expires":datetime.utcnow() + timedelta(minutes=5)}
+    return {
+        "message": "otp sent to your registered email"
+    }
+
+async def verify_otp_and_reset_password(data:VerifyOtpRequest):
+    record = otp_store.get(data.username_or_email)
+    print(otp_store)
+    if not record:
+        raise HTTPException(status_code = 404,
+                            detail="No  OTP Found.")
+    if datetime.utcnow()>record["expires"]:
+        raise HTTPException(status_code =410,
+                            detail = "OTP Expired.")
+    
+    if data.otp!= record["otp"]:
+        raise HTTPException(status_code = 404,
+                            detail ="Invalid OTP")
+    
+    hased_password = hash_password(data.new_password)
+
+    await user_collection.update_one(
+        {"$or" : [{"username":data.username_or_email},{"email":data.username_or_email}]},
+        {
+            "$set":{"password":hased_password},
+            "$push":{"password_history":hased_password}
+        }
+    )
+
+    del otp_store[data.username_or_email]
+
+    return {"message" :" OTP Verified Successfully and password reset successful"}

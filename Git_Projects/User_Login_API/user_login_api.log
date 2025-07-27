@@ -16,3 +16,18 @@
 2025-07-27 17:51:07,930 - app.services.user_service - INFO - MainThread - Password change requested for email: Elon3@gmail.com
 2025-07-27 17:51:08,746 - app.services.user_service - INFO - MainThread - Password successfully updated for user: Elon3@gmail.com
 2025-07-27 17:51:51,112 - app.services.user_service - INFO - MainThread - User Elon333 logged in successfully
+2025-07-27 18:20:41,480 - app.services.user_service - INFO - MainThread - User surendrareddy registered with email: surendrareddygandra3@gmail.com
+2025-07-27 18:22:48,521 - app.services.user_service - INFO - MainThread - User surendra333 logged in successfully
+2025-07-27 18:23:55,553 - app.utils.email_otp - ERROR - MainThread -  Failed to send OTP: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-7640863502fsm3461644b3a.19 - gsmtp')
+2025-07-27 18:25:27,897 - app.utils.email_otp - ERROR - MainThread -  Failed to send OTP: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-31e83545002sm3560017a91.27 - gsmtp')
+2025-07-27 18:28:39,020 - app.utils.email_otp - ERROR - MainThread -  Failed to send OTP: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-766cf6c19dcsm1394701b3a.68 - gsmtp')
+2025-07-27 18:31:00,847 - app.utils.email_otp - ERROR - MainThread -  Failed to send OTP: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-23ff3893975sm17992055ad.183 - gsmtp')
+2025-07-27 18:35:06,425 - app.utils.email_otp - ERROR - MainThread -  Failed to send OTP: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-764087294d6sm3453857b3a.21 - gsmtp')
+2025-07-27 18:36:32,625 - app.utils.email_otp - ERROR - MainThread -  Failed to send OTP: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-b3f7f6b0b41sm2995469a12.53 - gsmtp')
+2025-07-27 18:44:12,173 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to surendrareddygandra3@gmail.com
+2025-07-27 18:52:01,183 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to surendrareddygandra3@gmail.com
+2025-07-27 18:53:15,160 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to surendrareddygandra3@gmail.com
+2025-07-27 18:56:34,199 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to surendrareddygandra3@gmail.com
+2025-07-27 18:59:04,185 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to surendrareddygandra3@gmail.com
+2025-07-27 18:59:25,718 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to surendrareddygandra3@gmail.com
+2025-07-27 19:00:50,153 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to surendrareddygandra3@gmail.com
