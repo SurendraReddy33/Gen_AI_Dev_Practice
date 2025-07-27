@@ -4,10 +4,12 @@ from app.models.user_models import Register_Request, Login_Request
 from app.utils.logger import get_logger
 from datetime import datetime, timedelta
 from fastapi import HTTPException
+import bcrypt
+import os
  
 logger = get_logger(__name__) 
 
-def register_user(user_data: Register_Request):
+async def register_user(user_data: Register_Request):
     # Check if user already exists
     existing_user = user_collection.find_one({
         "$or": [
@@ -38,7 +40,7 @@ def register_user(user_data: Register_Request):
         "failed_attempts": 0
     }
  
-    user_collection.insert_one(user_doc)
+    await user_collection.insert_one(user_doc)
  
     logger.info(f"User {full_username} registered with email: {user_data.email}")
  
@@ -48,36 +50,41 @@ def register_user(user_data: Register_Request):
         "email": user_data.email
     }
  
-def login_user(login_data: Login_Request):
-    user = user_collection.find_one({
+async def login_user(data: Login_Request):
+    user = await user_collection.find_one({
         "$or": [
-            {"email": login_data.identifier},
-            {"username": login_data.identifier}
+            {"email": data.username_or_email},
+            {"username": data.username_or_email}
         ]
     })
  
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
  
-    if user["status"] == "Blocked":
+    if user["status"] != "Active":
         raise HTTPException(status_code=403, detail="User is blocked due to multiple failed login attempts")
  
     # Check if password is expired (1 month)
-    password_created_at = datetime.strptime(user["password_created_at"], "%Y-%m-%d %H:%M:%S")
-    if password_created_at < datetime.now() - timedelta(days=30):
-        raise HTTPException(status_code=403, detail="Your password has expired. Please change your password and try again.")
+    pwd_created = datetime.strptime(user["password_created_at"], "%Y-%m-%d %H:%M:%S")
+    if (datetime.now() - pwd_created).days > 30:
+        raise HTTPException(status_code=403, detail="Password expired. Please change your password and try again.")
  
     # Verify password
-    if not verify_password(login_data.password, user["password"]):
-        user_collection.update_one({"_id": user["_id"]}, {"$inc": {"failed_attempts": 1}})
+    if not verify_password(data.password, user["password"]):
+        await user_collection.update_one({"_id": user["_id"]}, {"$inc": {"failed_attempts": 1}})
         if user["failed_attempts"] + 1 >= 3:
-            user_collection.update_one({"_id": user["_id"]}, {"$set": {"status": "Blocked"}})
+            await user_collection.update_one({"_id": user["_id"]}, {
+                "$set": {
+                    "status": "Inactive",
+                    "inactive_until": datetime.now() + timedelta(hours=24)
+                }
+            })
             logger.warning(f"User {user['username']} blocked due to multiple failed login attempts")
-            raise HTTPException(status_code=403, detail="User blocked due to multiple failed attempts")
         raise HTTPException(status_code=401, detail="Incorrect password")
  
-    user_collection.update_one({"_id": user["_id"]}, {"$set": {"failed_attempts": 0}})
-    token = create_jwt_token(user["username"], user["email"], expiry_minutes=60)
+    await user_collection.update_one({"_id": user["_id"]}, {"$set": {"failed_attempts": 0}})
+
+    token = create_jwt_token(user["username"], user["email"])
     logger.info(f"User {user['username']} logged in successfully")
  
     return {

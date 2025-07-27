@@ -16,14 +16,16 @@ class Register_Request(BaseModel):
 
     @validator('email')
     def validate_gmail(cls, v):
-        if not v.endswith("@gmail.com"):
-             raise ValueError("Email must end with @gmail.com")
-        return v
+         if not v.endswith("@gmail.com"):
+            raise HTTPException(status_code = 400,
+                                detail = "Invalid Email")
+         return v
     
     @validator('password')
     def validate_password(cls, v):
         if not re.match(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!#%*?&]{8,20}$', v):
-            raise ValueError("Password must be 8-20 chars, include uppercase, lowercase, number, special char")
+            raise HTTPException(status_code =400,
+                                detail = "Password must be 8-20 chars, include uppercase, lowercase, number, special char")
         return v
     
 class Register_Response(BaseModel):
@@ -32,6 +34,11 @@ class Register_Response(BaseModel):
     email : str
 
 class Login_Request(BaseModel):
-    identifier: str  # email or username
+    username_or_email: str  # email or username
     password: str
+
+class LoginResponse(BaseModel):
+    message: str
+    username: str
+    token: str
 
