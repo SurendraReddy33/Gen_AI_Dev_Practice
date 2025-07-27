@@ -2,3 +2,17 @@
 2025-07-26 14:56:17,474 - app.services.user_service - INFO - AnyIO worker thread - User johnkeller logged in successfully
 2025-07-27 15:37:50,786 - app.services.user_service - INFO - MainThread - User johnkeller logged in successfully
 2025-07-27 16:23:52,454 - app.services.user_service - INFO - MainThread - User johnkeller logged in successfully
+2025-07-27 16:34:20,618 - app.services.user_service - INFO - MainThread - User johnkeller logged in successfully
+2025-07-27 16:34:44,131 - app.services.user_service - INFO - MainThread - User johnkeller logged in successfully
+2025-07-27 16:53:44,090 - app.services.user_service - INFO - MainThread - User johnkeller logged in successfully
+2025-07-27 17:00:47,476 - app.services.user_service - INFO - MainThread - User johnkeller logged in successfully
+2025-07-27 17:07:51,442 - app.services.user_service - INFO - MainThread - User johnkeller logged in successfully
+2025-07-27 17:13:58,807 - app.services.user_service - INFO - MainThread - User johnkeller logged in successfully
+2025-07-27 17:23:19,325 - app.services.user_service - INFO - MainThread - Password change requested for email: john.keller@gmail.com
+2025-07-27 17:35:36,299 - app.services.user_service - INFO - MainThread - User Elonmusk registered with email: Elon3@gmail.com
+2025-07-27 17:36:23,082 - app.services.user_service - INFO - MainThread - User Elon333 logged in successfully
+2025-07-27 17:46:54,179 - app.services.user_service - INFO - MainThread - User Elon333 logged in successfully
+2025-07-27 17:48:46,919 - app.services.user_service - INFO - MainThread - User Elon3@gmail.com updated details: ['phone_number']
+2025-07-27 17:51:07,930 - app.services.user_service - INFO - MainThread - Password change requested for email: Elon3@gmail.com
+2025-07-27 17:51:08,746 - app.services.user_service - INFO - MainThread - Password successfully updated for user: Elon3@gmail.com
+2025-07-27 17:51:51,112 - app.services.user_service - INFO - MainThread - User Elon333 logged in successfully
