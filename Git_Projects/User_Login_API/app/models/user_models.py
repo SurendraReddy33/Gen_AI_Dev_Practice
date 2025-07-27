@@ -42,3 +42,21 @@ class LoginResponse(BaseModel):
     username: str
     token: str
 
+class UpdateDetailsRequest(BaseModel):
+    password: str
+    username: Optional[str] = None
+    first_name: Optional[str] = None
+    last_name: Optional[str] = None
+    email: Optional[EmailStr] = None
+    phone_number: Optional[int] = None
+    dob: Optional[str] = None
+    address: Optional[str] = None
+
+class UpdateDetailsResponse(BaseModel):
+    message: str
+    username: str
+
+
+
+
+

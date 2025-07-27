@@ -1,6 +1,6 @@
 from app.db.mongo_db import user_collection
-from app.core.security import hash_password, verify_password, create_jwt_token
-from app.models.user_models import Register_Request, Login_Request
+from app.core.security import hash_password, verify_password, create_jwt_token, verify_jwt
+from app.models.user_models import Register_Request, Login_Request, UpdateDetailsRequest
 from app.utils.logger import get_logger
 from datetime import datetime, timedelta
 from fastapi import HTTPException
@@ -92,3 +92,36 @@ async def login_user(data: Login_Request):
         "username": user["username"],
         "token": token
     }
+
+async def update_user(token: str, data: UpdateDetailsRequest):
+    payload = verify_jwt(token)
+    logged_in_email = payload.get("email")
+    if not logged_in_email:
+        raise HTTPException(status_code=401, detail="Invalid Token: no email found")
+    
+    user = await user_collection.find_one({"email": logged_in_email})
+    if not user:
+        raise HTTPException(status_code=404, detail= "User not found")
+    
+    if not verify_password(data.password, user["password"]):
+        raise HTTPException(status_code=403, detail="Incorrect password")
+    
+    if data.username and data.password != user["username"]:
+        raise HTTPException(status_code=403, detail="You dont have access to update this account")
+    
+    updates = {}
+    for field in ["username", "first_name", "last_name", "email", "phone_number", "dob", "address"]:
+        new_val = getattr(data, field)
+        if new_val is not None and new_val != user.get[field]:
+            updates[field] = new_val
+
+    if not updates:
+        raise HTTPException(status_code=400, detail="No new details provided")
+    
+    await user_collection.update_one({"_id": user["_id"]}, {"$set": updates})
+    logger.info(f"User {logged_in_email} updated details: {list(updates.keys())}")
+    return {
+        "message": "Details updated successfully",
+        "username": updates.get("username", user["username"])
+    }
+
