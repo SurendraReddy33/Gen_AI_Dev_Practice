@@ -17,7 +17,7 @@ def get_logger(name):
 
         # Rotating file handler
         file_handler = RotatingFileHandler(
-            "user_login_api.log", maxBytes=10_000_000, backupCount=10, encoding='utf-8'
+            "user_login_api.log", maxBytes=10_000_000, backupCount=10, encoding='utf-8', delay=True 
         )
         file_handler.setFormatter(formatter)
 
