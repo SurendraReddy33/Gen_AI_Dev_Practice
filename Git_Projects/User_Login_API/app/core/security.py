@@ -5,15 +5,15 @@ from app.core.config import SECRET_KEY
 from fastapi import HTTPException
 from jose import jwt, JWTError, ExpiredSignatureError
  
-pwd_context = CryptContext(schemes=["bcrypt"] , deprecated = "auto")
+password_handler = CryptContext(schemes=["bcrypt"] , deprecated = "auto")
  
-def hash_password(password:str)->str:
-    return pwd_context.hash(password)
+def encrypt_password(password:str)->str:
+    return password_handler.hash(password)
  
 def verify_password(plain: str, hashed: str) -> bool:
-    return pwd_context.verify(plain,hashed)
+    return password_handler.verify(plain,hashed)
 
-def create_jwt_token(username: str, email: str):
+def generate_auth_token(username: str, email: str):
     payload = {
         "user": username,
         "email": email,
@@ -22,7 +22,7 @@ def create_jwt_token(username: str, email: str):
     token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
     return token
 
-def verify_jwt(token:str):
+def decode_access_token(token:str):
     try:
         decoded = jwt.decode(token,SECRET_KEY,algorithms = ['HS256'])
         return decoded

@@ -1,7 +1,10 @@
 from pydantic import BaseModel, EmailStr, Field, validator
 from fastapi import HTTPException
 from typing import Optional
+from app.utils.logger import get_logger
 import re
+
+logger = get_logger(__name__)
 
 class Register_Request(BaseModel):
     first_name : str
@@ -15,18 +18,20 @@ class Register_Request(BaseModel):
     address : str
 
     @validator('email')
-    def validate_gmail(cls, v):
-         if not v.endswith("@gmail.com"):
+    def validate_gmail(cls, mail):
+         if not mail.endswith("@gmail.com"):
+            logger.warning("Signup Blocked due to unsupported domain: %s", mail)
             raise HTTPException(status_code = 400,
                                 detail = "Invalid Email")
-         return v
+         return mail
     
     @validator('password')
-    def validate_password(cls, v):
-        if not re.match(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!#%*?&]{8,20}$', v):
+    def validate_password(cls, mail):
+        if not re.match(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!#%*?&]{8,20}$', mail):
+            logger.warning("Password requirement does not matched")
             raise HTTPException(status_code =400,
                                 detail = "Password must be 8-20 chars, include uppercase, lowercase, number, special char")
-        return v
+        return mail
     
 class Register_Response(BaseModel):
     message : str
@@ -34,15 +39,15 @@ class Register_Response(BaseModel):
     email : str
 
 class Login_Request(BaseModel):
-    username_or_email: str  # email or username
+    identifier: str  # email or username
     password: str
 
-class LoginResponse(BaseModel):
+class Login_Response(BaseModel):
     message: str
     username: str
     token: str
 
-class UpdateDetailsRequest(BaseModel):
+class Update_Details_Request(BaseModel):
     password: str
     username: Optional[str] = None
     first_name: Optional[str] = None
@@ -52,29 +57,23 @@ class UpdateDetailsRequest(BaseModel):
     dob: Optional[str] = None
     address: Optional[str] = None
 
-class UpdateDetailsResponse(BaseModel):
+class Update_Details_Response(BaseModel):
     message: str
     username: str
 
-class ChangePassword(BaseModel):
+class Change_Password(BaseModel):
     email: str
     old_password: str
     new_password: str
 
-class ForgotPasswordRequest(BaseModel):
-    username_or_email: str
+class Forgot_Password_Request(BaseModel):
+    identifier: str
  
-class VerifyOtpRequest(BaseModel):
-    username_or_email: str
+class Verify_Otp_Request(BaseModel):
+    identifier: str
     otp: str
     new_password: str
  
-class ResetPasswordRequest(BaseModel):
-    username_or_email: str
-    new_password: str
- 
-class GenericResponse(BaseModel):
-    message: str
 
 
 

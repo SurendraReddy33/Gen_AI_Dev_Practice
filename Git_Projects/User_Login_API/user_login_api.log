@@ -31,3 +31,59 @@
 2025-07-27 18:59:04,185 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to surendrareddygandra3@gmail.com
 2025-07-27 18:59:25,718 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to surendrareddygandra3@gmail.com
 2025-07-27 19:00:50,153 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to surendrareddygandra3@gmail.com
+2025-07-28 10:42:34,855 - app.services.user_routes - INFO - MainThread - Received registration request.
+2025-07-28 10:42:37,584 - app.services.user_service - INFO - MainThread - User GowriGanesh registered with email: gowri1@gmail.com
+2025-07-28 10:45:51,710 - app.services.user_routes - INFO - MainThread - Login attempt for user: Gowri123
+2025-07-28 10:45:53,963 - app.services.user_service - INFO - MainThread - User Gowri123 logged in successfully
+2025-07-28 10:47:03,009 - app.services.user_routes - INFO - MainThread - Updating user details.
+2025-07-28 10:47:20,192 - app.services.user_routes - INFO - MainThread - Updating user details.
+2025-07-28 10:47:33,113 - app.services.user_routes - INFO - MainThread - Updating user details.
+2025-07-28 10:47:33,690 - app.services.user_service - INFO - MainThread - User gowri1@gmail.com updated details: ['phone_number']
+2025-07-28 10:48:28,830 - app.services.user_routes - INFO - MainThread - Password change request received.
+2025-07-28 10:48:28,856 - app.services.user_service - INFO - MainThread - Password change requested for email: gowri1@gmail.com
+2025-07-28 10:48:30,501 - app.services.user_service - INFO - MainThread - Password successfully updated for user: gowri1@gmail.com
+2025-07-28 10:49:20,851 - app.services.user_routes - INFO - MainThread - Forgot password request for email/username: surendrareddygandra3@gmail.com
+2025-07-28 10:49:24,353 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to surendrareddygandra3@gmail.com
+2025-07-28 10:50:38,318 - app.services.user_routes - INFO - MainThread - OTP verification and password reset request.
+2025-07-28 12:44:38,317 - app.services.user_routes - INFO - MainThread - New Registration attempt initiated.
+2025-07-28 12:44:42,106 - app.services.user_service - INFO - MainThread - New user created: GowriGanesh with email gowri1@gmail.com
+2025-07-28 12:45:39,270 - app.services.user_routes - INFO - MainThread - Login initiated for: Gowri123
+2025-07-28 12:45:40,510 - app.services.user_service - INFO - MainThread - User Gowri123 logged in successfully
+2025-07-28 12:46:24,585 - app.services.user_routes - INFO - MainThread - User profile update requested.
+2025-07-28 12:46:25,616 - app.services.user_service - INFO - MainThread - User details updated for gowri1@gmail.com: ['phone_number']
+2025-07-28 12:46:44,048 - app.services.user_routes - INFO - MainThread - Password change request received.
+2025-07-28 12:46:44,076 - app.services.user_service - INFO - MainThread - Password update requested for email: gowri1@gmail.com
+2025-07-28 12:46:47,259 - app.services.user_service - INFO - MainThread - Password changed successfully user: gowri1@gmail.com
+2025-07-28 12:48:09,666 - app.services.user_routes - INFO - MainThread - User profile update requested.
+2025-07-28 12:48:10,412 - app.services.user_service - WARNING - MainThread - Password mismatch for user: gowri1@gmail.com
+2025-07-28 12:48:16,704 - app.services.user_routes - INFO - MainThread - User profile update requested.
+2025-07-28 12:48:17,680 - app.services.user_service - INFO - MainThread - User details updated for gowri1@gmail.com: ['email']
+2025-07-28 12:48:34,153 - app.services.user_routes - INFO - MainThread - Forgot password trigerred for: voonnagowriganesh@gmail.com
+2025-07-28 12:48:38,258 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to voonnagowriganesh@gmail.com
+2025-07-28 12:48:38,261 - app.services.user_service - INFO - MainThread - OTP issued to: voonnagowriganesh@gmail.com
+2025-07-28 12:49:22,900 - app.services.user_routes - INFO - MainThread - OTP verification and password reset initiated.
+2025-07-28 12:49:22,901 - app.services.user_service - WARNING - MainThread - No OTP found for user: voonnagowriganesh@gmail.com@gmail.com
+2025-07-28 12:51:44,025 - app.services.user_routes - INFO - MainThread - OTP verification and password reset initiated.
+2025-07-28 12:51:44,028 - app.services.user_service - WARNING - MainThread - No OTP found for user: voonnagowriganesh@gmail.com@gmail.com
+2025-07-28 12:55:00,347 - app.services.user_routes - INFO - MainThread - Forgot password trigerred for: voonnagowriganesh@gmail.com
+2025-07-28 12:55:53,421 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to voonnagowriganesh@gmail.com
+2025-07-28 12:55:53,423 - app.services.user_service - INFO - MainThread - OTP issued to: voonnagowriganesh@gmail.com
+2025-07-28 12:56:14,733 - app.services.user_routes - INFO - MainThread - Forgot password trigerred for: voonnagowriganesh@gmail.com
+2025-07-28 12:56:19,907 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to voonnagowriganesh@gmail.com
+2025-07-28 12:56:19,913 - app.services.user_service - INFO - MainThread - OTP issued to: voonnagowriganesh@gmail.com
+2025-07-28 12:56:51,025 - app.services.user_routes - INFO - MainThread - OTP verification and password reset initiated.
+2025-07-28 12:56:51,026 - app.services.user_service - WARNING - MainThread - No OTP found for user: voonnagowriganesh@gmail.com@gmail.com
+2025-07-28 12:57:43,695 - app.services.user_routes - INFO - MainThread - OTP verification and password reset initiated.
+2025-07-28 12:57:43,696 - app.services.user_service - WARNING - MainThread - No OTP found for user: voonnagowriganesh@gmail.com@gmail.com
+2025-07-28 13:01:02,759 - app.services.user_routes - INFO - MainThread - Forgot password trigerred for: voonnagowriganesh@gmail.com
+2025-07-28 13:01:07,696 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to voonnagowriganesh@gmail.com
+2025-07-28 13:01:07,699 - app.services.user_service - INFO - MainThread - OTP issued to: voonnagowriganesh@gmail.com
+2025-07-28 13:01:45,117 - app.services.user_routes - INFO - MainThread - OTP verification and password reset initiated.
+2025-07-28 13:01:46,284 - app.services.user_service - INFO - MainThread - Password reset after OTP verification for user: voonnagowriganesh@gmail.com
+2025-07-28 13:02:49,521 - app.services.user_routes - INFO - MainThread - OTP verification and password reset initiated.
+2025-07-28 13:02:49,523 - app.services.user_service - WARNING - MainThread - No OTP found for user: voonnagowriganesh@gmail.com
+2025-07-28 13:03:28,303 - app.services.user_routes - INFO - MainThread - Forgot password trigerred for: voonnagowriganesh@gmail.com
+2025-07-28 13:03:33,832 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to voonnagowriganesh@gmail.com
+2025-07-28 13:03:33,834 - app.services.user_service - INFO - MainThread - OTP issued to: voonnagowriganesh@gmail.com
+2025-07-28 13:03:52,169 - app.services.user_routes - INFO - MainThread - OTP verification and password reset initiated.
+2025-07-28 13:03:53,232 - app.services.user_service - INFO - MainThread - Password reset after OTP verification for user: voonnagowriganesh@gmail.com

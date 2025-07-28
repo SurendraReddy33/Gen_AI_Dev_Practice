@@ -1,42 +1,51 @@
 from fastapi import APIRouter, Header
-from app.models.user_models import Register_Request, Register_Response, Login_Request, LoginResponse, UpdateDetailsRequest, UpdateDetailsResponse, ChangePassword, ForgotPasswordRequest, VerifyOtpRequest
-from app.services.user_service import register_user,login_user, update_user_details, change_password, forgot_password, verify_otp_and_reset_password
+from app.models.user_models import Register_Request, Register_Response, Login_Request, Login_Response, Update_Details_Request, Update_Details_Response, Change_Password, Forgot_Password_Request, Verify_Otp_Request
+from app.services.user_service import register_user,login_user, update_user, change_password, forgot_password, verify_otp_and_reset_password
 from app.utils.decorator import handle_exceptions
-
+from app.utils.logger import get_logger
  
 router = APIRouter()
 
+logger = get_logger(__name__)
+
 @handle_exceptions
 @router.post("/register", response_model=Register_Response)
-async def register_user_route(user: Register_Request):
+async def signup(user: Register_Request):
+    logger.info("New Registration attempt initiated.")
+    print("testing")
     return await register_user(user)
 
 @handle_exceptions
-@router.post("/login")
-async def login(login_data: Login_Request):
-    return await login_user(login_data)
+@router.post("/login", response_model=Login_Response)
+async def login(data: Login_Request):
+    logger.info("Login initiated for: %s", data.identifier)
+    return await login_user(data)
 
 @handle_exceptions
-@router.put("/update", response_model=UpdateDetailsResponse)
+@router.put("/update", response_model=Update_Details_Response)
 async def update_user_route(
-    update_data: UpdateDetailsRequest,
+    update_data: Update_Details_Request,
     authorization: str = Header(...)
-):
+):  
+    logger.info("User profile update requested.")
     token = authorization.replace("Bearer ", "").strip()
-    return await update_user_details(token, update_data)
+    return await update_user(token, update_data)
 
 @handle_exceptions
 @router.put("/change_password")
-async def change_password_route(change_request: ChangePassword):
+async def change_password_route(change_request: Change_Password):
+    logger.info("Password change request received.")
     return await change_password(change_request)
 
 @handle_exceptions
 @router.post("/Forgot_Password")
-async def Forgot_password(data:ForgotPasswordRequest):
+async def Forgot_password_route(data:Forgot_Password_Request):
+    logger.info("Forgot password trigerred for: %s", data.identifier)
     return await forgot_password(data)
 
 
 @handle_exceptions
 @router.post("/verify-otp")
-async def otp_verification_reset_password(data:VerifyOtpRequest):
+async def verify_otp(data:Verify_Otp_Request):
+    logger.info("OTP verification and password reset initiated.")
     return await verify_otp_and_reset_password(data)
