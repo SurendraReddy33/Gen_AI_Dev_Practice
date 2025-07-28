@@ -1,4 +1,4 @@
-from app.db.mongo_db import user_collection
+from app.db.mongo_db import user_collection, token_blacklist_collection
 from app.core.security import encrypt_password, verify_password, generate_auth_token, decode_access_token
 from app.models.user_models import Register_Request, Login_Request, Update_Details_Request, Change_Password,Reset_Password_Otp, Forgot_Password_Request, Verify_Otp_Request
 from app.utils.logger import get_logger
@@ -277,3 +277,33 @@ async def verify_otp_and_reset_password(data:Verify_Otp_Request):
     logger.info(f"Password reset after OTP verification for user: {data.identifier}")
 
     return {"message" :" OTP Verified and password reset successfully"}
+
+ 
+async def logout_user_service(token: str):
+    # Check if token already blacklisted
+    existing = await token_blacklist_collection.find_one({"token": token})
+    if existing:
+        logger.warning("Token already blacklisted")
+        raise HTTPException(status_code=403, detail="Token already invalidated")
+ 
+    # Decode and extract expiry
+    try:
+        payload = decode_access_token(token)
+        exp_timestamp = payload.get("exp")
+        if not exp_timestamp:
+            raise ValueError("Missing exp in token")
+        expiry_time = datetime.utcfromtimestamp(exp_timestamp)
+    except Exception as e:
+        logger.error(f"Token decode failed: {e}")
+        raise HTTPException(status_code=401, detail="Invalid token")
+ 
+    # Insert token into blacklist
+    await token_blacklist_collection.insert_one({
+        "token": token,
+        "email": payload.get("email"),
+        "blacklisted_at": datetime.utcnow(),
+        "expires_at": expiry_time  # Used by TTL index
+    })
+ 
+    logger.info(f"Token for {payload.get('email')} blacklisted until {expiry_time}")
+    return {"message": "Logout successful"}

@@ -1,6 +1,6 @@
-from fastapi import APIRouter, Header
+from fastapi import APIRouter, Header, HTTPException
 from app.models.user_models import Register_Request, Register_Response, Login_Request, Login_Response, Update_Details_Request, Update_Details_Response, Change_Password, Reset_Password_Otp,Forgot_Password_Request, Verify_Otp_Request
-from app.services.user_service import register_user,login_user, update_user, change_password, password_reset_with_otp,forgot_password, verify_otp_and_reset_password
+from app.services.user_service import register_user,login_user, update_user, change_password, password_reset_with_otp,forgot_password, verify_otp_and_reset_password, logout_user_service
 from app.utils.decorator import handle_exceptions
 from app.utils.logger import get_logger
  
@@ -50,7 +50,15 @@ async def Forgot_password_route(data:Forgot_Password_Request):
 
 
 @handle_exceptions
-@router.post("/verify-otp")
+@router.post("/verify_otp")
 async def verify_otp(data:Verify_Otp_Request):
     logger.info("OTP verification and password reset initiated.")
     return await verify_otp_and_reset_password(data)
+
+@handle_exceptions
+@router.post("/logout")
+async def logout_user(authorization: str = Header(...)):
+    if not authorization.startswith("Bearer "):
+        raise HTTPException(status_code=401, detail = "Missing or invalid token")
+    token = authorization.split(" ")[1]
+    return await logout_user_service(token)
