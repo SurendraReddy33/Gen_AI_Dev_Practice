@@ -1,6 +1,6 @@
 from app.db.mongo_db import user_collection
 from app.core.security import encrypt_password, verify_password, generate_auth_token, decode_access_token
-from app.models.user_models import Register_Request, Login_Request, Update_Details_Request, Change_Password, Forgot_Password_Request, Verify_Otp_Request
+from app.models.user_models import Register_Request, Login_Request, Update_Details_Request, Change_Password,Reset_Password_Otp, Forgot_Password_Request, Verify_Otp_Request
 from app.utils.logger import get_logger
 from app.utils.email_otp import send_otp_email
 from datetime import datetime, timedelta
@@ -164,26 +164,23 @@ async def change_password(change_request: Change_Password):
                 detail = "New Password must be different from old passwords"
             )
     
-    result = await user_collection.update_one(
-        {"email": change_request.email},
-        {
-            "$set": {
-                "password": new_hashed_password,
-                "password_created_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            },
-            "$push": {
-                "password_history": new_hashed_password
-            }
-        }
+    # Generate and Send OTP
+    otp = send_otp_email(
+        receiver_email=user["email"],
+        sender_email="gsrgsreddy3@gmail.com",
+        app_password=email_app_key
     )
 
-    if result.modified_count == 1:
-        logger.info(f"Password changed successfully user: {change_request.email}")
-    else:
-        logger.error(f"Password update failed for user: {change_request.email}")
-        raise HTTPException(status_code=500, detail="Failed to update password")
+    # store OTP +new_password temporarily
+    stored_otp[user["username"]] = {
+        "otp":otp,
+        "new_password" : change_request.new_password,
+        "expires" : datetime.utcnow()+timedelta(minutes=5)
+    }
     
-    return {"message": "Password updated"}
+ 
+    return {"message": "OTP has been Sent to your registered email"}
+     
 
 async def forgot_password(data:Forgot_Password_Request):
     user = await user_collection.find_one({
@@ -202,6 +199,52 @@ async def forgot_password(data:Forgot_Password_Request):
     logger.info(f"OTP issued to: {data.identifier}")
 
     return {"message": "otp has been sent to your email"}
+
+async def password_reset_with_otp(data : Reset_Password_Otp):
+    record = stored_otp.get(data.username)
+
+    if not record:
+        logger.warning(f"User not found for username: {data.username}")
+        raise HTTPException(status_code=404, detail=f"{data.username} Not Found")
+    
+    if datetime.utcnow()> record["expires"] :
+        logger.info("OTP has been Expired for change_password")
+        del stored_otp[data.username]
+        raise HTTPException(status_code = 410, detail = "OTP Expired")
+    
+    if data.otp != record["otp"] :
+        logger.info("Invalid OTP ")
+        raise HTTPException(status_code = 401,
+                            detail = "Invalid OTP")
+    
+    new_hashed_password = encrypt_password(record["new_password"])
+
+    result = await user_collection.update_one(
+        {"username": data.username},
+        {
+            "$set": {
+                "password": new_hashed_password,
+                "password_created_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            },
+            "$push": {
+                "password_history": new_hashed_password
+            }
+        }
+    )
+
+    if result.modified_count == 1:
+        logger.info(f"Password successfully updated for user: {data.username}")
+    else:
+        logger.error(f"Failed to update password for user: {data.username}")
+        raise HTTPException(status_code=500, detail="Failed to update password")
+    
+    del stored_otp[data.username]
+
+    logger.info(f"Password Changed Successfully for {data.username}")
+
+    return {"message":"OTP verified and password changed successfully"}
+
+
 
 async def verify_otp_and_reset_password(data:Verify_Otp_Request):
     record = stored_otp.get(data.identifier)

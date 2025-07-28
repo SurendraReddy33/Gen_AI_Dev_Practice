@@ -66,6 +66,10 @@ class Change_Password(BaseModel):
     old_password: str
     new_password: str
 
+class Reset_Password_Otp(BaseModel):
+    username:str
+    otp:str
+
 class Forgot_Password_Request(BaseModel):
     identifier: str
  
@@ -73,6 +77,7 @@ class Verify_Otp_Request(BaseModel):
     identifier: str
     otp: str
     new_password: str
+
  
 
 

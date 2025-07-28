@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Header
-from app.models.user_models import Register_Request, Register_Response, Login_Request, Login_Response, Update_Details_Request, Update_Details_Response, Change_Password, Forgot_Password_Request, Verify_Otp_Request
-from app.services.user_service import register_user,login_user, update_user, change_password, forgot_password, verify_otp_and_reset_password
+from app.models.user_models import Register_Request, Register_Response, Login_Request, Login_Response, Update_Details_Request, Update_Details_Response, Change_Password, Reset_Password_Otp,Forgot_Password_Request, Verify_Otp_Request
+from app.services.user_service import register_user,login_user, update_user, change_password, password_reset_with_otp,forgot_password, verify_otp_and_reset_password
 from app.utils.decorator import handle_exceptions
 from app.utils.logger import get_logger
  
@@ -36,6 +36,11 @@ async def update_user_route(
 async def change_password_route(change_request: Change_Password):
     logger.info("Password change request received.")
     return await change_password(change_request)
+
+@handle_exceptions
+@router.post("/change_password/otp")
+async def change_password_otp_route(data : Reset_Password_Otp):
+    return await password_reset_with_otp(data)
 
 @handle_exceptions
 @router.post("/Forgot_Password")
