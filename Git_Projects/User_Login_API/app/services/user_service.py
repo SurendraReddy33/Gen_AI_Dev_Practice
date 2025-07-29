@@ -1,10 +1,11 @@
-from app.db.mongo_db import user_collection, token_blacklist_collection
+from app.db.mongo_db import user_collection, login_sessions_collection,token_blacklist_collection
 from app.core.security import encrypt_password, verify_password, generate_auth_token, decode_access_token
 from app.models.user_models import Register_Request, Login_Request, Update_Details_Request, Change_Password,Reset_Password_Otp, Forgot_Password_Request, Verify_Otp_Request
 from app.utils.logger import get_logger
-from app.utils.email_otp import send_otp_email
+from app.utils.email_otp import send_otp_email, send_token
+from app.core.dependencies import validate_token, store_session
 from datetime import datetime, timedelta
-from fastapi import HTTPException
+from fastapi import HTTPException, Depends
 import bcrypt
 import os
  
@@ -96,13 +97,37 @@ async def login_user(data: Login_Request):
  
     await user_collection.update_one({"_id": user["_id"]}, {"$set": {"failed_attempts": 0}})
 
+    existing_session = await login_sessions_collection.find_one({
+        "$or": [
+            {"email": user["email"]},
+            {"username": user["username"]}
+        ]
+    })
+
+    if existing_session:
+        created_at = existing_session.get("created_at")
+        if created_at and (datetime.utcnow() - created_at).total_seconds() < 3600:
+            raise HTTPException(status_code=403,
+                                detail="You are already logged in. Try again after 1 hour.")
+        else:
+            await login_sessions_collection.delete_one({"_id": existing_session["_id"]})
+
     token = generate_auth_token(user["username"], user["email"])
     logger.info(f"User {user['username']} logged in successfully")
+
+    await store_session(user["email"],user["username"],token)
+    send_token(
+        receiver_email=user["email"],
+        sender_email="gsrgsreddy3@gmail.com",
+        app_password=email_app_key,
+        token=token,
+        username=user["username"]
+    )
  
     return {
         "message": "Login successful",
         "username": user["username"],
-        "token": token
+        "token": " Token has been sent to your Registered Mail ID "
     }
 
 async def update_user(token: str, data: Update_Details_Request):
@@ -112,11 +137,12 @@ async def update_user(token: str, data: Update_Details_Request):
         logger.warning("Invalid token: missing email")
         raise HTTPException(status_code=401, detail="Invalid token: no email found")
  
-    existing_user = await user_collection.find_one({"email": user_email})
-    if not existing_user:
+    login_existing_user = await login_sessions_collection.find_one({"email": user_email})
+    if not login_existing_user:
         logger.warning(f"No user record found for email: {user_email}")
-        raise HTTPException(status_code=404, detail="No user found")
- 
+        raise HTTPException(status_code=404, detail="User Already logged out")
+    
+    existing_user = await user_collection.find_one({"email": user_email})
     if not verify_password(data.password, existing_user["password"]):
         logger.warning(f"Password mismatch for user: {user_email}")
         raise HTTPException(status_code=403, detail="Incorrect password")
@@ -142,45 +168,57 @@ async def update_user(token: str, data: Update_Details_Request):
         "username": updates.get("username", existing_user["username"])
     }
  
-
-async def change_password(change_request: Change_Password):
-    user = await user_collection.find_one({"email": change_request.email})
-    logger.info(f"Password update requested for email: {change_request.email}")
-
+ 
+async def change_password(token: str, change_request: Change_Password):
+    # Step 1: Decode Token
+    payload = decode_access_token(token)
+    user_email = payload.get("email")
+ 
+    if not user_email:
+        raise HTTPException(status_code=401, detail="Invalid token: no email found")
+ 
+    # Step 2: Check if session is valid
+    session = await login_sessions_collection.find_one({"email": user_email, "status": "Active"})
+    if not session:
+        raise HTTPException(status_code=403, detail="You are not logged in")
+ 
+    if datetime.utcnow() - session["created_at"] > timedelta(hours=1):
+        await login_sessions_collection.update_one({"_id": session["_id"]}, {"$set": {"status": "expired"}})
+        raise HTTPException(status_code=403, detail="Session expired")
+ 
+    # Step 3: Validate request belongs to same user
+    if change_request.email != user_email:
+        raise HTTPException(status_code=403, detail="You can only change your own password")
+ 
+    # Step 4: Lookup user
+    user = await user_collection.find_one({"email": user_email})
     if not user:
-        logger.warning(f"No user found with email: {change_request.email}")
-        raise HTTPException(status_code=404, detail=f"{change_request.email} Not Found")
-    
+        raise HTTPException(status_code=404, detail=f"{user_email} Not Found")
+ 
+    # Step 5: Validate old password
     if not verify_password(change_request.old_password, user["password"]):
-        logger.warning(f"Incorrect old password provided for user: {change_request.email}")
         raise HTTPException(status_code=401, detail="Old password is incorrect")
-    
-    new_hashed_password = encrypt_password(change_request.new_password)
+ 
+    # Step 6: Check password reuse
     for old_hashed in user['password_history']:
         if verify_password(change_request.new_password, old_hashed):
-            logger.warning(f"New password reused from history for user: {change_request.email}")
-            raise HTTPException(
-                status_code=400,
-                detail = "New Password must be different from old passwords"
-            )
-    
-    # Generate and Send OTP
+            raise HTTPException(status_code=400, detail="New Password must be different from old passwords")
+ 
+    # Step 7: Send OTP
     otp = send_otp_email(
         receiver_email=user["email"],
         sender_email="gsrgsreddy3@gmail.com",
         app_password=email_app_key
     )
-
-    # store OTP +new_password temporarily
-    stored_otp[user["username"]] = {
-        "otp":otp,
-        "new_password" : change_request.new_password,
-        "expires" : datetime.utcnow()+timedelta(minutes=5)
-    }
-    
  
-    return {"message": "OTP has been Sent to your registered email"}
-     
+    stored_otp[user["username"]] = {
+        "otp": otp,
+        "new_password": change_request.new_password,
+        "expires": datetime.utcnow() + timedelta(minutes=5)
+    }
+ 
+    return {"message": "OTP has been sent to your registered email"}
+
 
 async def forgot_password(data:Forgot_Password_Request):
     user = await user_collection.find_one({
@@ -278,32 +316,54 @@ async def verify_otp_and_reset_password(data:Verify_Otp_Request):
 
     return {"message" :" OTP Verified and password reset successfully"}
 
+
  
 async def logout_user_service(token: str):
-    # Check if token already blacklisted
-    existing = await token_blacklist_collection.find_one({"token": token})
-    if existing:
-        logger.warning("Token already blacklisted")
-        raise HTTPException(status_code=403, detail="Token already invalidated")
+    payload = decode_access_token(token)
+    email = payload.get("email")
  
-    # Decode and extract expiry
-    try:
-        payload = decode_access_token(token)
-        exp_timestamp = payload.get("exp")
-        if not exp_timestamp:
-            raise ValueError("Missing exp in token")
-        expiry_time = datetime.utcfromtimestamp(exp_timestamp)
-    except Exception as e:
-        logger.error(f"Token decode failed: {e}")
+    if not email:
         raise HTTPException(status_code=401, detail="Invalid token")
  
-    # Insert token into blacklist
+    # Check if token already blacklisted
+    existing_blacklisted = await token_blacklist_collection.find_one({"token": token})
+    if existing_blacklisted:
+        raise HTTPException(status_code=403, detail="Token already blacklisted (Already logged out)")
+ 
+    # Get session for the email
+    session = await login_sessions_collection.find_one({"email": email})
+    if not session:
+        raise HTTPException(status_code=403, detail="Session already expired or not found")
+ 
+    # Optional: check if token in session matches current token
+    if session["token"] != token:
+        raise HTTPException(status_code=403, detail="Token mismatch – Invalid session")
+ 
+    # Check if session is expired
+    session_time = session.get("created_at")
+    if not session_time:
+        raise HTTPException(status_code=403, detail="Invalid session timestamp")
+ 
+    if datetime.utcnow() - session_time > timedelta(hours=1):
+        # Still remove session even if expired
+        await login_sessions_collection.delete_one({"email": email})
+        await token_blacklist_collection.insert_one({
+            "token": token,
+            "email": email,
+            "blacklisted_at": datetime.utcnow(),
+            "expires_at": datetime.utcfromtimestamp(payload.get("exp", datetime.utcnow().timestamp() + 3600))
+        })
+        return {"message": "Session already expired. Token blacklisted."}
+ 
+    # All good: logout now
+    await login_sessions_collection.delete_one({"email": email})
+ 
     await token_blacklist_collection.insert_one({
         "token": token,
-        "email": payload.get("email"),
+        "email": email,
         "blacklisted_at": datetime.utcnow(),
-        "expires_at": expiry_time  # Used by TTL index
+        "expires_at": datetime.utcfromtimestamp(payload.get("exp", datetime.utcnow().timestamp() + 3600))
     })
  
-    logger.info(f"Token for {payload.get('email')} blacklisted until {expiry_time}")
     return {"message": "Logout successful"}
+

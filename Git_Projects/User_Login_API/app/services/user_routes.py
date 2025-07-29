@@ -1,8 +1,9 @@
-from fastapi import APIRouter, Header, HTTPException
+from fastapi import APIRouter, Header, HTTPException, Depends
 from app.models.user_models import Register_Request, Register_Response, Login_Request, Login_Response, Update_Details_Request, Update_Details_Response, Change_Password, Reset_Password_Otp,Forgot_Password_Request, Verify_Otp_Request
 from app.services.user_service import register_user,login_user, update_user, change_password, password_reset_with_otp,forgot_password, verify_otp_and_reset_password, logout_user_service
 from app.utils.decorator import handle_exceptions
 from app.utils.logger import get_logger
+from app.core.dependencies import validate_token
  
 router = APIRouter()
 
@@ -12,7 +13,6 @@ logger = get_logger(__name__)
 @router.post("/register", response_model=Register_Response)
 async def signup(user: Register_Request):
     logger.info("New Registration attempt initiated.")
-    print("testing")
     return await register_user(user)
 
 @handle_exceptions
@@ -33,9 +33,10 @@ async def update_user_route(
 
 @handle_exceptions
 @router.put("/change_password")
-async def change_password_route(change_request: Change_Password):
+async def change_password_route(change_request: Change_Password, authorization: str = Header(...)):
     logger.info("Password change request received.")
-    return await change_password(change_request)
+    token = authorization.replace("Bearer ", "").strip()
+    return await change_password(token, change_request)
 
 @handle_exceptions
 @router.post("/change_password/otp")
@@ -55,10 +56,10 @@ async def verify_otp(data:Verify_Otp_Request):
     logger.info("OTP verification and password reset initiated.")
     return await verify_otp_and_reset_password(data)
 
+
 @handle_exceptions
 @router.post("/logout")
-async def logout_user(authorization: str = Header(...)):
-    if not authorization.startswith("Bearer "):
-        raise HTTPException(status_code=401, detail = "Missing or invalid token")
-    token = authorization.split(" ")[1]
+async def logout_route(authorization: str= Header(...)):
+    token = authorization.replace("Bearer ", "").strip()
     return await logout_user_service(token)
+

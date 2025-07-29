@@ -25,6 +25,7 @@ def generate_auth_token(username: str, email: str):
 def decode_access_token(token:str):
     try:
         decoded = jwt.decode(token,SECRET_KEY,algorithms = ['HS256'])
+        print(decoded)
         return decoded
     except ExpiredSignatureError:
         raise HTTPException(status_code= 401,
@@ -32,5 +33,7 @@ def decode_access_token(token:str):
     except JWTError:
         raise HTTPException(status_code= 401,
                              detail="Invalid Token")
+
+ 
 
 

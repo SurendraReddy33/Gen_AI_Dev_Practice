@@ -78,8 +78,6 @@ class Verify_Otp_Request(BaseModel):
     otp: str
     new_password: str
 
-class Logout_Response(BaseModel):
-    message:str
 
  
 

@@ -1,0 +1,342 @@
+{
+	"info": {
+		"_postman_id": "cd0dbf0e-4b31-4263-a4eb-d6369f2ded29",
+		"name": "User_Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44744021",
+		"_collection_link": "https://surendrareddy-5782033.postman.co/workspace/Surendra-Reddy's-Workspace~f556d798-1795-4403-8ade-460abd7f75f0/collection/44744021-cd0dbf0e-4b31-4263-a4eb-d6369f2ded29?action=share&source=collection_link&creator=44744021"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"first_name\": \"vijay\",\r\n  \"last_name\": \"sai\",\r\n  \"username\": \"vijay1\",\r\n  \"email\": \"gandrasurendrareddy@gmail.com\",\r\n  \"phone_number\": 1234567890,\r\n  \"password\": \"Vijay@1122\",\r\n  \"dob\": \"2003-04-06\",\r\n  \"doj\": \"2024-07-01\",\r\n  \"address\": \"Hyderabad\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiam9obmtlbGxlciIsImVtYWlsIjoiam9obi5rZWxsZXJAZ21haWwuY29tIiwiZXhwIjoxNzUzNjE3ODYwfQ.3J0PovNjvQEyk_HFVCWd1VT0o4buQdyAC-AVQIKOE1s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"identifier\" : \"vijay1\",\r\n    \"password\" : \"Vijay_1122\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change_password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidmlqYXkxIiwiZW1haWwiOiJnYW5kcmFzdXJlbmRyYXJlZGR5QGdtYWlsLmNvbSIsImV4cCI6MTc1Mzc4Mzc0MX0.l28STUsxs3jIk8RwHn-KD-DyNre_az-CHfQW0cPzY-4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"gandrasurendrareddy@gmail.com\",\r\n    \"old_password\": \"Vijay@1122\",\r\n    \"new_password\": \"Vijay$1122\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/change_password",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"change_password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forgot_password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiam9obmtlbGxlciIsImVtYWlsIjoiam9obi5rZWxsZXJAZ21haWwuY29tIiwiZXhwIjoxNzUzNjE3ODYwfQ.3J0PovNjvQEyk_HFVCWd1VT0o4buQdyAC-AVQIKOE1s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"identifier\" : \"gandrasurendrareddy@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/Forgot_Password",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"Forgot_Password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send_otp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"identifier\": \"gandrasurendrareddy@gmail.com\",\r\n    \"otp\": \"563455\",\r\n    \"new_password\": \"Vijay_1122\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/verify-otp",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"verify-otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reset_password_with_otp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"vijay1\",\r\n    \"otp\": \"511432\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/change_password/otp",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"change_password",
+						"otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidmlqYXkxIiwiZW1haWwiOiJnYW5kcmFzdXJlbmRyYXJlZGR5QGdtYWlsLmNvbSIsImV4cCI6MTc1Mzc5MzE5NX0.PLB9ZcR0XRm8dvv7BAuezfwKaM7CpGp3Bgl8MDYyDJQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidmlqYXkxIiwiZW1haWwiOiJnYW5kcmFzdXJlbmRyYXJlZGR5QGdtYWlsLmNvbSIsImV4cCI6MTc1Mzc4Mzc0MX0.l28STUsxs3jIk8RwHn-KD-DyNre_az-CHfQW0cPzY-4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"Vijay_1122\",\r\n    \"phone_number\": 1234567891011121314\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/update",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"update"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
