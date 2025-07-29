@@ -3,7 +3,6 @@ from app.models.user_models import Register_Request, Register_Response, Login_Re
 from app.services.user_service import register_user,login_user, update_user, change_password, password_reset_with_otp,forgot_password, verify_otp_and_reset_password, logout_user_service
 from app.utils.decorator import handle_exceptions
 from app.utils.logger import get_logger
-from app.core.dependencies import validate_token
  
 router = APIRouter()
 

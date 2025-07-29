@@ -109,3 +109,12 @@
 2025-07-29 17:21:27,209 - app.services.user_routes - INFO - MainThread - Password change request received.
 2025-07-29 17:21:33,419 - app.services.user_routes - INFO - MainThread - User profile update requested.
 2025-07-29 17:21:33,443 - app.services.user_service - WARNING - MainThread - No user record found for email: gandrasurendrareddy@gmail.com
+2025-07-29 18:03:41,801 - app.services.user_routes - INFO - MainThread - Login initiated for: vijay1
+2025-07-29 18:03:52,744 - app.services.user_routes - INFO - MainThread - Login initiated for: vijay1
+2025-07-29 18:03:53,130 - app.services.user_service - INFO - MainThread - User vijay1 logged in successfully
+2025-07-29 18:03:53,210 - app.core.dependencies - INFO - MainThread - Session created for user vijay1 with email gandrasurendrareddy@gmail.com
+2025-07-29 18:03:57,045 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to gandrasurendrareddy@gmail.com
+2025-07-29 18:04:35,513 - app.services.user_routes - INFO - MainThread - User profile update requested.
+2025-07-29 18:04:35,835 - app.services.user_service - WARNING - MainThread - Password mismatch for user: gandrasurendrareddy@gmail.com
+2025-07-29 18:04:48,245 - app.services.user_routes - INFO - MainThread - User profile update requested.
+2025-07-29 18:04:48,566 - app.services.user_service - INFO - MainThread - No changed detected for user: gandrasurendrareddy@gmail.com
