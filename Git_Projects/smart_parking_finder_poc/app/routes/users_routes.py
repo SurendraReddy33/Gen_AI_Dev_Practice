@@ -25,8 +25,9 @@ async def user_profile(Authorization: str | None = Header(default=None)):
 @router.put("/profile/update", response_model=MessageOut)
 async def user_profile_update(payload: UpdateProfileIn, Authorization: str | None = Header(default=None)):
     user_id, _ = get_bearer_user_id(Authorization)
-    await update_profile(user_id, payload.model_dump())
+    await update_profile(user_id, payload.model_dump(), Authorization)  # added Authorization
     return {"message": "Profile updated successfully"}
+
 
 @router.delete("/profile/delete", response_model=MessageOut)
 async def user_profile_delete(Authorization: str | None = Header(default=None)):

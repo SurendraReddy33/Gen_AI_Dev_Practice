@@ -2,7 +2,7 @@
 from fastapi import APIRouter, Query
 from app.services.parkings_service import list_parkings, parking_details, parking_slots, available_slots
 
-router = APIRouter(prefix="parking", tags=["Parkings"])
+router = APIRouter(prefix="/parking", tags=["Parkings"])
 
 @router.get("/parkings", response_model=list[dict])
 async def get_parkings(vehicle_type: str | None = Query(default=None)):

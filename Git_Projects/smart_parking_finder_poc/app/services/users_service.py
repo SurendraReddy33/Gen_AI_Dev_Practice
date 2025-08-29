@@ -1,15 +1,19 @@
 
-from datetime import datetime, timedelta
-from fastapi import HTTPException, status
+from datetime import datetime, timedelta, timezone
+from typing import Optional
+from fastapi import HTTPException, Header, status
 from bson import ObjectId
 import uuid
 
+import jwt
 from app.config.db import get_db
 from app.models import USERS_COLL
 from app.utils.validators import validate_email, validate_phone, validate_password
 from app.utils.auth import hash_password, verify_password, generate_jwt
 from app.config.settings import settings
 from app.utils.emailer import send_mail
+ 
+
 
 def _oid_str(oid) -> str:
     return str(oid) if isinstance(oid, ObjectId) else oid
@@ -57,6 +61,7 @@ async def register_user(data: dict) -> dict:
         "message": "User registered successfully",
     }
 
+
 async def login_user(email: str, password: str) -> dict:
     db = get_db()
     user = await db[USERS_COLL].find_one({"email": email.lower()})
@@ -66,9 +71,53 @@ async def login_user(email: str, password: str) -> dict:
     if not verify_password(password, user.get("password_hash", "")):
         raise HTTPException(status_code=401, detail="Invalid password")
 
-    await db[USERS_COLL].update_one({"_id": user["_id"]}, {"$set": {"last_login": datetime.utcnow()}})
+    # Check existing active session
+    existing_session = await db["login_sessions"].find_one({
+        "user_id": str(user["_id"]),
+        "is_active": True,
+        "expiry_time": {"$gt": datetime.utcnow()}
+    })
+    
+            
+    if existing_session:
+        # ✅ FIX: await the session query
+        session = await db["login_sessions"].find_one({"user_id": str(user["_id"])})
 
+        expiry_time = session.get("expiry_time")
+        if not expiry_time:
+            raise HTTPException(status_code=401, detail="Invalid session expiry")
+
+        if datetime.utcnow() > expiry_time:
+        # Expired → mark inactive
+            db.login_sessions.update_one(
+            {"_id": session["_id"]},
+            {"$set": {"is_active": False}}
+        )
+            raise HTTPException(status_code=401, detail="Session expired, login again")
+
+        if not session.get("is_active", False):
+            raise HTTPException(status_code=401, detail="Inactive session, login again")
+
+        raise HTTPException(status_code=403, detail="User already logged in")
+
+
+    # Generate token
     token = generate_jwt(str(user["_id"]), user.get("role", "user"))
+
+    # Insert session with expiry
+    await db["login_sessions"].insert_one({
+        "user_id": str(user["_id"]),
+        "token": token,
+        "login_time": datetime.utcnow(),
+        "expiry_time": datetime.utcnow() + timedelta(hours=1),
+        "is_active": True
+    })
+
+    # Update last login
+    await db[USERS_COLL].update_one(
+        {"_id": user["_id"]}, {"$set": {"last_login": datetime.utcnow()}}
+    )
+
     return {
         "status": "success",
         "message": "Login successful",
@@ -79,6 +128,167 @@ async def login_user(email: str, password: str) -> dict:
             "role": user.get("role", "user"),
         },
     }
+
+
+
+# async def login_user(email: str, password: str) -> dict:
+#     db = get_db()
+#     user = await db[USERS_COLL].find_one({"email": email.lower()})
+#     if not user:
+#         raise HTTPException(status_code=404, detail="User not found with this email")
+
+#     if not verify_password(password, user.get("password_hash", "")):
+#         raise HTTPException(status_code=401, detail="Invalid password")
+
+#     user_id_str = str(user["_id"])
+#     now = datetime.utcnow()
+
+#     # 1) Deactivate any expired sessions first (so stale 'is_active: true' doesn't block login)
+#     await db["login_sessions"].update_many(
+#         {
+#             "user_id": user_id_str,
+#             "is_active": True,
+#             "expiry_time": {"$lte": now},
+#         },
+#         {"$set": {"is_active": False}}
+#     )
+
+#     # 2) Check for an actually-active session (still within expiry window)
+#     existing_session = await db["login_sessions"].find_one({
+#         "user_id": user_id_str,
+#         "is_active": True,
+#         "expiry_time": {"$gt": now}
+#     })
+#     if existing_session:
+#         raise HTTPException(status_code=403, detail="User already logged in")
+
+#     # 3) Create new session
+#     token = generate_jwt(user_id_str, user.get("role", "user"))
+#     await db["login_sessions"].insert_one({
+#         "user_id": user_id_str,
+#         "token": token,
+#         "login_time": now,
+#         "expiry_time": now + timedelta(hours=1),
+#         "is_active": True
+#     })
+
+#     # 4) Update last login
+#     await db[USERS_COLL].update_one(
+#         {"_id": user["_id"]},
+#         {"$set": {"last_login": now}}
+#     )
+
+#     return {
+#         "status": "success",
+#         "message": "Login successful",
+#         "token": token,
+#         "user": {
+#             "id": user_id_str,
+#             "email": user["email"],
+#             "role": user.get("role", "user"),
+#         },
+#     }
+
+
+async def get_user_from_token(token: str):
+    """Check token validity (JWT + session) and return user if active"""
+    db = get_db()
+
+    try:
+        # ✅ Decode token first
+        payload = jwt.decode(token, settings.JWT_SECRET, algorithms=[settings.JWT_ALG])
+        user_id = payload.get("sub")
+    except jwt.ExpiredSignatureError:
+        raise HTTPException(status_code=401, detail="Token expired, login again")
+    except jwt.InvalidTokenError:
+        raise HTTPException(status_code=401, detail="Invalid JWT token")
+
+    # ✅ Now check session in DB
+    session = await db.login_sessions.find_one({"token": token})
+    if not session:
+        raise HTTPException(status_code=401, detail="Invalid session token")
+
+    expiry_time = session.get("expiry_time")
+    if not expiry_time:
+        raise HTTPException(status_code=401, detail="Invalid session expiry")
+
+    now = datetime.utcnow()
+    if now > expiry_time:
+        # Expired → mark inactive
+        await db.login_sessions.update_one(
+            {"_id": session["_id"]},
+            {"$set": {"is_active": False}}
+        )
+        raise HTTPException(status_code=401, detail="Session expired, login again")
+
+    if not session.get("is_active", False):
+        raise HTTPException(status_code=401, detail="Inactive session, login again")
+
+    # ✅ Fetch user by ID from token/session
+    user = await db.users.find_one({"_id": ObjectId(user_id)})
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    return user
+
+
+async def update_profile(user_id: str, data: dict, authorization: str):
+    """
+    Update user profile with conditions:
+    - fields should not be empty
+    - password cannot be updated here
+    - same details can't be updated multiple times
+    - only logged in user can update
+    - return only updated fields
+    """
+    db = get_db()
+    
+    # 1. Validate Authorization Header
+    if not authorization:
+        raise HTTPException(status_code=401, detail="Authorization header missing")
+
+    if not authorization.startswith("Bearer "):
+        raise HTTPException(status_code=401, detail="Invalid authorization format")
+
+    token = authorization.split(" ")[1]
+
+    # 2. Validate session and get user
+    user = await get_user_from_token(token)
+
+    if str(user["_id"]) != str(user_id):
+        raise HTTPException(status_code=403, detail="You can only update your own profile")
+
+    # 3. Prevent password updates here
+    if "password" in data:
+        raise HTTPException(status_code=400, detail="Password can only be updated via Change Password endpoint")
+
+    # 4. Validate non-empty fields
+    for field, value in data.items():
+        if value is None or (isinstance(value, str) and not value.strip()):
+            raise HTTPException(status_code=400, detail=f"{field} cannot be empty")
+
+    # 5. Compare old vs new data
+    updates = {}
+    for field, value in data.items():
+        if field in user and user[field] != value:
+            updates[field] = value
+
+    if not updates:
+        raise HTTPException(status_code=400, detail="No new changes provided")
+
+    # 6. Apply update
+    await db.users.update_one(
+        {"_id": ObjectId(user["_id"])},
+        {"$set": updates}
+    )
+
+    return {
+        "status": "success",
+        "message": "Profile updated successfully",
+        "updated_fields": updates
+    }
+
+
 
 async def get_profile(user_id: str) -> dict:
     db = get_db()
@@ -101,30 +311,7 @@ async def get_profile(user_id: str) -> dict:
         "account_status": "active" if user.get("is_active", True) else "inactive",
     }
 
-async def update_profile(user_id: str, updates: dict) -> None:
-    db = get_db()
-    allowed = {k: v for k, v in updates.items() if k in {"username", "email", "phone"} and v is not None}
-    if not allowed:
-        raise HTTPException(status_code=400, detail="No valid fields to update")
 
-    # validations & uniqueness
-    if "email" in allowed:
-        validate_email(allowed["email"])
-        exists = await db[USERS_COLL].find_one({"email": allowed["email"].lower(), "_id": {"$ne": ObjectId(user_id)}})
-        if exists:
-            raise HTTPException(status_code=400, detail="Email already exists")
-        allowed["email"] = allowed["email"].lower()
-    if "username" in allowed:
-        exists = await db[USERS_COLL].find_one({"username": allowed["username"], "_id": {"$ne": ObjectId(user_id)}})
-        if exists:
-            raise HTTPException(status_code=400, detail="Username already exists")
-    if "phone" in allowed:
-        from app.utils.validators import validate_phone
-        validate_phone(allowed["phone"])
-
-    res = await db[USERS_COLL].update_one({"_id": ObjectId(user_id)}, {"$set": allowed})
-    if res.matched_count == 0:
-        raise HTTPException(status_code=404, detail="User not found")
 
 async def delete_profile(user_id: str) -> None:
     db = get_db()
