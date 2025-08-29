@@ -10,7 +10,8 @@ Decorators - better to use for exception handling if required you can use where 
 Postman Collection
  
 Response Time - Login API - {Execution Time : 3 ms}
- 
+
+
  
 1. Write an Fast API which will allow user to
  
@@ -47,3 +48,5 @@ Endpoints
 3. Change Password
 4. Forget Password
 5. Logout
+6. update
+7. logout

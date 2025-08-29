@@ -8,6 +8,7 @@ router = APIRouter()
 
 logger = get_logger(__name__)
 
+# User Routes
 @handle_exceptions
 @router.post("/register", response_model=Register_Response)
 async def signup(user: Register_Request):

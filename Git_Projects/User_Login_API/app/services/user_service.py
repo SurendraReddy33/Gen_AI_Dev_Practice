@@ -16,6 +16,7 @@ smart_parking_app = os.getenv("EMAIL_SMTP_PASS")
 stored_otp = {}
 
 
+# User sevice codes
 async def register_user(user_data: Register_Request):
     # Check if user already exists
     user_exists = await user_collection.find_one({

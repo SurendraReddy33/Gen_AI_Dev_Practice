@@ -8,6 +8,7 @@ from datetime import datetime,timedelta
 
 logger = get_logger(__name__)
  
+# smtp mail generator
 def generate_otp():
     return str(random.randint(100000, 999999))
 

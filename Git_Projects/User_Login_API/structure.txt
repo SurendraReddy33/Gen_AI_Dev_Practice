@@ -22,4 +22,4 @@ user_auth_api/                      ← 🔹 project root
 │
 ├── main.py                         ← entry point to start FastAPI server
 ├── requirements.txt                ← dependencies (Provided by the client)
-└── README.md                       ← optional: documentation
+└── README.md                       ← documentation

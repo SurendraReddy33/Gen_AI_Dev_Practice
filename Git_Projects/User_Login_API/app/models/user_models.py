@@ -6,6 +6,7 @@ import re
 
 logger = get_logger(__name__)
 
+# User Models
 class Register_Request(BaseModel):
     first_name : str
     last_name : str

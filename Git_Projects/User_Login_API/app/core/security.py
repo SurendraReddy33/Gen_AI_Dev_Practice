@@ -6,6 +6,8 @@ from fastapi import HTTPException
 from jose import jwt, JWTError, ExpiredSignatureError
  
 password_handler = CryptContext(schemes=["bcrypt"] , deprecated = "auto")
+
+# password handlers
  
 def encrypt_password(password:str)->str:
     return password_handler.hash(password)

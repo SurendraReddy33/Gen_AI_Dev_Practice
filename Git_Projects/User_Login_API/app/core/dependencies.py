@@ -9,6 +9,8 @@ logger = get_logger(__name__)
 
 SESSION_EXP_TIME = 60
 
+# session handlers
+
 async def store_session(email: str, username: str, token: str):
     # Remove any old sessions beyond expiry duration
     await login_sessions_collection.delete_many({
