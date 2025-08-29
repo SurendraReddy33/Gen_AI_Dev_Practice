@@ -1,0 +1,191 @@
+2025-08-29 10:59:33,349 - app.models.user_models - WARNING - MainThread - Password requirement does not matched
+2025-08-29 10:59:45,274 - app.routes.user_routes - INFO - MainThread - New Registration attempt initiated.
+2025-08-29 10:59:46,433 - app.services.user_service - INFO - MainThread - New user created: surendrareddy with email gsrgsreddy3@gmail.com
+2025-08-29 11:01:33,888 - app.routes.user_routes - INFO - MainThread - New Registration attempt initiated.
+2025-08-29 11:01:33,928 - app.services.user_service - WARNING - MainThread - Duplicate user attempt during registration.
+2025-08-29 11:01:55,961 - app.routes.user_routes - INFO - MainThread - New Registration attempt initiated.
+2025-08-29 11:01:57,323 - app.services.user_service - INFO - MainThread - New user created: surendrareddy with email gsrgsreddy3@gmail.com
+2025-08-29 11:03:03,579 - app.routes.user_routes - INFO - MainThread - New Registration attempt initiated.
+2025-08-29 11:03:03,625 - app.services.user_service - WARNING - MainThread - Duplicate user attempt during registration.
+2025-08-29 11:04:09,993 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 11:04:10,836 - app.services.user_service - INFO - MainThread - User Surendra3 logged in successfully
+2025-08-29 11:04:10,922 - app.core.dependencies - INFO - MainThread - Session created for user Surendra3 with email gsrgsreddy3@gmail.com
+2025-08-29 11:04:14,006 - app.utils.email_otp - ERROR - MainThread -  Failed to send OTP: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-24903705be3sm12987055ad.18 - gsmtp')
+2025-08-29 11:16:33,572 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 11:20:50,371 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 11:21:17,576 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 11:22:02,911 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 11:23:26,609 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 11:23:41,831 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 11:24:35,759 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 11:26:11,545 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 11:27:53,995 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 11:38:59,264 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 11:39:30,875 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 11:42:58,320 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 11:44:05,143 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 11:44:52,667 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 11:44:53,132 - app.services.user_service - INFO - MainThread - User Surendra3 logged in successfully
+2025-08-29 11:44:53,219 - app.core.dependencies - INFO - MainThread - Session created for user Surendra3 with email gsrgsreddy3@gmail.com
+2025-08-29 11:44:55,668 - app.utils.email_otp - ERROR - MainThread -  Failed to send OTP: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-b4cd28ae414sm1179640a12.33 - gsmtp')
+2025-08-29 11:45:52,729 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 11:46:29,048 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 11:46:29,367 - app.services.user_service - INFO - MainThread - User details updated for gsrgsreddy3@gmail.com: ['phone_number']
+2025-08-29 11:47:16,047 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 11:47:16,471 - app.services.user_service - INFO - MainThread - User details updated for gsrgsreddy3@gmail.com: ['first_name', 'last_name']
+2025-08-29 11:48:03,491 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 11:48:03,890 - app.services.user_service - INFO - MainThread - No changed detected for user: gsrgsreddy3@gmail.com
+2025-08-29 11:48:31,970 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 11:48:32,264 - app.services.user_service - INFO - MainThread - No changed detected for user: gsrgsreddy3@gmail.com
+2025-08-29 11:48:53,294 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 11:48:53,583 - app.services.user_service - INFO - MainThread - No changed detected for user: gsrgsreddy3@gmail.com
+2025-08-29 13:02:54,937 - app.routes.parking_routes - INFO - MainThread - User profile update requested.
+2025-08-29 13:03:15,575 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 13:03:15,938 - app.services.user_service - INFO - MainThread - User Surendra3 logged in successfully
+2025-08-29 13:03:16,025 - app.core.dependencies - INFO - MainThread - Session created for user Surendra3 with email gsrgsreddy3@gmail.com
+2025-08-29 13:03:17,853 - app.utils.email_otp - ERROR - MainThread -  Failed to send OTP: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-327d9331244sm1866923a91.3 - gsmtp')
+2025-08-29 13:03:25,735 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 13:04:07,984 - app.routes.parking_routes - INFO - MainThread - User profile update requested.
+2025-08-29 13:09:05,262 - app.routes.parking_routes - INFO - MainThread - User profile update requested.
+2025-08-29 13:10:12,304 - app.routes.parking_routes - INFO - MainThread - Parkings List requested.
+2025-08-29 13:10:44,160 - app.routes.parking_routes - INFO - MainThread - Parkings List requested.
+2025-08-29 13:10:51,754 - app.routes.parking_routes - INFO - MainThread - Parkings List requested.
+2025-08-29 13:12:12,423 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 13:26:00,504 - app.routes.booking_routes - WARNING - MainThread - Booking creation failed: Parking lot not found
+2025-08-29 13:26:36,270 - app.routes.booking_routes - WARNING - MainThread - Booking creation failed: Parking lot not found
+2025-08-29 13:26:57,024 - app.routes.booking_routes - WARNING - MainThread - Booking creation failed: Parking lot not found
+2025-08-29 13:28:26,524 - app.routes.booking_routes - WARNING - MainThread - Booking creation failed: Parking lot not found
+2025-08-29 13:28:53,210 - app.routes.booking_routes - WARNING - MainThread - Booking creation failed: Parking lot not found
+2025-08-29 13:31:19,220 - app.services.booking_service - INFO - MainThread - Booking created: B20CD51BD for slot 1-1 in lot 1
+2025-08-29 13:32:04,615 - app.routes.booking_routes - WARNING - MainThread - Booking creation failed: Invalid vehicle type for this slot
+2025-08-29 13:32:29,309 - app.routes.booking_routes - WARNING - MainThread - Booking creation failed: Invalid vehicle type for this slot
+2025-08-29 13:32:39,316 - app.routes.booking_routes - WARNING - MainThread - Booking creation failed: Slot already booked
+2025-08-29 13:43:11,666 - app.services.booking_service - INFO - MainThread - Booking created: BB396CD0D for slot 1-2 in lot 1
+2025-08-29 13:43:21,009 - app.services.booking_service - INFO - MainThread - Booking created: BE20A0A02 for slot 1-3 in lot 1
+2025-08-29 13:56:54,060 - app.services.booking_service - WARNING - MainThread - Parking lot not found for booking B20CD51BD
+2025-08-29 13:57:24,791 - app.services.booking_service - WARNING - MainThread - Parking lot not found for booking B20CD51BD
+2025-08-29 13:58:05,035 - app.services.booking_service - WARNING - MainThread - Parking lot not found for booking B20CD51BD
+2025-08-29 13:58:10,587 - app.services.booking_service - WARNING - MainThread - Parking lot not found for booking B20CD51BD
+2025-08-29 13:58:24,537 - app.services.booking_service - WARNING - MainThread - Parking lot not found for booking B20CD51BD
+2025-08-29 14:00:43,510 - app.services.booking_service - WARNING - MainThread - Booking not found: "B20CD51BD"
+2025-08-29 14:01:00,239 - app.services.booking_service - WARNING - MainThread - Parking lot not found for booking B20CD51BD
+2025-08-29 14:01:09,411 - app.services.booking_service - WARNING - MainThread - Parking lot not found for booking B20CD51BD
+2025-08-29 14:01:36,692 - app.services.booking_service - WARNING - MainThread - Parking lot not found for booking B20CD51BD
+2025-08-29 14:04:16,760 - app.services.booking_service - INFO - MainThread - Booking B20CD51BD updated successfully
+2025-08-29 14:08:01,242 - app.routes.parking_routes - INFO - MainThread - Parkings List requested.
+2025-08-29 14:08:51,035 - app.routes.parking_routes - INFO - MainThread - Parkings List requested.
+2025-08-29 14:16:01,828 - app.routes.parking_routes - INFO - MainThread - Parkings List requested.
+2025-08-29 14:35:13,347 - app.routes.parking_routes - INFO - MainThread - Parkings List requested.
+2025-08-29 14:35:13,349 - app.routes.parking_routes - INFO - MainThread - Parkings List requested.
+2025-08-29 14:35:25,000 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 14:35:25,470 - app.services.user_service - INFO - MainThread - User Surendra3 logged in successfully
+2025-08-29 14:35:25,547 - app.core.dependencies - INFO - MainThread - Session created for user Surendra3 with email gsrgsreddy3@gmail.com
+2025-08-29 14:35:27,288 - app.utils.email_otp - ERROR - MainThread -  Failed to send OTP: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-7722a2d7c42sm1774433b3a.39 - gsmtp')
+2025-08-29 14:38:39,963 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 14:47:38,052 - app.routes.user_routes - INFO - MainThread - New Registration attempt initiated.
+2025-08-29 14:47:38,090 - app.services.user_service - WARNING - MainThread - Duplicate user attempt during registration.
+2025-08-29 14:47:44,283 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 14:47:44,789 - app.services.user_service - INFO - MainThread - User Surendra3 logged in successfully
+2025-08-29 14:47:44,863 - app.core.dependencies - INFO - MainThread - Session created for user Surendra3 with email gsrgsreddy3@gmail.com
+2025-08-29 14:47:47,136 - app.utils.email_otp - ERROR - MainThread -  Failed to send OTP: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2490658999fsm18476285ad.112 - gsmtp')
+2025-08-29 14:55:44,540 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 14:56:13,033 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 14:56:13,400 - app.services.user_service - INFO - MainThread - User Surendra3 logged in successfully
+2025-08-29 14:56:13,562 - app.core.dependencies - INFO - MainThread - Session created for user Surendra3 with email gsrgsreddy3@gmail.com
+2025-08-29 14:56:15,296 - app.utils.email_otp - ERROR - MainThread -  Failed to send OTP: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-3276f59e29csm7718548a91.12 - gsmtp')
+2025-08-29 15:04:43,544 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 15:04:59,014 - app.routes.user_routes - INFO - MainThread - New Registration attempt initiated.
+2025-08-29 15:04:59,037 - app.services.user_service - WARNING - MainThread - Duplicate user attempt during registration.
+2025-08-29 15:05:02,980 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 15:05:03,318 - app.services.user_service - INFO - MainThread - User Surendra3 logged in successfully
+2025-08-29 15:05:03,436 - app.core.dependencies - INFO - MainThread - Session created for user Surendra3 with email gsrgsreddy3@gmail.com
+2025-08-29 15:05:05,173 - app.utils.email_otp - ERROR - MainThread -  Failed to send OTP: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-b4cd28ae66bsm1684899a12.28 - gsmtp')
+2025-08-29 15:08:47,751 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 15:08:48,117 - app.services.user_service - INFO - MainThread - User Surendra3 logged in successfully
+2025-08-29 15:08:48,188 - app.core.dependencies - INFO - MainThread - Session created for user Surendra3 with email gsrgsreddy3@gmail.com
+2025-08-29 15:08:50,652 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to gsrgsreddy3@gmail.com
+2025-08-29 15:09:30,302 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 15:09:30,689 - app.services.user_service - INFO - MainThread - No changed detected for user: gsrgsreddy3@gmail.com
+2025-08-29 15:09:35,875 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 15:09:36,479 - app.services.user_service - INFO - MainThread - User details updated for gsrgsreddy3@gmail.com: ['phone_number']
+2025-08-29 15:14:39,754 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:15:02,969 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:15:16,498 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:18:12,842 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:18:46,847 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:19:42,449 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:21:01,358 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:21:51,202 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:22:10,048 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:22:24,935 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:23:17,261 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:25:06,970 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:25:56,435 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:26:21,765 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:29:31,334 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:31:04,455 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:31:32,484 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:32:22,832 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:32:54,422 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:33:20,730 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:33:52,643 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:34:59,218 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:35:22,236 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 15:35:39,518 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 15:37:03,600 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 15:37:04,022 - app.services.user_service - INFO - MainThread - User Surendra3 logged in successfully
+2025-08-29 15:37:04,123 - app.core.dependencies - INFO - MainThread - Session created for user Surendra3 with email gsrgsreddy3@gmail.com
+2025-08-29 15:37:06,842 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to gsrgsreddy3@gmail.com
+2025-08-29 15:37:32,847 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 15:37:33,203 - app.services.user_service - INFO - MainThread - User details updated for gsrgsreddy3@gmail.com: ['phone_number']
+2025-08-29 15:37:59,521 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:38:03,398 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to gsrgsreddy3@gmail.com
+2025-08-29 15:39:38,506 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:40:10,703 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:40:42,265 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 15:40:56,495 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 15:55:59,643 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 15:56:12,895 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 15:56:13,252 - app.services.user_service - INFO - MainThread - User Surendra3 logged in successfully
+2025-08-29 15:56:13,283 - app.core.dependencies - INFO - MainThread - Session created for user Surendra3 with email gsrgsreddy3@gmail.com
+2025-08-29 15:56:16,489 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to gsrgsreddy3@gmail.com
+2025-08-29 15:56:45,895 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 15:56:46,327 - app.services.user_service - INFO - MainThread - User details updated for gsrgsreddy3@gmail.com: ['phone_number']
+2025-08-29 15:56:49,675 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 15:56:50,038 - app.services.user_service - INFO - MainThread - No changed detected for user: gsrgsreddy3@gmail.com
+2025-08-29 15:57:02,660 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:57:09,422 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:57:16,906 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:57:20,114 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to gsrgsreddy3@gmail.com
+2025-08-29 15:57:26,912 - app.routes.user_routes - INFO - MainThread - Password change request received.
+2025-08-29 15:57:29,877 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to gsrgsreddy3@gmail.com
+2025-08-29 16:00:07,749 - app.services.user_service - INFO - MainThread - Password successfully updated for user: Surendra3
+2025-08-29 16:00:07,749 - app.services.user_service - INFO - MainThread - Password Changed Successfully for Surendra3
+2025-08-29 16:00:23,935 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 16:00:30,628 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 16:01:18,252 - app.routes.parking_routes - INFO - MainThread - Parkings List requested.
+2025-08-29 16:01:33,899 - app.routes.parking_routes - INFO - MainThread - Parkings List requested.
+2025-08-29 16:05:56,247 - app.routes.parking_routes - INFO - MainThread - Parkings List requested.
+2025-08-29 16:06:17,108 - app.routes.parking_routes - INFO - MainThread - Parkings List requested.
+2025-08-29 16:07:27,050 - app.routes.parking_routes - INFO - MainThread - Parkings List requested.
+2025-08-29 16:15:28,875 - app.routes.parking_routes - INFO - MainThread - Parkings List requested.
+2025-08-29 16:16:21,667 - app.routes.parking_routes - INFO - MainThread - Parkings List requested.
+2025-08-29 16:52:58,163 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 16:52:58,871 - app.services.user_service - INFO - MainThread - User Surendra3 logged in successfully
+2025-08-29 16:52:58,902 - app.core.dependencies - INFO - MainThread - Session created for user Surendra3 with email gsrgsreddy3@gmail.com
+2025-08-29 16:53:02,855 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to gsrgsreddy3@gmail.com
+2025-08-29 16:53:29,425 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 16:53:30,086 - app.services.user_service - WARNING - MainThread - Password mismatch for user: gsrgsreddy3@gmail.com
+2025-08-29 16:53:35,825 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-08-29 16:53:36,469 - app.services.user_service - INFO - MainThread - No changed detected for user: gsrgsreddy3@gmail.com
+2025-08-29 17:05:49,864 - app.routes.parking_routes - INFO - MainThread - Parkings List requested.
+2025-08-29 17:06:05,150 - app.routes.parking_routes - INFO - MainThread - Parkings List requested.
+2025-08-29 17:12:16,146 - app.routes.parking_routes - INFO - MainThread - Parkings List requested.
+2025-08-29 17:19:29,697 - app.routes.parking_routes - INFO - MainThread - Parkings List requested.
+2025-08-29 17:42:13,397 - app.services.booking_service - INFO - MainThread - Booking created: B0B88C2C9 for slot 2-3 in lot 2 by gsrgsreddy3@gmail.com
+2025-08-29 18:00:48,336 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-08-29 18:00:49,086 - app.services.user_service - INFO - MainThread - User Surendra3 logged in successfully
+2025-08-29 18:00:49,113 - app.core.dependencies - INFO - MainThread - Session created for user Surendra3 with email gsrgsreddy3@gmail.com
+2025-08-29 18:00:52,685 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to gsrgsreddy3@gmail.com
+2025-08-29 18:13:51,167 - app.services.booking_service - INFO - MainThread - Booking B20CD51BD released successfully
+2025-08-29 18:20:14,753 - app.services.booking_service - INFO - MainThread - Booking B20CD51BD released and deleted successfully
