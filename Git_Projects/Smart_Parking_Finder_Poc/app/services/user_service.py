@@ -132,9 +132,7 @@ async def login_user(data: Login_Request):
     }
 
 async def update_user(token: str, data: Update_Details_Request):
-    print(token)
     payload = verify_jwt(token)
-    print(payload)
     user_email = payload.get("email")
     if not user_email:
         logger.warning("Invalid token: missing email")
