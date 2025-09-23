@@ -4,7 +4,7 @@ your_project/                        ← 🔹 project root
 │  
 │   ├── core/                        ← core utilities & configs
 │   │   ├── config.py                ← app config, constants, settings
-│   │   ├── dependencies.py          ← common dependencies (auth, DB, etc.)
+│   │   ├── dependencies.py          ← common dependencies (auth, token validation,etc.)
 │   │   ├── security.py              ← password hashing, JWT creation
 │
 │   ├── db/                          ← database related code

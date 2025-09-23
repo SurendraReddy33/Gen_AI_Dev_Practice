@@ -189,3 +189,5 @@
 2025-08-29 18:00:52,685 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to gsrgsreddy3@gmail.com
 2025-08-29 18:13:51,167 - app.services.booking_service - INFO - MainThread - Booking B20CD51BD released successfully
 2025-08-29 18:20:14,753 - app.services.booking_service - INFO - MainThread - Booking B20CD51BD released and deleted successfully
+2025-09-23 11:02:14,963 - app.routes.user_routes - INFO - MainThread - New Registration attempt initiated.
+2025-09-23 11:02:14,998 - app.services.user_service - WARNING - MainThread - Duplicate user attempt during registration.
