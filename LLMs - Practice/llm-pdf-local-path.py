@@ -1,25 +1,21 @@
-import os 
 from google import genai
 from google.genai import types
-import httpx
+import pathlib
+import os
+
 
 api_key = os.getenv("API_KEY")
-
 client = genai.Client(api_key=api_key)
 
-
-doc_path = r"D:\Documents\what is agentic ai.pdf"
-
-
 # Retrieve and encode the PDF byte
-doc_data = httpx.get(doc_path).content
+filepath = pathlib.Path('C:/Users/svcs/Downloads/Surendra_Reddy_Gandra_Python_Developer.pdf')
 
-prompt = "Summarize this document"
+prompt = "What are the projects mentioned in this document?"
 response = client.models.generate_content(
-  model="gemini-2.5-flash",
+  model="gemini-2.5-pro",
   contents=[
       types.Part.from_bytes(
-        data=doc_data,
+        data=filepath.read_bytes(),
         mime_type='application/pdf',
       ),
       prompt])
