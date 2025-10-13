@@ -191,3 +191,27 @@
 2025-08-29 18:20:14,753 - app.services.booking_service - INFO - MainThread - Booking B20CD51BD released and deleted successfully
 2025-09-23 11:02:14,963 - app.routes.user_routes - INFO - MainThread - New Registration attempt initiated.
 2025-09-23 11:02:14,998 - app.services.user_service - WARNING - MainThread - Duplicate user attempt during registration.
+2025-10-13 16:51:19,674 - app.routes.user_routes - INFO - MainThread - New Registration attempt initiated.
+2025-10-13 16:51:19,989 - app.services.user_service - INFO - MainThread - New user created: surendrareddy with email surendrareddygandra3@gmail.com
+2025-10-13 16:52:44,719 - app.routes.user_routes - INFO - MainThread - New Registration attempt initiated.
+2025-10-13 16:52:44,742 - app.services.user_service - WARNING - MainThread - Duplicate user attempt during registration.
+2025-10-13 16:54:34,688 - app.routes.user_routes - INFO - MainThread - New Registration attempt initiated.
+2025-10-13 16:54:35,049 - app.services.user_service - INFO - MainThread - New user created: surendrareddy with email gsrgsreddy3@gmail.com
+2025-10-13 16:54:45,754 - app.routes.user_routes - INFO - MainThread - Login initiated for: gsrgsreddy3@gmail.com
+2025-10-13 16:54:46,163 - app.services.user_service - INFO - MainThread - User Surendra logged in successfully
+2025-10-13 16:54:46,200 - app.core.dependencies - INFO - MainThread - Session created for user Surendra with email gsrgsreddy3@gmail.com
+2025-10-13 16:54:48,994 - app.utils.email_otp - INFO - MainThread -  OTP sent successfully to gsrgsreddy3@gmail.com
+2025-10-13 16:55:40,836 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-10-13 16:55:40,862 - app.services.user_service - WARNING - MainThread - No user record found for email: surendrareddygandra3@gmail.com
+2025-10-13 16:55:47,871 - app.routes.user_routes - INFO - MainThread - User profile update requested.
+2025-10-13 16:55:48,207 - app.services.user_service - INFO - MainThread - User details updated for gsrgsreddy3@gmail.com: ['phone_number']
+2025-10-13 16:56:28,671 - app.routes.parking_routes - INFO - MainThread - Parkings List requested.
+2025-10-13 16:56:35,205 - app.routes.parking_routes - INFO - MainThread - Parkings List requested.
+2025-10-13 16:57:16,471 - app.routes.booking_routes - WARNING - MainThread - Booking creation failed: Session not active or logged out
+2025-10-13 16:57:23,470 - app.routes.booking_routes - WARNING - MainThread - Booking creation failed: Slot already booked
+2025-10-13 16:57:46,986 - app.services.booking_service - WARNING - MainThread - Booking not found: B20CD51BD
+2025-10-13 16:58:07,902 - app.services.booking_service - WARNING - MainThread - Booking not found: B20CD51BD
+2025-10-13 16:58:30,566 - app.services.booking_service - WARNING - MainThread - Booking not found: B20CD51BD
+2025-10-13 16:58:41,577 - app.services.booking_service - INFO - MainThread - Booking BB396CD0D updated successfully
+2025-10-13 16:58:51,010 - app.services.booking_service - WARNING - MainThread - Booking not found: B20CD51BD
+2025-10-13 16:58:55,496 - app.services.booking_service - INFO - MainThread - Booking BB396CD0D released and deleted successfully

@@ -1,12 +1,12 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from google import genai
-from google.genai import types
+from google.genai import types                                 
 import os
-from IPython.display import Markdown
+from IPython.display import Markdown                            
 
 api_key = os.getenv("API_KEY")
-client = genai.Client(api_key=api_key)
+client = genai.Client(api_key=api_key)                                                 
 
 app = FastAPI()
 

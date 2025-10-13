@@ -3,7 +3,6 @@ from google.genai import types
 import pathlib
 import os
 
-
 api_key = os.getenv("API_KEY")
 client = genai.Client(api_key=api_key)
 
