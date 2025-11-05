@@ -4,7 +4,7 @@ from google import genai
 from google.genai import types
 import os
 
-api_key = os.getenv("API_KEY")
+api_key = os.getenv("llm-api-key")
 client = genai.Client(api_key=api_key)
 
 app = FastAPI()
@@ -25,7 +25,7 @@ async def summarize(request: TextSummarize):
 """
 
     response = client.models.generate_content(
-        model = "gemini-2.5-pro",
+        model = "gemini-2.5-flash",
         contents= prompt,
     )
 
