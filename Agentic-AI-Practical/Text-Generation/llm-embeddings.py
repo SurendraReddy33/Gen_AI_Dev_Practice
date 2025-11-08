@@ -49,6 +49,7 @@ async def store_embedding(request: EmbedRequest):
     )
     vector = np.array(response.embedding.values, dtype="float32")
     index.add(np.array([vector]))
+    
     texts_db.append(request.text)
     return {"message": "Text embedded and stored successfully!"}
 
