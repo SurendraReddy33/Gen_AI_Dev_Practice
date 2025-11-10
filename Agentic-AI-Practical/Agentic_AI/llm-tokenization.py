@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from typing import Optional
 from sentence_transformers import SentenceTransformer
 from transformers import AutoTokenizer
 import numpy as np
@@ -15,7 +16,10 @@ tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 # ✅ Define request model
 class TextRequest(BaseModel):
     text: str
-    text2: str = None  # Optional second text for similarity
+    text2: Optional[str] = None
+    sentences: Optional[list[str]] = None
+    top_k: Optional[int] = 3
+
 
 
 # ✅ Tokenization endpoint
@@ -77,3 +81,38 @@ def cosine_similarity(request: TextRequest):
         "text2": request.text2,
         "similarity_score": round(float(similarity), 3)
     }
+
+
+# ✅ Finding most similar sentences endpoint
+@app.post("/find-similar")
+def find_most_similar(request: TextRequest):
+    query = request.text                    # ✅ fixed field name
+    sentences = request.sentences or []     # ✅ safety check
+    if not sentences:
+        return {"error": "Please provide a list of sentences to compare against."}
+
+    top_k = min(request.top_k or 3, len(sentences))
+
+    # Encode sentences and query
+    sentence_embeddings = embedding_model.encode(sentences)
+    query_embedding = embedding_model.encode(query)
+
+    # Compute cosine similarities
+    similarities = np.dot(sentence_embeddings, query_embedding) / (
+        np.linalg.norm(sentence_embeddings, axis=1) * np.linalg.norm(query_embedding)
+    )
+
+    # Sort and get top-k
+    sorted_indices = np.argsort(similarities)[::-1]
+    results = [
+        {"sentence": sentences[i], "similarity_score": round(float(similarities[i]), 3)}
+        for i in sorted_indices[:top_k]
+    ]
+
+    return {
+        "model_name": MODEL_NAME,
+        "query": query,
+        "top_results": results
+    }
+
+
