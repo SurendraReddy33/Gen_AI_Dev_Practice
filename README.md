@@ -20,7 +20,7 @@ This repo brings together everything I’ve built, practiced, and experimented w
 
 ## 🧠 **Agentic AI Practical**  
 📁 `/agentic-ai-practical`  
-[![Folder](https://img.shields.io/badge/Folder-Agentic%20AI-blue?style=for-the-badge)](https://github.com/SurendraReddy33/Gen_AI_Dev_Practice/tree/main/Voice-Agent-E-Commerce-Platform%20(VOXERA))
+[![Folder](https://img.shields.io/badge/Folder-Agentic%20AI-blue?style=for-the-badge)]([https://github.com/SurendraReddy33/Gen_AI_Dev_Practice/tree/main/Voice-Agent-E-Commerce-Platform%20(VOXERA)](https://github.com/SurendraReddy33/Gen_AI_Dev_Practice/tree/main/Agentic-AI-Practical))
 
 A complete hands-on folder containing all my practical work in building **Agentic AI Systems includes llm Fundamentals, Prompt Engineering, RAG Systems, frameworks - Langchain, langgraph etc.., Gradio UI** and also with **Python, Flask, FastAPI, MongoDB, Docker** :
 
@@ -38,7 +38,7 @@ A complete hands-on folder containing all my practical work in building **Agenti
 
 ## 🎙️ **VOXERA – Voice Agent E-Commerce Platform**  
 📁 `/voxera`  
-![Folder](https://img.shields.io/badge/Folder-VOXera-orange?style=for-the-badge)
+[![Folder](https://img.shields.io/badge/Folder-VOXera-orange?style=for-the-badge)](https://github.com/SurendraReddy33/Gen_AI_Dev_Practice/tree/main/Voice-Agent-E-Commerce-Platform%20(VOXERA))
 
 A voice-controlled intelligent shopping assistant built using AI & LLM tools. Built with fully smart and interactiveness according to this evolving AI Era.
 
@@ -56,7 +56,7 @@ A voice-controlled intelligent shopping assistant built using AI & LLM tools. Bu
 
 ## 🅿️ **Smart Parking Management System**  
 📁 `/smart-parking`  
-![Folder](https://img.shields.io/badge/Folder-Smart%20Parking-green?style=for-the-badge)
+[![Folder](https://img.shields.io/badge/Folder-Smart%20Parking-green?style=for-the-badge)](https://github.com/SurendraReddy33/Gen_AI_Dev_Practice/tree/main/Smart_Parking_Finder)
 
 A fully functional **FastAPI project** managing real-time parking availability for solving real-time parking solutions.
 
@@ -72,7 +72,7 @@ A fully functional **FastAPI project** managing real-time parking availability f
 
 ## 🗂️ **Projects & POCs**  
 📁 `/projects`  
-![Folder](https://img.shields.io/badge/Folder-Projects%20%26%20POCs-purple?style=for-the-badge)
+[![Folder](https://img.shields.io/badge/Folder-Projects%20%26%20POCs-purple?style=for-the-badge)](https://github.com/SurendraReddy33/Gen_AI_Dev_Practice/tree/main/Projects)
 
 Collection of backend APIs and proof-of-concepts built using Python, FastAPI & MongoDB.
 
@@ -88,7 +88,7 @@ Includes:
 
 ## ✍️ **Articles**  
 📁 `/article`  
-![Folder](https://img.shields.io/badge/Folder-Articles-yellow?style=for-the-badge)
+[![Folder](https://img.shields.io/badge/Folder-Articles-yellow?style=for-the-badge)](https://github.com/SurendraReddy33/Gen_AI_Dev_Practice/tree/main/Master-Class-Article)
 
 Contains all my written content explaining my:
 
@@ -103,7 +103,7 @@ Contains all my written content explaining my:
 
 ## 📝 **Notes**  
 📁 `/notes`  
-![Folder](https://img.shields.io/badge/Folder-Notes-lightgrey?style=for-the-badge)
+[![Folder](https://img.shields.io/badge/Folder-Notes-lightgrey?style=for-the-badge)](https://github.com/SurendraReddy33/Gen_AI_Dev_Practice/blob/main/Agentic_AI_Notes.docx)
 
 Topic-wise notes prepared during my learning journey:
 
