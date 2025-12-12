@@ -10,18 +10,17 @@ This repo brings together everything I’ve built, practiced, and experimented w
 > 🔗 Navigate to the folders 🔽 .
 
 1. 🧠 [Agentic AI Practical](https://github.com/SurendraReddy33/Gen_AI_Dev_Practice/tree/main/Agentic-AI-Practical)
-2. 🎙️ [VOXERA – Voice Agent E-Commerce Platform](#)
-3. 🅿️ [Smart_Parking_Management_System](#)
-4. 🗂️ [Projects & POCs](#)
-5. ✍️ [Articles](#)
-6. 📝 [Notes](#)
-7. 🚀 [Summary](#summary)
+2. 🎙️ [VOXERA – Voice Agent E-Commerce Platform](https://github.com/SurendraReddy33/Gen_AI_Dev_Practice/tree/main/Voice-Agent-E-Commerce-Platform%20(VOXERA))
+3. 🅿️ [Smart_Parking_Management_System](https://github.com/SurendraReddy33/Gen_AI_Dev_Practice/tree/main/Smart_Parking_Finder)
+4. 🗂️ [Projects & POCs](https://github.com/SurendraReddy33/Gen_AI_Dev_Practice/tree/main/Projects)
+5. ✍️ [Articles](https://github.com/SurendraReddy33/Gen_AI_Dev_Practice/tree/main/Master-Class-Article)
+6. 📝 [Notes](https://github.com/SurendraReddy33/Gen_AI_Dev_Practice/blob/main/Agentic_AI_Notes.docx)
 
 ---
 
 ## 🧠 **Agentic AI Practical**  
 📁 `/agentic-ai-practical`  
-![Folder](https://img.shields.io/badge/Folder-Agentic%20AI-blue?style=for-the-badge)
+[![Folder](https://img.shields.io/badge/Folder-Agentic%20AI-blue?style=for-the-badge)](https://github.com/SurendraReddy33/Gen_AI_Dev_Practice/tree/main/Voice-Agent-E-Commerce-Platform%20(VOXERA))
 
 A complete hands-on folder containing all my practical work in building **Agentic AI Systems includes llm Fundamentals, Prompt Engineering, RAG Systems, frameworks - Langchain, langgraph etc.., Gradio UI** and also with **Python, Flask, FastAPI, MongoDB, Docker** :
 
