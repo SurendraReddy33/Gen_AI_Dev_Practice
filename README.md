@@ -9,7 +9,7 @@ This repo brings together everything I’ve built, practiced, and experimented w
 
 > 🔗 Navigate to the folders 🔽 .
 
-1. 🧠 [Agentic AI Practical](#)
+1. 🧠 [Agentic AI Practical](#https://github.com/SurendraReddy33/Gen_AI_Dev_Practice/tree/main/Agentic-AI-Practical)
 2. 🎙️ [VOXERA – Voice Agent E-Commerce Platform](#)
 3. 🅿️ [Smart_Parking_Management_System](#)
 4. 🗂️ [Projects & POCs](#)
