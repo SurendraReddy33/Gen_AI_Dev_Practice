@@ -20,7 +20,7 @@ This repo brings together everything I’ve built, practiced, and experimented w
 
 ## 🧠 **Agentic AI Practical**  
 📁 `/agentic-ai-practical`  
-[![Folder](https://img.shields.io/badge/Folder-Agentic%20AI-blue?style=for-the-badge)]([https://github.com/SurendraReddy33/Gen_AI_Dev_Practice/tree/main/Voice-Agent-E-Commerce-Platform%20(VOXERA)](https://github.com/SurendraReddy33/Gen_AI_Dev_Practice/tree/main/Agentic-AI-Practical))
+[![Folder](https://img.shields.io/badge/Folder-Agentic%20AI-blue?style=for-the-badge)]([https://github.com/SurendraReddy33/Gen_AI_Dev_Practice/tree/main/Voice-Agent-E-Commerce-Platform%20(VOXERA)](https://github.com/SurendraReddy33/Gen_AI_Dev_Practice/tree/main/Agentic-AI-Practical)
 
 A complete hands-on folder containing all my practical work in building **Agentic AI Systems includes llm Fundamentals, Prompt Engineering, RAG Systems, frameworks - Langchain, langgraph etc.., Gradio UI** and also with **Python, Flask, FastAPI, MongoDB, Docker** :
 
