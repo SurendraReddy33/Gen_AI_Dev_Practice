@@ -120,6 +120,7 @@ def build_faiss_index(request: ChunkRequest):
         chunk_overlap=request.chunk_overlap,
         separators=["\n\n", "\n", ".", " ", ""]
     )
+    
     chunks_list = splitter.split_text(text)
 
     # Generate embeddings
