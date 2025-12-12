@@ -1,0 +1,507 @@
+{
+	"info": {
+		"_postman_id": "57d1c6b9-a82c-4098-81d7-dd9ab189bb9c",
+		"name": "smart_parking_finder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44744021",
+		"_collection_link": "https://surendrareddy-5782033.postman.co/workspace/Surendra-Reddy's-Workspace~f556d798-1795-4403-8ade-460abd7f75f0/collection/44744021-57d1c6b9-a82c-4098-81d7-dd9ab189bb9c?action=share&source=collection_link&creator=44744021"
+	},
+	"item": [
+		{
+			"name": "register_admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin1\",\r\n    \"email\": \"admin2@gmail.com\",\r\n    \"password\": \"admin@1\",\r\n    \"phone\": \"1234567899\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login_admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OGFkNDUyMGZiNTVhMDAxNTRiNmY4YzEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NjE5ODg2NCwiZXhwIjoxNzU2Mjg1MjY0fQ.s_krggkNH4Ipx3YVyZh8oJyLH87nA3FbeJ8Xk7WnlZw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"gsrgsreddy3@gmail.com\",\r\n    \"password\": \"Surendra@1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OGFkOGI2YTc0NDE4YzBjMTZhZDdlYzQiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NjIwODIyOSwiZXhwIjoxNzU2Mjk0NjI5fQ._Oe7MAl7RNL1Y14gEbw3HyGGHzIgm9ny_xnS1xQnMWo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\": \"9121758435\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/profile/update",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"profile",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OGFkNzkxOTlmMzliZWI3YTE3Yjc2ZjUiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NjE5OTIwMSwiZXhwIjoxNzU2Mjg1NjAxfQ.FGcY76D7BZ7EqrexWSzVoJyOR3LtiWTdD6ipUXGrqpI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/profile/delete",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"profile",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change_password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiU3VyZW5kcmEzIiwiZW1haWwiOiJnc3Jnc3JlZGR5M0BnbWFpbC5jb20iLCJleHAiOjE3NTY0NjM5Mjh9.nBV9daLyMy6tm7DxW2TDcCt5dkhjM1fGWJlAbySm3dI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"gsrgsreddy3@gmail.com\",\r\n    \"old_password\": \"Surendra@1\",\r\n    \"new_password\": \"Surendra@11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/change_password",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"change_password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reset_password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiU3VyZW5kcmEzIiwiZW1haWwiOiJnc3Jnc3JlZGR5M0BnbWFpbC5jb20iLCJleHAiOjE3NTY0NjM5Mjh9.nBV9daLyMy6tm7DxW2TDcCt5dkhjM1fGWJlAbySm3dI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"gsrgsreddy3@gmail.com\",\r\n    \"old_password\": \"Surendra@1\",\r\n    \"new_password\": \"Surendra@11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/change_password",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"change_password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OGFkNDUyMGZiNTVhMDAxNTRiNmY4YzEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NjE5ODg2NCwiZXhwIjoxNzU2Mjg1MjY0fQ.s_krggkNH4Ipx3YVyZh8oJyLH87nA3FbeJ8Xk7WnlZw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_parkings_list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiU3VyZW5kcmEzIiwiZW1haWwiOiJnc3Jnc3JlZGR5M0BnbWFpbC5jb20iLCJleHAiOjE3NTY0NjY3NzN9.ivr3mHLmDObOM_0KFqSTtNsQTwPeitT_TSeTXa7dEU8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/parking/list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"parking",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_lot_details",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "available_slots",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiU3VyZW5kcmEzIiwiZW1haWwiOiJnc3Jnc3JlZGR5M0BnbWFpbC5jb20iLCJleHAiOjE3NTY0NzAxNzh9.-m-WUWIQMgpWprqqpf4zEAdnx_DtEErvtorgSz_bdPI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/parking/slots/available",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"parking",
+						"slots",
+						"available"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vehicle_type_slots",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "create_booking",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "list_bookings",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiU3VyZW5kcmEzIiwiZW1haWwiOiJnc3Jnc3JlZGR5M0BnbWFpbC5jb20iLCJleHAiOjE3NTY0NzAxNzh9.-m-WUWIQMgpWprqqpf4zEAdnx_DtEErvtorgSz_bdPI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/booking/list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"booking",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_booking_by_id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "update_booking",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"new_slot_id\":\"1-5\",\r\n    \"new_vehicle_id\": \"bike\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/booking/update/B20CD51BD",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"booking",
+						"update",
+						"B20CD51BD"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "release_booking",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

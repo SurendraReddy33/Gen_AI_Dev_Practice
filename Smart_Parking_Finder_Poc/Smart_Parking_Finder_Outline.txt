@@ -1,0 +1,213 @@
+Smart Parking Finder POC — Endpoint Outline
+ 
+ 
+---
+ 
+1️⃣ Admin Endpoints (10)
+ 
+1. Admin Register
+ 
+Method: POST
+ 
+Request Body: username, email, password, phone
+ 
+Validations: unique email, password strength, phone format
+ 
+Internal Fields: admin_id, created_at, last_login, status="active"
+ 
+Response: Success / Duplicate email / Invalid fields
+ 
+ 
+2. Admin Login
+ 
+Method: POST
+ 
+Request Body: email, password
+ 
+Validations: check credentials, status active
+ 
+Internal Fields: update last_login
+ 
+Response: JWT token, login success / failure
+ 
+ 
+3. Add Parking Lot
+ 
+Method: POST
+ 
+Request Body: lot_id, lot_name, manager_name, phone, location
+ 
+Validations: unique lot_id & lot_name
+ 
+Internal Fields: status="active", created_at
+ 
+Response: Lot created success / duplicate
+ 
+ 
+4. Update Parking Lot
+ 
+Method: PUT
+ 
+Request Body: optional fields: lot_name, manager_name, phone, location, status
+ 
+Validations: must provide at least one field, status fixed (active/inactive)
+ 
+Response: Lot updated success / error
+ 
+ 
+5. Delete Parking Lot (archive)
+ 
+Method: DELETE
+ 
+Request Body: lot_id
+ 
+Internal Fields: archived_at
+ 
+Response: Lot deleted success / not found
+ 
+ 
+6. Add Parking Slot
+ 
+Method: POST
+ 
+Request Body: slot_id, lot_id, slot_type, capacity, status
+ 
+Validations: unique slot_id, lot must exist
+ 
+Internal Fields: created_at
+ 
+Response: Slot created success / error
+ 
+ 
+7. Update Parking Slot
+ 
+Method: PUT
+ 
+Request Body: optional fields: slot_type, capacity, status
+ 
+Validations: must provide at least one field
+ 
+Response: Slot updated success / error
+ 
+ 
+8. Delete Parking Slot (archive)
+ 
+Method: DELETE
+ 
+Request Body: slot_id
+ 
+Internal Fields: archived_at
+ 
+Response: Slot deleted success / not found
+ 
+ 
+9. View Active Slots
+ 
+Method: GET
+ 
+Response: List of active slots
+ 
+ 
+10. View Archived Slots
+ 
+Method: GET
+ 
+Response: List of archived slots
+ 
+ 
+ 
+---
+ 
+2️⃣ User Endpoints (6)
+ 
+11. User Register
+ 
+Method: POST
+ 
+Request Body: username, email, password, phone
+ 
+Validations: unique email, password strength
+ 
+Internal Fields: user_id, created_at, last_login, status="active"
+ 
+Response: Success / Duplicate email / Invalid fields
+ 
+ 
+12. User Login
+ 
+Method: POST
+ 
+Request Body: email, password
+ 
+Validations: credentials check, active status
+ 
+Internal Fields: update last_login
+ 
+Response: JWT token, login success / failure
+ 
+ 
+13. Reserve Parking Slot
+ 
+Method: POST
+ 
+Request Body: user_id, slot_id, reserve_time, duration
+ 
+Validations: slot available, capacity check
+ 
+Internal Fields: reservation_id, created_at, status="confirmed"
+ 
+Response: Reservation success / slot full / error
+ 
+ 
+14. Cancel Reservation
+ 
+Method: DELETE
+ 
+Request Body: reservation_id
+ 
+Internal Fields: update status="cancelled"
+ 
+Response: Reservation cancelled / not found
+ 
+ 
+15. View User Reservations
+ 
+Method: GET
+ 
+Path Param: user_id
+ 
+Response: List of reservations for user
+ 
+ 
+16. Search Available Slots
+ 
+Method: GET
+ 
+Query Params: lot_id, date, time, duration
+ 
+Response: List of available slots matching criteria
+ 
+ 
+ 
+---
+ 
+3️⃣ Notification Endpoints (2)
+ 
+17. Admin Send Email Notification
+ 
+Method: POST
+ 
+Request Body: recipient_email, subject, message
+ 
+Validations: valid email, only admin can send
+ 
+Response: Email sent success / failed
+ 
+ 
+18. User View Notifications
+ 
+Method: GET
+ 
+Path Param: user_id
+ 
+Response: List of notifications

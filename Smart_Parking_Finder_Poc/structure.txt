@@ -1,0 +1,37 @@
+your_project/                        ← 🔹 project root
+│
+├── app/                             ← main application folder
+│  
+│   ├── core/                        ← core utilities & configs
+│   │   ├── config.py                ← app config, constants, settings
+│   │   ├── dependencies.py          ← common dependencies (auth, token validation,etc.)
+│   │   ├── security.py              ← password hashing, JWT creation
+│
+│   ├── db/                          ← database related code
+│   │   ├── mongo_db.py              ← MongoDB client setup
+│
+│   ├── models/                      ← pydantic request/response models
+│   │   ├── user_models.py           ← schemas for user
+│   │   ├── parking_models.py        ← schemas for parking
+│   │   ├── booking_models.py        ← schemas for booking
+│
+│   ├── services/                    ← business logic
+│   │   ├── user_service.py          ← logic for register, login, update, etc.
+│   │   ├── parking_service.py       ← parking slot management
+│   │   ├── booking_service.py       ← booking flow, validations
+│
+│   ├── routes/                      ← API route handlers
+│   │   ├── user_routes.py           ← endpoints: register, login, logout, etc.
+│   │   ├── parking_routes.py        ← endpoints: add, update, delete parking
+│   │   ├── booking_routes.py        ← endpoints: booking operations
+│
+│   ├── utils/                       ← helper utilities
+│   │   ├── decorators.py            ← reusable decorators (auth, error handling)
+│   │   ├── logger.py                ← logging setup
+│   │   ├── email_otp.py             ← email sending + OTP generation
+│
+│
+├── .env                             ← environment variables (DB_URL, JWT_SECRET, etc.)
+├── main.py                          ← entry point to start FastAPI server
+├── seed.py                          ← script to seed initial data (admin user, etc.)
+├── requirements.txt                 ← Python dependencies
