@@ -20,11 +20,26 @@ def load_document(file_path):
 
 def split_documents(documents):
     splitter = RecursiveCharacterTextSplitter(
-        chunk_size=400,
-        chunk_overlap=80
+        chunk_size=300,
+        chunk_overlap=60
     )
-    return splitter.split_documents(documents)
+    chunks = splitter.split_documents(documents)
 
+    # Normalize headings for better retrieval
+    for chunk in chunks:
+        chunk.page_content = normalize_text(chunk.page_content)
+
+    return chunks
+
+def normalize_text(text):
+    replacements = {
+        "PROJECTS": "Projects",
+        "SKILLS": "Skills",
+        "EXPERIENCE": "Experience"
+    }
+    for k, v in replacements.items():
+        text = text.replace(k, v)
+    return text
 
 # -------------------- STEP 2: EMBEDDINGS + FAISS --------------------
 
@@ -74,6 +89,18 @@ Answer:
     return rag_chain
 
 
+def retrieve_with_sources(vector_store, question, k=5):
+    retriever = vector_store.as_retriever(search_kwargs={"k": k})
+    docs = retriever.invoke(question)
+    return docs
+
+
+def format_docs(docs):
+    return "\n\n".join(doc.page_content for doc in docs)
+
+
+
+
 # -------------------- TEST FULL RAG --------------------
 
 if __name__ == "__main__":
@@ -91,5 +118,4 @@ if __name__ == "__main__":
     question = "What projects has the candidate worked on?"
     response = rag_chain.invoke(question)
 
-    print("\nQuestion:", question)
     print("Answer:\n", response.content)
