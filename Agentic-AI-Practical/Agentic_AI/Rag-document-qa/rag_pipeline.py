@@ -5,60 +5,31 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
-
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate
-from langchain_core.runnables import RunnablePassthrough
 
 load_dotenv()
 
-# -------------------- HELPERS --------------------
-
-def normalize_text(text):
-    for k in ["PROJECTS", "SKILLS", "EXPERIENCE", "CERTIFICATIONS"]:
-        text = text.replace(k, k.title())
-    return text
-
-
-def add_section_hints(text):
-    for sec in ["Projects", "Skills", "Experience", "Certifications"]:
-        text = text.replace(sec, f"\n\nSECTION: {sec}\n")
-    return text
-
-
-def get_dynamic_k(n):
-    return 5 if n <= 10 else 7 if n <= 30 else 10
-
-
-def deduplicate_lines(text):
-    seen, out = set(), []
-    for line in text.split("\n"):
-        l = line.strip()
-        if l and l.lower() not in seen:
-            seen.add(l.lower())
-            out.append(l)
-    return "\n".join(out)
-
-# -------------------- LOAD & SPLIT --------------------
+# -------------------- LOAD DOCUMENT --------------------
 
 def load_document(path):
     return PyPDFLoader(path).load()
 
+# -------------------- SPLIT DOCUMENT --------------------
 
 def split_documents(docs):
-    for d in docs:
-        d.page_content = normalize_text(add_section_hints(d.page_content))
-
     splitter = RecursiveCharacterTextSplitter(
-        chunk_size=300,
-        chunk_overlap=60
+        chunk_size=250,
+        chunk_overlap=80
     )
     return splitter.split_documents(docs)
 
 # -------------------- VECTOR STORE --------------------
 
 def create_vector_store(chunks):
-    embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+    embeddings = HuggingFaceEmbeddings(
+        model_name="all-MiniLM-L6-v2"
+    )
 
     if os.path.exists("faiss_index"):
         return FAISS.load_local(
@@ -71,96 +42,74 @@ def create_vector_store(chunks):
     vs.save_local("faiss_index")
     return vs
 
-# -------------------- AGENT 1: PLANNER --------------------
+# -------------------- RETRIEVAL --------------------
 
-def planner_agent(question):
-    q = question.lower()
-    if "project" in q:
-        return "Projects"
-    if "skill" in q:
-        return "Skills"
-    if "experience" in q or "work" in q:
-        return "Experience"
-    if "certification" in q:
-        return "Certifications"
-    return None
+def retrieve_sources(vector_store, question):
+    retriever = vector_store.as_retriever(
+        search_kwargs={"k": 10}
+    )
+    return retriever.invoke(question)
 
-# -------------------- AGENT 2: RETRIEVER --------------------
+# -------------------- STRICT GROUNDED ANSWER --------------------
 
-def retrieve_with_sources(vector_store, question, chunks_len):
-    k = get_dynamic_k(chunks_len)
-    retriever = vector_store.as_retriever(search_kwargs={"k": k})
-    docs = retriever.invoke(question)
-
-    section = planner_agent(question)
-    if section:
-        docs = [d for d in docs if section.lower() in d.page_content.lower()]
-
-    return docs
-
-# -------------------- AGENT 3: ANSWER GENERATOR --------------------
-
-def create_answer_chain(vector_store, chunks_len):
+def grounded_answer(sources, question, chat_history):
     llm = ChatGoogleGenerativeAI(
-        model="gemini-pro",
-        temperature=0.2
+        model="gemini-2.5-flash",
+        temperature=0.1
+    )
+
+    conversation = "\n".join(
+        f"{role}: {msg}" for role, msg in chat_history[-6:]
     )
 
     prompt = PromptTemplate.from_template(
         """
-You are an AI assistant answering questions from a document.
+You are a document question-answering assistant.
 
-Rules:
-- Use ONLY the given context
-- List ALL relevant items
-- Use bullet points if applicable
-- Do NOT hallucinate
-- If missing, say:
-"Answer not available in the provided document."
+RULES (VERY IMPORTANT):
+- Answer ONLY using the document context
+- Do NOT add external knowledge
+- Do NOT assume or guess
+- If partial information exists, answer partially
+- If information does not exist, clearly say so
+- Use bullet points when listing items
+- Be precise and factual
 
-Context:
+Conversation (for reference only):
+{conversation}
+
+Document Context:
 {context}
 
 Question:
 {question}
 
-Answer:
+Accurate Answer:
 """
     )
 
-    retriever = vector_store.as_retriever(
-        search_kwargs={"k": get_dynamic_k(chunks_len)}
+    context_text = "\n\n".join(doc.page_content for doc in sources)
+
+    response = llm.invoke(
+        prompt.format(
+            conversation=conversation,
+            context=context_text,
+            question=question
+        )
     )
 
-    return (
-        {
-            "context": retriever,
-            "question": RunnablePassthrough()
-        }
-        | prompt
-        | llm
-    )
+    return response.content
 
-# -------------------- AGENT 4: VERIFIER --------------------
+# -------------------- MAIN ENTRY --------------------
 
-def verifier_agent(answer, sources):
-    if "not available" in answer.lower():
-        return answer
+def document_chat_answer(vector_store, question, chat_history):
+    sources = retrieve_sources(vector_store, question)
 
-    for doc in sources:
-        if any(word.lower() in doc.page_content.lower() for word in answer.split()):
-            return answer
+    if not sources:
+        return (
+            "The document does not contain information related to this question.",
+            [],
+        )
 
-    return "Answer not available in the provided document."
-
-# -------------------- MAIN AGENTIC PIPELINE --------------------
-
-def agentic_rag_answer(vector_store, chunks_len, question):
-    sources = retrieve_with_sources(vector_store, question, chunks_len)
-    answer_chain = create_answer_chain(vector_store, chunks_len)
-
-    response = answer_chain.invoke(question)
-    raw_answer = deduplicate_lines(response.content)
-
-    final_answer = verifier_agent(raw_answer, sources)
-    return final_answer, sources
+    answer = grounded_answer(sources, question, chat_history)
+    return answer, sources
