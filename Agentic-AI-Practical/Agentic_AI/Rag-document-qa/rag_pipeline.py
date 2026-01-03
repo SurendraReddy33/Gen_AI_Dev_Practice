@@ -1,9 +1,10 @@
+import os
 from dotenv import load_dotenv
 
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate
@@ -14,82 +15,107 @@ load_dotenv()
 # -------------------- HELPERS --------------------
 
 def normalize_text(text):
-    replacements = {
-        "PROJECTS": "Projects",
-        "SKILLS": "Skills",
-        "EXPERIENCE": "Experience",
-        "CERTIFICATIONS": "Certifications"
-    }
-    for k, v in replacements.items():
-        text = text.replace(k, v)
+    for k in ["PROJECTS", "SKILLS", "EXPERIENCE", "CERTIFICATIONS"]:
+        text = text.replace(k, k.title())
     return text
 
 
 def add_section_hints(text):
-    sections = ["Projects", "Skills", "Experience", "Certifications"]
-    for sec in sections:
+    for sec in ["Projects", "Skills", "Experience", "Certifications"]:
         text = text.replace(sec, f"\n\nSECTION: {sec}\n")
     return text
 
 
-def get_dynamic_k(chunks_len):
-    if chunks_len <= 10:
-        return 5
-    elif chunks_len <= 30:
-        return 7
-    return 10
+def get_dynamic_k(n):
+    return 5 if n <= 10 else 7 if n <= 30 else 10
 
 
-def filter_short_chunks(docs, min_len=100):
-    return [doc for doc in docs if len(doc.page_content) >= min_len]
+def deduplicate_lines(text):
+    seen, out = set(), []
+    for line in text.split("\n"):
+        l = line.strip()
+        if l and l.lower() not in seen:
+            seen.add(l.lower())
+            out.append(l)
+    return "\n".join(out)
 
-# -------------------- STEP 1: LOAD --------------------
+# -------------------- LOAD & SPLIT --------------------
 
-def load_document(file_path):
-    loader = PyPDFLoader(file_path)
-    return loader.load()
+def load_document(path):
+    return PyPDFLoader(path).load()
 
-# -------------------- STEP 2: SPLIT --------------------
 
-def split_documents(documents):
-    for doc in documents:
-        doc.page_content = add_section_hints(doc.page_content)
-        doc.page_content = normalize_text(doc.page_content)
+def split_documents(docs):
+    for d in docs:
+        d.page_content = normalize_text(add_section_hints(d.page_content))
 
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=300,
         chunk_overlap=60
     )
-    return splitter.split_documents(documents)
+    return splitter.split_documents(docs)
 
-# -------------------- STEP 3: VECTOR STORE --------------------
+# -------------------- VECTOR STORE --------------------
 
 def create_vector_store(chunks):
-    embeddings = HuggingFaceEmbeddings(
-        model_name="all-MiniLM-L6-v2"
-    )
-    return FAISS.from_documents(chunks, embeddings)
+    embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
-# -------------------- STEP 4: RAG CHAIN --------------------
+    if os.path.exists("faiss_index"):
+        return FAISS.load_local(
+            "faiss_index",
+            embeddings,
+            allow_dangerous_deserialization=True
+        )
 
-def create_rag_chain(vector_store, chunks_len):
+    vs = FAISS.from_documents(chunks, embeddings)
+    vs.save_local("faiss_index")
+    return vs
+
+# -------------------- AGENT 1: PLANNER --------------------
+
+def planner_agent(question):
+    q = question.lower()
+    if "project" in q:
+        return "Projects"
+    if "skill" in q:
+        return "Skills"
+    if "experience" in q or "work" in q:
+        return "Experience"
+    if "certification" in q:
+        return "Certifications"
+    return None
+
+# -------------------- AGENT 2: RETRIEVER --------------------
+
+def retrieve_with_sources(vector_store, question, chunks_len):
     k = get_dynamic_k(chunks_len)
     retriever = vector_store.as_retriever(search_kwargs={"k": k})
+    docs = retriever.invoke(question)
 
+    section = planner_agent(question)
+    if section:
+        docs = [d for d in docs if section.lower() in d.page_content.lower()]
+
+    return docs
+
+# -------------------- AGENT 3: ANSWER GENERATOR --------------------
+
+def create_answer_chain(vector_store, chunks_len):
     llm = ChatGoogleGenerativeAI(
-        model="gemini-2.5-flash",
+        model="gemini-pro",
         temperature=0.2
     )
 
     prompt = PromptTemplate.from_template(
         """
-You are answering questions from a document such as a resume.
+You are an AI assistant answering questions from a document.
 
 Rules:
 - Use ONLY the given context
-- Be concise and factual
-- If multiple items exist, list them clearly
-- If information is missing, say:
+- List ALL relevant items
+- Use bullet points if applicable
+- Do NOT hallucinate
+- If missing, say:
 "Answer not available in the provided document."
 
 Context:
@@ -98,11 +124,15 @@ Context:
 Question:
 {question}
 
-Answer (use bullet points if applicable):
+Answer:
 """
     )
 
-    rag_chain = (
+    retriever = vector_store.as_retriever(
+        search_kwargs={"k": get_dynamic_k(chunks_len)}
+    )
+
+    return (
         {
             "context": retriever,
             "question": RunnablePassthrough()
@@ -111,28 +141,26 @@ Answer (use bullet points if applicable):
         | llm
     )
 
-    return rag_chain
+# -------------------- AGENT 4: VERIFIER --------------------
 
-# -------------------- STEP 5: RETRIEVAL WITH SOURCES --------------------
+def verifier_agent(answer, sources):
+    if "not available" in answer.lower():
+        return answer
 
-def retrieve_with_sources(vector_store, question, chunks_len):
-    k = get_dynamic_k(chunks_len)
-    retriever = vector_store.as_retriever(search_kwargs={"k": k})
-    docs = retriever.invoke(question)
-    return filter_short_chunks(docs)
+    for doc in sources:
+        if any(word.lower() in doc.page_content.lower() for word in answer.split()):
+            return answer
 
-# -------------------- OPTIONAL TEST --------------------
+    return "Answer not available in the provided document."
 
-if __name__ == "__main__":
-    pdf_path = r"data\Surendra_Reddy_Agentic_AI_Developer.pdf"
+# -------------------- MAIN AGENTIC PIPELINE --------------------
 
-    docs = load_document(pdf_path)
-    chunks = split_documents(docs)
+def agentic_rag_answer(vector_store, chunks_len, question):
+    sources = retrieve_with_sources(vector_store, question, chunks_len)
+    answer_chain = create_answer_chain(vector_store, chunks_len)
 
-    vector_store = create_vector_store(chunks)
-    rag_chain = create_rag_chain(vector_store, len(chunks))
+    response = answer_chain.invoke(question)
+    raw_answer = deduplicate_lines(response.content)
 
-    q = "List all projects mentioned"
-    response = rag_chain.invoke(q)
-
-    print(response.content)
+    final_answer = verifier_agent(raw_answer, sources)
+    return final_answer, sources
